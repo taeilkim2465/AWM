@@ -1,0 +1,31 @@
+Summary Workflows for Redbox (Entertainment, Movie, redbox)
+
+## open_on_demand_section
+Given you are on the Redbox site, open the On Demand area.
+- [link] On Demand (nav) -> CLICK
+- [label] On Demand (page/section) -> CLICK (or verify loaded)
+
+## open_supported_devices_and_select_streaming
+Find supported devices and view streaming-device category (including Free Live TV).
+- [link] Supported Devices -> CLICK
+- [link] Streaming Devices (or similar) -> CLICK
+- [link] Free Live TV -> CLICK
+
+## search_for_title_from_header
+Search for a specific movie/title using the header search and pick the suggestion.
+- [input] Header search box -> TYPE: {movie-title}
+- [li] Suggested result for {movie-title} -> CLICK
+
+## rent_selected_on_demand_title
+Rent the currently selected On Demand title (choose format if offered).
+- [button] Rent On Demand -> CLICK
+- [option/button] Select format (e.g., High Definition) -> CLICK
+- [button] Confirm / Rent / Continue -> CLICK
+
+## browse_new_releases_and_filter_by_genre
+Browse newly released or Movies To Rent and filter by a genre (e.g., Comedy).
+- [link] Movies To Rent / New (On Demand navigation) -> CLICK
+- [link/button] Genres -> CLICK
+- [button] Filter by {genre} (e.g., Comedy) -> CLICK
+
+Each workflow is a reusable subroutine; combine them in sequence as needed (e.g., search_for_title_from_header -> rent_selected_on_demand_title).

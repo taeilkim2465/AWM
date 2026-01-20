@@ -1,0 +1,25 @@
+Summary Workflows (FlightAware)
+## open_aeroapi_and_compare_tiers
+Opens the AeroAPI product page and opens the pricing/tiers comparison.
+[link]  AeroAPI -> CLICK
+[link]  Compare Tiers / Compare Tiers Now -> CLICK
+
+## open_discussions_and_sort_by_replies
+Opens the community discussions list and sorts topics by reply count.
+[link]  Discussions (Community -> Discussions) -> CLICK
+[button]  Sort by Replies (Replies column header) -> CLICK
+
+## select_airport_search_category
+Switches the site-wide search/category selector to "Airport" to reach airport-specific pages.
+[select]  Main search/category dropdown -> CLICK
+[option]  Airport -> CLICK
+
+## fill_and_submit_contact_form
+Fills the contact / lead form (used on Industries -> Airports and similar pages) and submits it.
+[input]  First name -> TYPE: {first-name}
+[input]  Last name -> TYPE: {last-name}
+[input]  Company (if present) -> TYPE: {company}
+[input]  Email -> TYPE: {email}
+[input]  Phone -> TYPE: {phone}
+[textarea]  Message / Tell us a -> TYPE: {message}
+[button]  Submit -> CLICK

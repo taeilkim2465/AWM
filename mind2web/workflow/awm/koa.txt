@@ -1,0 +1,29 @@
+Summary Workflows (KOA website)
+
+1) open_deals_hot_deals
+Description: Navigate to the Hot Deals section under Deals.
+- [link] Deals -> CLICK
+- [link] Hot Deals -> CLICK
+
+2) enter_location_and_select_suggestion
+Description: Fill the "Where do you want to go?" field and choose an autocomplete result.
+- [textbox] Where do you want to go? -> TYPE: {city_or_zip}
+- [link] {autocomplete_suggestion} -> CLICK
+
+3) set_show_results_within_radius
+Description: Choose the search radius for Hot Deals / results.
+- [label/select] Show results within -> CLICK
+- [option] {radius_option} (e.g., 250 Miles) -> CLICK
+
+4) pick_checkin_and_checkout_dates
+Description: Select a check-in date and set a check-out date for a stay.
+- [button or input] Check In / Depart calendar -> CLICK
+- [link] {check-in-date} -> CLICK
+- [textbox or input] Check Out -> TYPE or CLICK: {check-out-date} (or select the check-out date in the calendar)
+
+5) open_filters_and_search
+Description: Open advanced filters (if needed) and submit the search/find results.
+- [link] Filters / Advanced Search -> CLICK
+- [button] Find a KOA / Submit / Search -> CLICK
+
+Use these workflows as reusable subroutines (plug in the specific city/zip, dates, radius, or button label as needed).

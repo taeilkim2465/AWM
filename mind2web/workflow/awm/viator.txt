@@ -1,0 +1,16 @@
+Summary Workflows:
+
+1) enter_destination_and_select_suggestion
+Description: Search for a city/location and choose the site suggestion from the autocomplete results.
+- [input/textbox] Where to? -> TYPE: {destination-city}
+- [link/anchor] {city-suggestion} -> CLICK
+
+2) sort_results_by_traveler_rating
+Description: Open the results sorting options and choose to sort by traveler rating.
+- [control] Sort options -> CLICK
+- [option/span] Traveler Rating -> CLICK
+
+3) add_top_result_to_wishlist
+Description: From a results page sorted by rating, add the highest‑ranked activity to the wishlist.
+- [result-list] First activity/result -> FOCUS/SELECT
+- [button] Add to wishlist -> CLICK

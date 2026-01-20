@@ -1,0 +1,33 @@
+## search_for_event_or_artist
+Given that you are on the TicketCenter site, this workflow finds an artist or show.
+[input] Search box -> TYPE: {artist-or-show}
+[button] Search -> CLICK or
+[listbox] Suggestion -> CLICK (select matching suggestion)
+
+## open_event_page_and_view_all_dates
+Given that you are on an event or category listing, this workflow opens the event details and shows its date controls.
+[link/button] Event or show listing -> CLICK
+[button] All dates / View all dates -> CLICK
+
+## set_date_range
+Given that the event date selector is open, this workflow sets a custom date range.
+[input] Date range field -> TYPE: {start-date} - {end-date}
+[button] Apply / Done -> CLICK (if present)
+
+## open_tickets_listing
+Given you're on an event page or search results, this workflow opens the ticket listings for a specific performance.
+[row/link] Tickets (event row) -> CLICK
+[section] Ticket listing / Inventory -> WAIT_FOR_LOAD or VIEW
+
+## apply_price_filter
+Given you are on a ticket listing, this workflow filters results by price.
+[text/label] Price Range summary -> CLICK (open price controls)
+[input] Min/Max price -> TYPE: {min-price} / {max-price}
+[button] Done / Apply -> CLICK
+
+## change_location
+Given you are on a listing page showing a location, this workflow changes the search location.
+[button] Change Location -> CLICK
+[input] Location field -> TYPE: {city-or-zip}
+[button] Apply / Update -> CLICK
+

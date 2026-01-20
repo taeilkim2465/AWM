@@ -1,0 +1,45 @@
+Summary Workflows (parking site)
+
+1) navigate_to_city_page
+Purpose: Open the city/region page where you'll search for parking.
+Steps:
+- CLICK: Cities (or the site’s city/region navigation)
+- CLICK: {state/region} (if presented)
+- CLICK: {city} (or the city link)
+
+2) enter_address_or_venue
+Purpose: Locate a specific venue or address to search nearby parking.
+Steps:
+- CLICK: search / "Enter an Address or Venue" input
+- TYPE: {address or venue name}
+- CLICK: {matching suggestion} from the autocomplete list
+
+3) select_parking_dates
+Purpose: Choose entrance and exit dates for the parking reservation.
+Steps:
+- CLICK: entrance date input / calendar opener
+- CLICK: {entrance-date} on the calendar
+- CLICK: exit date input (if required)
+- CLICK: {exit-date} on the calendar
+
+4) select_parking_times
+Purpose: Choose specific arrival/departure times.
+Steps:
+- CLICK: entrance time dropdown / time selector
+- CLICK: {entrance-time}
+- CLICK: exit time dropdown (if separate)
+- CLICK: {exit-time}
+
+5) apply_parking_filters_and_vehicle_size
+Purpose: Restrict results by vehicle size and other parking attributes (outdoor/indoor, payment, amenities).
+Steps:
+- CLICK: vehicle size toggle / "Oversize" option (or check "Oversized Parking")
+- CLICK: indoor/outdoor filter (e.g., CLICK: "Outdoor" or "Indoor")
+- CLICK: additional amenity/payment checkboxes (e.g., "Pre-purchase", "Open gate with phone", "Pay with phone", "EV charging")
+
+6) search_and_open_result
+Purpose: Run the search and inspect/book a listing from the results.
+Steps:
+- CLICK: Search / Search for parking button
+- CLICK: {result item} (open listing or "View details")
+- CLICK: "Book now" (or other booking action)

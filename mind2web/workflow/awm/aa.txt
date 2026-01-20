@@ -1,0 +1,27 @@
+## enter_flight_locations
+Purpose: Fill the origin and destination fields and choose the matching suggestions.
+Steps:
+- TYPE the Origin input -> TYPE: {origin-city-or-airport}
+- CLICK the matching origin suggestion -> CLICK: {origin-suggestion}
+- TYPE the Destination input -> TYPE: {destination-city-or-airport}
+- CLICK the matching destination suggestion -> CLICK: {destination-suggestion}
+
+## set_passenger_count
+Purpose: Choose the total number of passengers for the booking.
+Steps:
+- OPEN the Number of passengers dropdown -> CLICK / SELECT: {passenger-dropdown}
+- SELECT the desired passenger count -> SELECT: {number-of-passengers}
+
+## select_departure_date
+Purpose: Open the date picker and pick the departure date.
+Steps:
+- CLICK the Depart calendar / View Calendar control -> CLICK: {calendar-button}
+- CLICK the desired travel date in the calendar -> CLICK: {travel-date}
+(Optionally close the calendar if required: CLICK: done/close)
+
+## submit_search_and_continue
+Purpose: Submit the flight search and proceed to the results / external search flow.
+Steps:
+- CLICK the Search / Submit button on the booking form -> CLICK: {search-submit-button}
+- If an intermediate "Search flights" link or external results page appears, CLICK that link -> CLICK: {external-search-link}
+- CLICK Continue / proceed on the resulting page -> CLICK: {continue-button}

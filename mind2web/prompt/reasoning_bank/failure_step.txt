@@ -1,0 +1,40 @@
+Task: {task}
+Domain: {domain}
+
+Below are ONLY the FAILED steps from a task execution:
+{trajectory}
+
+---
+Instructions:
+1. Analyze the failed steps above. These steps were executed INCORRECTLY and did NOT achieve their intended goal.
+
+2. Identify what caused these failures:
+   - What mistakes were made? (e.g., clicking wrong element types, incorrect typing format)
+   - What element selections failed and why? (e.g., choosing icons instead of buttons, selecting hidden elements)
+   - What interaction patterns led to errors? (e.g., skipping required fields, not waiting for UI updates)
+
+3. Extract LESSONS LEARNED and PREVENTION STRATEGIES:
+   - What should have been done instead?
+   - What warning signs indicate a similar mistake might occur?
+   - What checks or validations could prevent this error?
+
+4. Abstract these insights into reusable "Memory Items" as warnings for future tasks:
+   - Focus on MISTAKES to avoid, not specific element IDs
+   - Generalize from specific failures (e.g., "CLICK [456]" → "Avoid clicking decorative icons")
+   - Identify anti-patterns that should be prevented
+
+5. Format each item as:
+   - **Title**: A short, catchy warning (3-5 words) that captures the pitfall.
+   - **Description**: A one-sentence explanation of when this mistake typically occurs.
+   - **Content**: The detailed explanation of WHY this is a mistake, WHAT went wrong, and HOW to prevent it in the future.
+
+6. Output strictly a JSON list. Example:
+[
+  {{
+    "title": "Don't Click Decorative Icons",
+    "description": "Avoid when multiple visual elements appear near interactive controls.",
+    "content": "Decorative SVG icons or images often do not have click handlers and will not trigger any action. Instead of clicking icons, look for the associated labeled button or control (e.g., a button with text 'Search' next to a magnifying glass icon). If you click an icon and see no response, immediately try the nearest labeled button."
+  }}
+]
+
+Generate the JSON now:

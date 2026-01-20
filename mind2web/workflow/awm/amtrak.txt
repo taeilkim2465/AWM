@@ -1,0 +1,44 @@
+Here are the distinct, non-overlapping common workflows extracted from the Amtrak tasks. Each workflow is a reusable subroutine with parameter placeholders.
+
+Workflow: select_departure_and_arrival_stations
+- Click the departure station input / combobox.
+- Type or choose the departure station option -> CLICK: {departure-station}
+- Click the arrival station input / combobox.
+- Type or choose the arrival station option -> CLICK: {arrival-station}
+
+Workflow: select_date_range
+- Open the date picker / calendar -> CLICK.
+- Click the departure date -> CLICK: {depart-date}
+- Click the return date (if round-trip) -> CLICK: {return-date}
+- Click Done / Close to confirm the dates -> CLICK
+
+Workflow: set_travelers
+- Open the traveler selector / "Traveler" button -> CLICK.
+- Set passenger counts (adjust adults/children/others) -> CLICK or TYPE as needed to set {num-adults} and other counts.
+
+Workflow: initiate_train_search_and_open_result
+- Click FIND TRAINS -> CLICK.
+- From the returned list, click the desired route/result to view details -> CLICK: {result-name}
+
+Workflow: view_route_schedules_by_day
+- Navigate to "See all routes" (or Routes listing) -> CLICK.
+- Click the specific route name -> CLICK: {route-name}
+- Click Find Schedules -> CLICK.
+- Choose the weekday filter (e.g., Wednesday) -> CLICK: {weekday}
+
+Workflow: view_onboard_caf_menu
+- Click Experience (or "Experience" nav) -> CLICK.
+- Click Caf / Onboard Dining -> CLICK.
+- Click National Caf Menu (or specific caf menu) -> CLICK: {menu-name}
+
+Workflow: enter_passenger_name_and_save
+- Type the passenger first name -> TYPE: {first-name}
+- Type the passenger last name -> TYPE: {last-name}
+- Click Continue / Save -> CLICK
+
+Workflow: add_passenger_assistance_request
+- Toggle/enable "Passenger with Disability or Assistance Needed?" -> CLICK.
+- Open the service/assistance modal or options -> CLICK.
+- Click Save and Continue (or Done) to apply the assistance request -> CLICK
+
+If you want these merged into higher-level workflows (e.g., "book auto train from A to B"), I can compose them from the above primitives.

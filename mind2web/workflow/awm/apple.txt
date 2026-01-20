@@ -1,0 +1,21 @@
+## go_to_macbook_air_tech_specs
+Given the Apple site global navigation, open the MacBook Air product page and view its technical specifications.
+[link]  Mac -> CLICK
+[link]  MacBook Air -> CLICK
+[link]  Tech Specs -> CLICK
+
+## compare_apple_watches_and_learn_more
+Open the Apple Watch compare page and navigate to the Ultra model details.
+[link]  Apple Watch -> CLICK
+[link]  Compare Watch (Compare) -> CLICK
+[link]  Apple Watch Ultra / Learn more -> CLICK
+
+## open_pro_display_xdr_product_page
+Navigate from the global Displays section to the Pro Display XDR product page.
+[link]  Displays -> CLICK
+[link]  Pro Display XDR -> CLICK
+
+## open_mac_accessories_shop
+From the global nav get to the Mac accessories shopping page.
+[link]  Accessories -> CLICK
+[link]  Shop / Shop Mac Accessories -> CLICK

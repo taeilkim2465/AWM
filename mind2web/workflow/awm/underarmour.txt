@@ -1,0 +1,47 @@
+Summary Workflows:
+## open_brand_or_collection
+Given that you are on the Under Armour shopping site, this workflow opens a brand or collection page (e.g., Curry -> Shop Now / Shoes).
+[link]  {brand-menu-item} -> CLICK
+[link]  {collection-or-shop-now} -> CLICK
+
+## refine_listing_filters
+Apply common listing filters to narrow products (gender, product type, size).
+[link or button]  {filter-section: Gender} -> CLICK
+[link]  {filter-option: Unisex} -> CLICK
+[link or button]  {filter-section: Product Type} -> CLICK
+[link]  {filter-option: Athletic Shoes} -> CLICK
+[link or button]  {filter-section: Size} -> CLICK
+[link]  {filter-option: 5.5} -> CLICK
+
+## sort_by_price_low_to_high
+Sort search results to show cheapest items first.
+[button]  {sort-dropdown} -> CLICK
+[option]  Price (Low - High) -> CLICK
+
+## select_product_options_and_add_to_bag
+Choose product variants (color, size) and add the item to the bag.
+[link or button]  {color-option} -> CLICK
+[input or radio]  {size-option} -> CLICK or TYPE
+[button]  Add to Bag -> CLICK
+
+## handle_post_add_dialog
+Handle the add-to-bag confirmation dialog that appears after adding an item.
+[div/dialog]  {add-to-bag-dialog appears} -> (IMPLICIT WAIT / CHECK)
+[button or link]  Continue Shopping -> CLICK
+OR
+[link or button]  View Bag & Checkout -> CLICK
+
+## apply_coupon_code
+Apply a coupon code during checkout or on the cart page.
+[input]  {coupon-code-field} -> TYPE: {coupon-code}
+[button]  Apply -> CLICK
+
+## add_gift_card_to_bag
+Add an e-gift card by filling the gift card form and adding it to the bag.
+[link]  Gift Cards -> CLICK
+[input]  Recipient's Name -> TYPE: {recipient-name}
+[input]  Recipient's Email -> TYPE: {recipient-email}
+[input]  Amount -> TYPE: {amount}
+[input]  Message -> TYPE: {message}
+[input]  From -> TYPE: {sender-email}
+[button]  Add to Bag -> CLICK

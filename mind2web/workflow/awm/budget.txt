@@ -1,0 +1,60 @@
+## open_search_page
+Given the Budget car/truck rental site, open the search/reservations form.
+[link] Reservations OR Locations OR Deals -> CLICK
+[form area] Reservation/search form appears -> WAIT (or focus)
+
+## enter_pickup_location
+Enter a pickup location using the autocomplete field and choose the suggested option.
+[link or input] Pick‑up location field -> CLICK
+[textbox] Pick‑up location -> TYPE: {pickup-location-or-zip}
+[link/span] Suggested result (e.g., {best-popup-option}) -> CLICK
+
+## enter_return_location
+Set a return location (if returning to a different place) or confirm same‑location.
+[textbox] Return / Drop‑off location -> TYPE: {return-location-or-zip}
+[link/span] Suggested return result -> CLICK
+—or—
+[radiobutton/checkbox] Return to same location -> CLICK
+
+## pick_dates_with_calendar
+Select pickup and drop‑off dates from the date picker.
+[button/input] Pickup date field / calendar opener -> CLICK
+[link] {pickup-date} (calendar day) -> CLICK
+[link] {dropoff-date} (calendar day) -> CLICK
+[button] done/confirm (if present) -> CLICK
+
+## select_pickup_and_return_times
+Choose times from the pickup/return time dropdowns.
+[select] Pickup time dropdown -> SELECT: {pickup-time}
+[select] Return time dropdown -> SELECT: {return-time}
+
+## set_vehicle_type_filter
+Filter or choose a vehicle category (e.g., SUVs & Wagons, Vans).
+[section/link/image] Vehicle category (e.g., "SUVs & Wagons", "Vans") -> CLICK
+[result area] Vehicle category page or filter applied -> WAIT
+
+## specify_rental_options_and_search
+Set additional rental parameters (miles, days) and run the search / continue to locations.
+[input/select] Number of days / rental duration -> SELECT/TYPE: {duration}
+[input] Distance/miles field -> TYPE: {miles}
+[button/link] Continue to Location / Find Your Truck / Select My Car -> CLICK
+
+## choose_location_and_select_vehicle
+From the location results, pick a specific pickup location and select a vehicle.
+[list/dialog] Location from results -> CLICK (Select This Location)
+[button] Select Pick‑up Location / Select Truck / Select My Car -> CLICK
+[button/link] Pay Now or vehicle selection action -> CLICK
+
+## sort_results_and_set_currency
+Change sorting and currency on the search results page.
+[link/button] Sort by menu -> CLICK
+[option] Desired sort (e.g., Price (Low to High), Number of Seats (High to Low)) -> CLICK
+[link/button] Currency selector -> CLICK
+[option] USD (or desired currency) -> CLICK
+
+## download_e_receipt
+Retrieve an e‑receipt using last name and confirmation/rental number.
+[link] Get e‑Receipt (or View / Modify / Cancel -> Get e‑Receipt) -> CLICK
+[textbox] Last Name -> TYPE: {last-name}
+[textbox] Confirmation / Rental Agreement Number -> TYPE: {confirmation-number}
+[button] Get Receipt -> CLICK

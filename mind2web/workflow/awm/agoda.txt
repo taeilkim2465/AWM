@@ -1,0 +1,17 @@
+## enter_destination_and_search
+Given you are on the Agoda search page, this workflow enters a destination and starts the search.
+- [input] Destination field -> CLICK / FOCUS
+- [input] Destination field -> TYPE: {destination-city}
+- [link] Suggestion matching {destination-city} -> CLICK
+- [button] SEARCH -> CLICK
+
+## select_checkin_and_checkout_dates
+Given the Agoda date picker is visible, this workflow picks check-in and check-out dates.
+- [button or field] Open date picker -> CLICK (if needed)
+- [gridcell] Check-in date -> CLICK
+- [gridcell] Check-out date -> CLICK
+
+## select_accommodation_type
+Given you want to limit results to a specific accommodation category (e.g., Apartments), this workflow selects that category.
+- [link/tab] Accommodation category menu or tab (e.g., "Apartments") -> CLICK
+- [link/item] Choose the matching category entry or tile (e.g., "Apartments" result/count) -> CLICK

@@ -1,0 +1,352 @@
+[
+  {
+    "id": "451bf8ea-46d4-418a-9f55-ffe9ad2f3b36",
+    "source_task": "Book the lowest-priced and quickest flight for 5 adults and 1 child on May 20 from Mumbai to any airport near Washington.",
+    "domain": "Travel",
+    "title": "Select Labeled Suggestions",
+    "description": "When an autocomplete or suggestion list appears under an input field, click the clearly labeled suggestion.",
+    "content": "Autocomplete entries with explicit text (city names, airport codes, or full airport names) reliably represent the intended selection and often trigger the site to populate hidden fields. After typing or focusing the input, wait for the suggestion list to render and click the visible entry that matches the desired airport/city instead of attempting to type the entire value or clicking ambiguous icons.",
+    "score": 1.0,
+    "timestamp": "2026-01-15T19:58:53.341029"
+  },
+  {
+    "id": "47b902a7-bb09-4e67-be52-2ea9c155f57b",
+    "source_task": "Book the lowest-priced and quickest flight for 5 adults and 1 child on May 20 from Mumbai to any airport near Washington.",
+    "domain": "Travel",
+    "title": "Pick City-Level Code",
+    "description": "When a destination has multiple nearby airports, choose the aggregated city code (e.g., 'WAS') to include all airports.",
+    "content": "City-level codes represent a region rather than a single airport and return broader flight search results, increasing chances to find cheaper or faster itineraries. When the site offers both the city aggregate and individual airports, prefer the city aggregate if the task allows any nearby airport; this avoids missing good options limited to a secondary airport.",
+    "score": 1.0,
+    "timestamp": "2026-01-15T19:58:53.680124"
+  },
+  {
+    "id": "fe3766f6-447a-44d2-8cef-d75bc3a4fc99",
+    "source_task": "Book the lowest-priced and quickest flight for 5 adults and 1 child on May 20 from Mumbai to any airport near Washington.",
+    "domain": "Travel",
+    "title": "Click Visible Calendar Dates",
+    "description": "Select travel dates by clicking the date element shown in the calendar widget rather than typing them into the field.",
+    "content": "Calendar widgets usually enforce valid date formatting and availability rules; clicking a visible date element ensures the site registers the chosen date and applies any calendar-specific constraints (round-trip rules, minimum stay). Locate the clickable date within the active calendar panel and click that element rather than entering a string to avoid formatting or validation issues.",
+    "score": 1.0,
+    "timestamp": "2026-01-15T19:58:54.037147"
+  },
+  {
+    "id": "e16c6f41-caab-429e-8a48-ede5f0600765",
+    "source_task": "Check out my todos",
+    "domain": "gitlab",
+    "title": "Use navigation badges to infer list presence and item counts",
+    "description": "Badges next to navigation entries are reliable cues for the existence of list-type content and approximate item counts.",
+    "content": "When a navigation item shows a badge or count, use that to confirm the target (e.g., a to-do list) and to report how many items are likely present before opening the page. This saves an extra step of loading content just to check whether the list exists.",
+    "score": 1.0,
+    "timestamp": "2026-01-19T12:55:11.555286"
+  },
+  {
+    "id": "4567c270-65fd-479d-a961-1f3d6bb08700",
+    "source_task": "Check out my todos",
+    "domain": "gitlab",
+    "title": "Open the dedicated list page for \"view my items\" requests",
+    "description": "For requests to view a user's tasks or lists, go straight to the page specifically labeled for that list.",
+    "content": "If the UI has a clearly labeled page (like \"To-Do\", \"Tasks\", or similar), click that navigation entry rather than searching elsewhere in the app. This leads directly to the full list and any relevant controls or metadata.",
+    "score": 1.0,
+    "timestamp": "2026-01-19T12:55:12.736554"
+  },
+  {
+    "id": "5999c560-6522-4ded-9fd9-5b3dd20ddd84",
+    "source_task": "Check out my todos",
+    "domain": "gitlab",
+    "title": "Prefer clicking visible, labeled navigation elements",
+    "description": "Clicking a clearly labeled nav element is a quick, reliable action to reach the intended content.",
+    "content": "When multiple actions could reach content, choose the obvious navigation link with a matching label to avoid ambiguity. This reduces errors and aligns with user expectations for where lists are located.",
+    "score": 1.0,
+    "timestamp": "2026-01-19T12:55:13.019690"
+  },
+  {
+    "id": "5e6ac2e8-d826-4bfc-ba0e-47da749e590d",
+    "source_task": "Book the lowest-priced and quickest flight for 5 adults and 1 child on May 20 from Mumbai to any airport near Washington.",
+    "domain": "Travel",
+    "title": "Choose Autocomplete Suggestion",
+    "description": "Use when entering origin or destination fields with autocomplete.",
+    "content": "Select the visible autocomplete suggestion (the listed airport/city) rather than relying on typed text alone. Clicking the suggestion ensures the site registers the exact airport/city identifier the system expects, avoids spelling/format mismatches, and triggers any dependent UI updates (like available dates or pricing). To apply: type enough of the name to surface suggestions, wait for the dropdown, then click the matching list entry.",
+    "score": 1.0,
+    "timestamp": "2026-01-20T14:18:21.622185"
+  },
+  {
+    "id": "320acc93-4bfb-47ec-a535-15535e54ab03",
+    "source_task": "Book the lowest-priced and quickest flight for 5 adults and 1 child on May 20 from Mumbai to any airport near Washington.",
+    "domain": "Travel",
+    "title": "Pick City-Level Code",
+    "description": "Apply when the destination region has multiple nearby airports and the UI offers a consolidated city code.",
+    "content": "Choose the metropolitan or city-wide option (e.g., 'WAS - Washington, DC') when available to include flights into all nearby airports. This broad selection increases search coverage and often yields more routing/price options quickly, avoiding the need to repeat searches for each specific airport. To apply: prefer the high-level city code link or option in the list over individual airport entries unless a specific airport is required.",
+    "score": 1.0,
+    "timestamp": "2026-01-20T14:18:21.934350"
+  },
+  {
+    "id": "a24584d2-cbe9-45cf-8462-4a5fa4a11833",
+    "source_task": "Book the lowest-priced and quickest flight for 5 adults and 1 child on May 20 from Mumbai to any airport near Washington.",
+    "domain": "Travel",
+    "title": "Click Visible Calendar Day",
+    "description": "Use when selecting travel dates from a datepicker.",
+    "content": "After opening the calendar widget, click the visible day element for the desired date rather than entering the date string manually. Clicking the calendar day uses the widget's native selection logic, ensures correct date format and triggers any calendar-dependent validations. To apply: open the datepicker, wait for the day cells to render, then click the numeric day element corresponding to the intended travel date.",
+    "score": 1.0,
+    "timestamp": "2026-01-20T14:18:22.174200"
+  },
+  {
+    "id": "d0d45676-5d04-48ce-be50-ed2238139f41",
+    "source_task": "Book the lowest-priced and quickest flight for 5 adults and 1 child on May 20 from Mumbai to any airport near Washington.",
+    "domain": "Travel",
+    "title": "Click Labeled Submit/Continue",
+    "description": "Use when needing to advance a form or start a search/booking step.",
+    "content": "Prioritize clicking clearly labeled buttons like 'Search', 'Continue', or 'Submit' to progress rather than icons or unlabeled controls. Labeled buttons are designed to trigger form submission and are less likely to be ambiguous or tied to nonintuitive handlers. To apply: locate the button by its visible text, ensure it is enabled/visible, and click it to proceed to the next screen.",
+    "score": 1.0,
+    "timestamp": "2026-01-20T14:18:22.426343"
+  },
+  {
+    "id": "97be5ce8-6f4b-42c4-ab09-4a8186f72335",
+    "source_task": "Book the lowest-priced and quickest flight for 5 adults and 1 child on May 20 from Mumbai to any airport near Washington.",
+    "domain": "Travel",
+    "title": "Prefer Textual Links Over Icons",
+    "description": "When multiple clickable elements exist, choose those with descriptive text.",
+    "content": "Clickable anchors or buttons that include readable text (airport names, city codes, 'Today', 'Close') convey intent and are more robust targets than icon-only elements, which can change meaning across pages. Textual elements are also easier to identify programmatically. To apply: when selecting an option, pick the element that shows the relevant label or code rather than a mere symbol or ambiguous control.",
+    "score": 1.0,
+    "timestamp": "2026-01-20T14:18:22.818464"
+  },
+  {
+    "id": "a3a29637-ff24-4cd6-a3ab-c3a4c7d9aebd",
+    "source_task": "Book the lowest-priced and quickest flight for 5 adults and 1 child on May 20 from Mumbai to any airport near Washington.",
+    "domain": "Travel",
+    "title": "Follow Logical Input Order",
+    "description": "Apply when filling multi-field search or booking forms.",
+    "content": "Complete form fields in the natural sequence the UI expects (origin → destination → date → passengers → search/continue). This ordering minimizes validation errors and ensures dependent widgets (autocomplete, calendar, passenger selectors) load and update correctly. To apply: enter origin and choose suggestion first, then destination, then open the datepicker and select dates, set passengers if required, and finally click the form's submit/continue control.",
+    "score": 1.0,
+    "timestamp": "2026-01-20T14:18:23.141196"
+  },
+  {
+    "id": "92939309-5605-4e36-b090-c51cb4f6d337",
+    "source_task": "Book the lowest-priced and quickest flight for 5 adults and 1 child on May 20 from Mumbai to any airport near Washington.",
+    "domain": "Travel",
+    "title": "Avoid Clicking Decorative Spans",
+    "description": "Don't rely on clicking inner text or decorative spans near controls to activate actions.",
+    "content": "Why this is a mistake: Many interfaces use spans or nested elements for labels/visuals that do not have click handlers; clicking them can do nothing or trigger unexpected behaviour. What went wrong: the agent clicked a span inside a radio/label area instead of the actual radio input or label element, so the intended trip-type change may not have registered. How to prevent: target the actual control (input, button, or the label element bound to it). If unsure, click the input itself or the nearest element with a role/aria attribute (e.g., role=\"button\" or the <input>). Check for visual feedback (radio selected, control state change) after the click. If no change, try the parent control or the explicit control ID.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:18:58.289518"
+  },
+  {
+    "id": "ca51ca6e-ea08-4e49-a406-1254aed8f8b3",
+    "source_task": "Book the lowest-priced and quickest flight for 5 adults and 1 child on May 20 from Mumbai to any airport near Washington.",
+    "domain": "Travel",
+    "title": "Confirm Autocomplete Selection",
+    "description": "Typing a city name without selecting an autocomplete suggestion can leave the field unset or set to the wrong entity.",
+    "content": "Why this is a mistake: Many flight forms expect you to pick an autocomplete suggestion (airport or city) rather than free-text; typing alone can leave the field unresolved or accept an unintended suggestion. What went wrong: the agent typed \"mumbai\" and \"washington\" but did not select the correct autocomplete option; as a result the search used an unintended airport (e.g., BLI) rather than a Washington DC airport. How to prevent: after typing, explicitly select the correct suggestion (click it or use arrow+enter). Validate the selected value by checking for the displayed airport code/name or a hidden input value. If the page autocompletes to an unexpected airport, clear and reselect the intended airport code (e.g., BOM, IAD, DCA, BWI).",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:18:58.792353"
+  },
+  {
+    "id": "fff1058f-e1ae-4103-8b90-cd1f64f9f094",
+    "source_task": "Book the lowest-priced and quickest flight for 5 adults and 1 child on May 20 from Mumbai to any airport near Washington.",
+    "domain": "Travel",
+    "title": "Verify Destination Airport",
+    "description": "Double-check that the chosen airport corresponds to the intended metro area, not a similarly named but different airport.",
+    "content": "Why this is a mistake: Multiple airports or cities share similar names (e.g., 'Washington' vs 'Washington State' / Bellingham), causing searches to target the wrong destination. What went wrong: the results showed BOM to BLI (Bellingham) instead of Washington DC-area airports, indicating an ambiguous or incorrect destination selection. How to prevent: explicitly confirm the airport code or full airport name after selection (look for IAD/DCA/BWI for Washington DC). If the UI displays only the city or code in results, compare it to the intended target before proceeding. When in doubt, type and select the specific airport code.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:18:59.126918"
+  },
+  {
+    "id": "ee0f5900-9c91-460b-9fb6-ead1aac9084e",
+    "source_task": "Book the lowest-priced and quickest flight for 5 adults and 1 child on May 20 from Mumbai to any airport near Washington.",
+    "domain": "Travel",
+    "title": "Set Exact Travel Dates",
+    "description": "Opening the calendar drawer doesn't book a date—you must explicitly select the departure date.",
+    "content": "Why this is a mistake: The calendar control often requires a specific date click; simply opening the calendar has no effect on the search. What went wrong: the agent opened the calendar but did not pick May 20, so the search likely used a default or no date. How to prevent: after opening the calendar, find and click the exact date element (confirm it shows as selected), then verify the departure field reflects the chosen date. If the calendar is keyboard-driven, use the documented key commands or pick the date from a visible calendar table. Always validate the departure/return fields before searching.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:18:59.470205"
+  },
+  {
+    "id": "e58870a2-0da5-4a8c-bc57-c6b906f096b7",
+    "source_task": "Book the lowest-priced and quickest flight for 5 adults and 1 child on May 20 from Mumbai to any airport near Washington.",
+    "domain": "Travel",
+    "title": "Specify Passenger Types",
+    "description": "Selecting only a passenger total can miss required distinctions between adults and children.",
+    "content": "Why this is a mistake: Flight forms usually require separate counts for adults, children, and infants because fares and seat allocations differ. What went wrong: the agent selected \"5\" passengers but the request required 5 adults + 1 child (total 6), so passenger composition and total count were incorrect. How to prevent: explicitly set adults, children, and infant fields independently where available. If the form offers a single control for total passengers, open the passenger breakdown or advanced options and adjust the child count. Validate the UI summary shows the correct breakdown before searching.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:18:59.919274"
+  },
+  {
+    "id": "69b06d64-e061-40b6-9d0a-42e039b9e825",
+    "source_task": "Book the lowest-priced and quickest flight for 5 adults and 1 child on May 20 from Mumbai to any airport near Washington.",
+    "domain": "Travel",
+    "title": "Validate Passenger Total",
+    "description": "Always check that the total passengers match the task requirement and that the price refers to total vs per person.",
+    "content": "Why this is a mistake: Mistaking per-passenger fares for total or using an incorrect passenger count causes major booking errors and wrong price calculations. What went wrong: the agent proceeded with a result showing a per-passenger price without confirming that the booking covered 5 adults and 1 child; the modal later showed a total that didn't match expectations. How to prevent: confirm the passenger total displayed in the search summary equals the required number; when viewing prices, check whether the number shown is per person or for all passengers (look for 'each' or 'total'). Recompute total cost if necessary and abort if the numbers don't align.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:19:00.236573"
+  },
+  {
+    "id": "9c841bf4-c02a-4302-ad36-8cb01d3762da",
+    "source_task": "Book the lowest-priced and quickest flight for 5 adults and 1 child on May 20 from Mumbai to any airport near Washington.",
+    "domain": "Travel",
+    "title": "Wait For UI Updates",
+    "description": "Proceeding immediately after interactions often misses asynchronous changes (autocomplete, calendar, enabled buttons).",
+    "content": "Why this is a mistake: Modern web forms update asynchronously; actions like typing, selecting, or opening widgets may require milliseconds to render suggestions, enable buttons, or apply selections. What went wrong: interactions (typing, selecting passenger counts, opening calendar) were followed immediately by clicks that may have acted on stale or incomplete state, producing wrong search inputs and results. How to prevent: after each interaction, wait for a clear UI change (suggestion list visible, active selection state, search button enabled, date displayed). Use explicit checks for element states (aria-selected, visible text, enabled attribute) before proceeding.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:19:00.631909"
+  },
+  {
+    "id": "a77b0a87-338d-480b-a7af-f97feb4f07f3",
+    "source_task": "Book the lowest-priced and quickest flight for 5 adults and 1 child on May 20 from Mumbai to any airport near Washington.",
+    "domain": "Travel",
+    "title": "Review Search Summary",
+    "description": "Always inspect the assembled search criteria on-screen before choosing a flight.",
+    "content": "Why this is a mistake: Clicking a flight result without verifying the search summary can lock in wrong origin, destination, date, or passenger mix. What went wrong: the agent clicked a displayed fare without confirming that the summary matched 'Mumbai → Washington, May 20, 5 adults + 1 child', which led to booking the wrong route and passenger count. How to prevent: before selecting any flight, read the summary header or top-of-results banner (origin, destination with airport codes, departure date, passenger breakdown). If any item is incorrect, return to the form, correct it, and re-run the search.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:19:00.981692"
+  },
+  {
+    "id": "af22926d-9391-4398-b417-6b8e3e02ad28",
+    "source_task": "Find a flight for three adults from New York to New Orleans on April 14, return on April 16.",
+    "domain": "Travel",
+    "title": "Fill Visible Text Inputs",
+    "description": "Use when entering origin or destination in a flight search form.",
+    "content": "Target the visible text input elements labeled for origin/to destinations and type a clear, recognizable value (city name or airport code). Typing the full city name (e.g., \"New York\") or the IATA code triggers autocompletes reliably; ensure focus is on the correct input (matching the visible label) before typing and wait briefly for the UI to update or suggestions to appear.",
+    "score": 1.0,
+    "timestamp": "2026-01-20T14:20:03.951677"
+  },
+  {
+    "id": "1ea3ee6e-67ed-4be6-b77d-8de7324a7b3d",
+    "source_task": "Find a flight for three adults from New York to New Orleans on April 14, return on April 16.",
+    "domain": "Travel",
+    "title": "Use Airport Codes When Present",
+    "description": "Apply when the site accepts or displays airport/city codes for destinations.",
+    "content": "If the form or field shows an airport code (e.g., MSY), prefer entering the IATA code or selecting it from autocomplete—codes are unambiguous and often prefill or match faster than full names. This reduces ambiguity between similarly named cities and minimizes the chance of selecting the wrong airport.",
+    "score": 1.0,
+    "timestamp": "2026-01-20T14:20:04.535641"
+  },
+  {
+    "id": "dfb11b3f-5432-4b86-a333-b3cbb68a5a84",
+    "source_task": "Find a flight for three adults from New York to New Orleans on April 14, return on April 16.",
+    "domain": "Travel",
+    "title": "Select Passenger Dropdown",
+    "description": "Use when a passenger-count select element is available.",
+    "content": "Open the passenger-count combobox and choose the explicit option that matches the required number of travelers rather than incrementing step controls. Selecting the option element directly ensures the form value is set and reflected in the DOM (look for the option becoming selected) before proceeding.",
+    "score": 1.0,
+    "timestamp": "2026-01-20T14:20:04.925908"
+  },
+  {
+    "id": "621d895f-4483-4b74-80be-9a8a1fb9e2a0",
+    "source_task": "Find a flight for three adults from New York to New Orleans on April 14, return on April 16.",
+    "domain": "Travel",
+    "title": "Choose Dates via Calendar Links",
+    "description": "Use when the datepicker renders days as clickable links or anchors.",
+    "content": "Click the specific day elements in the calendar widget for departure and return (choose departure first, then return). If the desired date isn't visible, use the widget's navigation controls (e.g., 'Next' month) to reveal the correct month and then click the target date. Interacting with visible day elements avoids fragile text-parsing of date fields and triggers the datepicker's native handlers.",
+    "score": 1.0,
+    "timestamp": "2026-01-20T14:20:05.249562"
+  },
+  {
+    "id": "20d50d8c-88ce-44e4-8f76-c3cc9c33ce8d",
+    "source_task": "Find a flight for three adults from New York to New Orleans on April 14, return on April 16.",
+    "domain": "Travel",
+    "title": "Click Labeled Search/Submit",
+    "description": "Use when the search or submit control is present and visible.",
+    "content": "After completing fields and date selection, click the clearly labeled submit control (an input[type=submit] or button with text like 'Search'). Labeled buttons are more likely to invoke the form submission and associated logic than vague icons; prefer the element that is visibly labeled and enabled in the form area.",
+    "score": 1.0,
+    "timestamp": "2026-01-20T14:20:05.586621"
+  },
+  {
+    "id": "4a76ad5d-df28-4860-be91-91ad289a9f01",
+    "source_task": "Find a flight for three adults from New York to New Orleans on April 14, return on April 16.",
+    "domain": "Travel",
+    "title": "Follow Logical Interaction Order",
+    "description": "Apply a consistent sequence when filling flight-search forms to reduce errors.",
+    "content": "Use a predictable order: populate origin and destination fields, set number of passengers, pick departure date, pick return date, then submit. This sequence respects dependencies (e.g., some calendars open only after fields are filled) and reduces the chance of the UI resetting previously-entered values.",
+    "score": 1.0,
+    "timestamp": "2026-01-20T14:20:05.857158"
+  },
+  {
+    "id": "ca62ecec-05af-4a18-8ef5-a8747135cf04",
+    "source_task": "Find a flight for three adults from New York to New Orleans on April 14, return on April 16.",
+    "domain": "Travel",
+    "title": "Verify Selection State",
+    "description": "Use after making a selection in dropdowns or datepickers to ensure changes took effect.",
+    "content": "After selecting an option (passengers, date, autocomplete entry), confirm the DOM reflects the selection (e.g., the option shows selected, the input value updates, or the chosen date is highlighted) before moving to the next step. This verification guards against silent failures when elements re-render or new IDs appear after interactions.",
+    "score": 1.0,
+    "timestamp": "2026-01-20T14:20:06.322021"
+  },
+  {
+    "id": "dcaff0b2-bb9f-492a-8195-6bd16af44528",
+    "source_task": "Find a flight for three adults from New York to New Orleans on April 14, return on April 16.",
+    "domain": "Travel",
+    "title": "Don't Click Static Links",
+    "description": "Avoid clicking plain anchor or label elements that look like choices but don't populate the form.",
+    "content": "In many UIs a list of airports or locations is rendered as plain anchors or text items that are informational rather than the actual selection control. Clicking those can change focus or navigate the page without populating the origin/to input. Instead, target the form input itself and either (a) type and select from the autosuggest entries, or (b) click the suggestion element that is explicitly styled/annotated as selectable. If a click does nothing, check whether the element has a clickable role (button/option) or whether an adjacent suggestion list appears that must be used.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:20:31.586022"
+  },
+  {
+    "id": "3be726bd-eeda-4da9-80ca-305aa38e9304",
+    "source_task": "Find a flight for three adults from New York to New Orleans on April 14, return on April 16.",
+    "domain": "Travel",
+    "title": "Select Autosuggest Items",
+    "description": "Typing a city name into an input is often not enough — you must choose the autosuggest entry to set the canonical airport value.",
+    "content": "Many flight search forms require selecting an autosuggest result (airport code or canonical label) rather than relying on free text. Typing 'New Orleans' into the To field without clicking the suggestion can leave the field non-bound or invalid. After typing, wait for the suggestion list to appear and click the correct suggestion (or navigate it with keyboard + Enter). Add a verification step: read back the input value or the rendered chosen-item tag to confirm the selection.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:20:32.078210"
+  },
+  {
+    "id": "6b90e75c-cb11-4912-8ac8-f110a6283b10",
+    "source_task": "Find a flight for three adults from New York to New Orleans on April 14, return on April 16.",
+    "domain": "Travel",
+    "title": "Avoid Clicking Instructional Spans",
+    "description": "Don't click descriptive text or help spans that accompany controls — they often have no click handler.",
+    "content": "Calendar widgets and other controls sometimes include a span with guidance text near the actionable element; clicking that span may do nothing because the click handler is bound to the button/input, not the text. When interacting with a date picker, target the real control (the button/input with role=button or the input field) rather than the adjacent help text. If a click produces no visible change, inspect the DOM for an actual control or try clicking the input field itself to open the widget.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:20:32.803609"
+  },
+  {
+    "id": "977636f3-e0ef-4006-bcc4-e8c8671cf919",
+    "source_task": "Find a flight for three adults from New York to New Orleans on April 14, return on April 16.",
+    "domain": "Travel",
+    "title": "Click Active Controls Only",
+    "description": "Ensure the element you click is the control intended to trigger the action, not an icon or nearby element.",
+    "content": "Icons, decorative elements or container elements are frequently placed beside functional controls; these may not invoke the expected behavior. For example, a magnifying-glass icon might be decorative while the functional 'Search' is a button next to it. Confirm the target has an interactive role (button, input, option) and, if possible, test clicks during development to confirm behavior. Prefer clicking labeled buttons/inputs or using keyboard events that replicate user behavior (Tab + Enter).",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:20:33.200481"
+  },
+  {
+    "id": "1506f36c-df6b-44ad-afcc-ca76fcc0c9de",
+    "source_task": "Find a flight for three adults from New York to New Orleans on April 14, return on April 16.",
+    "domain": "Travel",
+    "title": "Wait for UI Updates",
+    "description": "After changing a field or clicking a control, wait for the DOM to update and new elements (suggestions, calendars) to appear before the next action.",
+    "content": "Rapid sequential actions can miss dynamically rendered elements; e.g., typing into a field may trigger an async suggestion list that isn't yet present when the agent immediately tries to click a suggestion. Insert checks that a suggestion/calendar element exists and is visible before clicking it. Use small explicit waits or poll for the presence of the expected element attribute (aria-expanded, visible option list, enabled button) to avoid acting on stale or absent elements.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:20:33.717268"
+  },
+  {
+    "id": "20b0c2cc-4950-44e3-b348-178a25c3114d",
+    "source_task": "Find a flight for three adults from New York to New Orleans on April 14, return on April 16.",
+    "domain": "Travel",
+    "title": "Pick Actual Date Cells",
+    "description": "Opening a calendar widget is not enough — you must select the specific date cell to set depart/return dates.",
+    "content": "Clicking a 'View Calendar' control only reveals the widget; if you don't click the date cell itself the date value remains unset. After opening the calendar, navigate to the correct month and click the exact date element (often a cell with data-date or role=gridcell). Verify the input shows the chosen date or that the hidden form value updated. If the calendar requires keyboard navigation, simulate the appropriate keys (arrow keys + Enter) rather than relying on the open action alone.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:20:34.083652"
+  },
+  {
+    "id": "bcf64c17-6874-4c1f-8114-4cc1cf050968",
+    "source_task": "Find a flight for three adults from New York to New Orleans on April 14, return on April 16.",
+    "domain": "Travel",
+    "title": "Set Select Fields Explicitly",
+    "description": "Don't assume select defaults are correct — set passenger counts and other selects explicitly using the select control or option values.",
+    "content": "The number-of-passengers field defaults to 1 in many forms; failing to change it leaves the booking for the wrong party size. Interact with the select control itself (open select + choose option, or set the select.value if supported) and then confirm the displayed or underlying value changed to the intended number. Add a verification after selection to prevent proceeding with the wrong passenger count.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:20:34.485418"
+  },
+  {
+    "id": "dd66ce37-667f-405d-a8b5-43d5a3d7a97e",
+    "source_task": "Find a flight for three adults from New York to New Orleans on April 14, return on April 16.",
+    "domain": "Travel",
+    "title": "Validate After Each Interaction",
+    "description": "After each critical action (origin, destination, passengers, dates), verify the form field actually contains the expected value.",
+    "content": "A robust flow includes immediate validation steps: read back the input value, check for a selected suggestion tag, or confirm the select shows the chosen option. This catches silent failures where a click or type didn't register. If a value isn't as expected, retry the specific interaction (re-open suggestions, re-click date cell, re-select the option) rather than continuing the sequence and compounding errors.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:20:34.858408"
+  }
+]

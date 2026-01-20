@@ -1,0 +1,33 @@
+Summary Workflows
+
+## schedule_transportation_access_pass_appointment
+Given the MBTA site, schedule an appointment to apply for a Transportation Access Pass (TAP) CharlieCard.
+- [link] CharlieCard Store -> CLICK
+- [link] Schedule an appointment -> CLICK
+- [input / radio] Select service "Apply for Automatically Eligible Transportation Access Pass (TAP) CharlieCard" -> CLICK
+- [button] Next month (if needed) -> CLICK
+- [link] {appointment-date-and-time} -> CLICK
+- [input] Name -> TYPE: {full-name}
+- [input] Email -> TYPE: {email-address}
+- [button] Book -> CLICK
+
+## plan_bus_trip_with_trip_planner
+Use the MBTA Trip Planner to find bus trips between two locations.
+- [tab / link] Trip Planner -> CLICK
+- [textbox / combobox] From -> TYPE: {origin-location}
+- [link / option] Select origin suggestion -> CLICK
+- [textbox / combobox] To -> TYPE: {destination-location}
+- [link / option] Select destination suggestion -> CLICK
+- [button] Get trip suggestions -> CLICK
+
+## filter_job_openings_and_apply
+On the MBTA Careers/Job Openings page, filter by department and salary, view a posting, and apply.
+- [link] View MBTA job openings (Careers) -> CLICK
+- [button] Confirm privacy dialog -> CLICK
+- [button / link] Filter -> CLICK
+- [link] Department -> CLICK
+- [label / checkbox] MBTA - Safety -> CLICK
+- [link] Estimated Annual Salary -> CLICK
+- [label / radio] $100,000+ -> CLICK
+- [link / button] Open job details -> CLICK
+- [button] Apply -> CLICK

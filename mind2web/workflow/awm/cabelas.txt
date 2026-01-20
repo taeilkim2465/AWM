@@ -1,0 +1,31 @@
+Summary workflows (distinct, commonly reused sub-routines)
+
+1) navigate_to_category_then_subcategory
+- Purpose: Open a top-level site category and then choose a subcategory/product type.
+- Steps:
+  1. CLICK the main navigation category (e.g., Fishing, Boating, Shooting, Bargain Cave).
+  2. CLICK the subcategory or specific collection link (e.g., Saltwater Rods, Aluminum Boats, Guns, Bargain Cave → Guns).
+
+2) apply_condition_and_sale_filters
+- Purpose: Restrict results to item condition and promotional buckets.
+- Steps:
+  1. CLICK the condition checkbox (e.g., New or Used).
+  2. CLICK promotional checkboxes as needed (e.g., Sale, Clearance).
+
+3) filter_by_average_rating
+- Purpose: Show only items with a specific average rating.
+- Steps:
+  1. CLICK the Average Ratings control/section.
+  2. CLICK the desired rating option (e.g., 5 stars, 4–5 stars).
+
+4) sort_by_lowest_price
+- Purpose: Order results from lowest to highest price.
+- Steps:
+  1. CLICK the Sort by control/menu.
+  2. CLICK the "Lowest Price" option.
+
+5) enter_zip_and_search_location
+- Purpose: Limit results to a geographic area (zip / radius search).
+- Steps:
+  1. TYPE the ZIP code into the site's zip/location input (e.g., 52554).
+  2. CLICK the site’s Search/Apply button to apply the location filter (or any nearby-radius control).

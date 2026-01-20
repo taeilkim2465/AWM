@@ -1,0 +1,54 @@
+## search_site_for_item
+Given you are on Newegg, this workflow performs a site search for an item.
+- [input] Search box -> TYPE: {search-term}
+- [button] Search -> CLICK
+
+## apply_search_filters
+Apply common result filters (price, condition, shipping country, rating) and confirm them.
+- [label/check] {filter-category} (e.g., Price: {price-range}) -> CLICK
+- [label/check] {filter-category} (e.g., Condition: New) -> CLICK
+- [label/check] {filter-category} (e.g., Ships From: {country}) -> CLICK
+- [label/check] {filter-category} (e.g., Customer Rating: {min-rating}+) -> CLICK
+- [button] Apply -> CLICK
+
+## set_results_sort
+Change how results are ordered (e.g., Lowest Price, Most Reviews, Best Rating).
+- [label] Sort By dropdown -> CLICK
+- [option] {sort-option} -> CLICK
+
+## select_result_by_index
+Open a specific search result from the results list by position.
+- (From search results) [div/item] Result {index} -> CLICK
+- [link/button] View details or product link -> CLICK
+
+## add_result_to_wishlist_or_list
+Add an opened product to a wish list or saved list.
+- (When product/result is open) [link/button] Add To List / Add To Wish List -> CLICK
+- (Optional) choose list or confirm -> CLICK
+
+## add_result_to_cart_with_quantity
+Add a product to the shopping cart, specifying quantity.
+- (When product is open) [input/select] Quantity -> TYPE/SELECT: {quantity}
+- [button] Add to cart -> CLICK
+
+## open_pc_builder_and_start_build
+Start a PC build using Newegg's PC Builder or AI builder and add the generated build to a build list.
+- [link] PC Builder or Gaming PC Finder -> CLICK
+- [button] BUILD WITH AI or Choose a preset (e.g., Entry Level) -> CLICK
+- [button] Add to Build List -> CLICK
+
+## pick_component_from_builder
+Select a component choice inside a PC Builder or preset build.
+- (Within builder) [section] Component type (e.g., CPU, SSD) -> CLICK if needed
+- [button] Select (for the desired component option) -> CLICK
+
+## find_and_bookmark_job_posting
+Locate career openings, filter by location and position type (e.g., Intern), then bookmark a posting.
+- [link] Newegg Careers or Openings -> CLICK
+- [input] City/State/Zip -> TYPE: {location}
+- [label/check] Position Type -> CLICK (e.g., Interns)
+- [button/icon] Bookmark / Add to bookmarks for the job -> CLICK
+
+Notes:
+- Workflows are modular and intended to be composed (e.g., search_site_for_item -> apply_search_filters -> set_results_sort -> select_result_by_index -> add_result_to_wishlist_or_list).
+- Use the placeholders ({...}) to insert task-specific values like search-term, price-range, sort-option, index, quantity, and location.

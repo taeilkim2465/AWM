@@ -1,0 +1,43 @@
+Summary Workflows (Airbnb)
+
+## enter_location_and_select_suggestion
+Given the Airbnb search UI, enter a location and pick a suggestion from the dropdown.
+- [button] Start your search / Location -> CLICK
+- [input] Where / location search box -> TYPE: {location}
+- [option] {matching-suggestion} -> CLICK
+
+## select_dates_on_calendar
+Open the date picker and choose check-in and check-out dates.
+- [button] Date / Check in or Check out -> CLICK
+- [button] {check-in-date} -> CLICK
+- [button] {check-out-date} -> CLICK
+- [button] done / confirm dates -> CLICK  (if present)
+
+## set_guests
+Open the guests control and set the number and types of guests.
+- [button] Who / Guests -> CLICK
+- [input / control] Adults -> TYPE or ADJUST: {adult-count}
+- [input / control] Children -> TYPE or ADJUST: {child-count}  (if needed)
+- [button] done / close guests panel -> CLICK  (if present)
+
+## apply_category_or_property_type_filter
+Open filters (or use the visible category control) and select a category/property type.
+- [button] Filters OR category toggle (e.g., "Sports", "Private rooms") -> CLICK
+- [checkbox / option] {category-name} (e.g., Private rooms, Sports) -> CLICK
+- [button] Apply / Done -> CLICK  (if present)
+
+## switch_to_experiences_tab
+Switch the search context from stays to experiences.
+- [tab] Experiences -> CLICK
+- [button] (optional) Confirm search context change if required -> CLICK
+
+## set_language_and_time_of_day_filters
+Restrict results by language and time-of-day (used for Experiences).
+- [button] Choose a language -> CLICK
+- [checkbox / option] English -> CLICK
+- [checkbox / option] Morning / Starts before 12 pm -> CLICK
+- [button] Apply / Done -> CLICK  (if present)
+
+Notes:
+- Use placeholders in braces for values to be filled per query.
+- Workflows are intentionally non-overlapping (location, dates, guests, category/filters, tab switch, language/time filters).

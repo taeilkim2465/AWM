@@ -1,0 +1,21 @@
+Summary Workflows:
+
+1) change_location_to_city
+Description: Set the browsing/search location to a specific city.
+Steps:
+- Click the "Change Location" button.
+- Type {city} into the location search input.
+- Click the matching city suggestion from the results (e.g., "New York City, NY").
+
+2) filter_events_by_month
+Description: Open the date filter and select a target month for event results.
+Steps:
+- Click the "Filter by Date" button.
+- Navigate to the desired month (click next/previous month until {target-month} is shown).
+- Click "Apply" (or equivalent) to confirm the month filter.
+
+3) open_help_and_select_topic
+Description: Open the help/support area and choose a specific help article.
+Steps:
+- Click the "Help & Support" (or "Support") link.
+- Click the desired help topic (e.g., "Buying Tickets").

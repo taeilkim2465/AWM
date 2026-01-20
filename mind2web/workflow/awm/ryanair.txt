@@ -1,0 +1,45 @@
+Here are non-overlapping, commonly reused workflows extracted from the Ryanair tasks. Each workflow is a reusable sub-routine with parameter placeholders where appropriate.
+
+1) open_service_tab
+Purpose: Open the site’s main planning menu and switch to the desired service tab (e.g., Hotels, Events & Activities).
+Steps:
+- CLICK the Plan/menu button (if present)
+- CLICK the {service-tab} (e.g., Hotels, Events & Activities)
+
+2) enter_and_select_destination
+Purpose: Enter a destination and pick the site suggestion.
+Steps:
+- CLICK the destination input (or focus the Destination field)
+- TYPE: {destination-name}
+- CLICK the matching suggestion from the tooltip/list (e.g., "{destination}, {region}")
+
+3) select_date_from_calendar
+Purpose: Pick a date from an on-page calendar widget (applies to check-in, check-out, event date).
+Steps:
+- CLICK the calendar control (e.g., Check-in / Check-out / date selector)
+- CLICK the {date} element in the calendar (e.g., "13", "25 March")
+
+4) set_guests_and_rooms
+Purpose: Configure number of travellers and rooms for a hotel search.
+Steps:
+- CLICK the Guests and rooms control
+- ADJUST counters as needed (increase/decrease adults, children)
+- CLICK + Add room (if additional rooms required)
+- CLICK Done (to confirm guests/rooms)
+
+5) submit_search_and_open_result
+Purpose: Run the search and open a first actionable result (choose room / get tickets / view offer).
+Steps:
+- CLICK the search action button (e.g., Search / Go! / Check availability / Let's go)
+- CLICK the desired result action (e.g., Choose room / Get tickets / Book now)
+
+6) filter_events_by_category_location_and_sort
+Purpose: Narrow event/activity listings by category, location/country, date and sort order.
+Steps:
+- CLICK Categories
+- CLICK the {category} (e.g., Family Friendly, Food & Drink)
+- CLICK the {location/country} filter (e.g., Denmark, Ireland)
+- CLICK the desired date (via date picker) or date option
+- CLICK the sort option (e.g., Most popular / Lowest price) and then open an event (Get tickets / Check availability)
+
+Use these workflows as building blocks to assemble the full task sequences (open tab → enter destination → select dates → set guests → submit search → choose result; or open events → filter by category/location/date → view tickets).

@@ -1,0 +1,46 @@
+## enter_and_select_location
+Given you are on a KAYAK search form, this workflow enters a pickup / origin / destination location and selects the matching autosuggest option.
+[click]  Location input (pick-up / origin / to?) -> CLICK
+[textbox]  Location input -> TYPE: {location-name}
+[li]  Matching autosuggest option -> CLICK
+
+## select_date_range
+Selects travel or pick-up and drop-off dates (works for single or round-trip and car rentals).
+[click]  Start date / depart date calendar input -> CLICK
+[link/button]  {start-date} -> CLICK
+[click]  End date / return date calendar input (if applicable) -> CLICK
+[link/button]  {end-date} -> CLICK
+
+## set_time_option
+Sets a time for a date input (commonly used for car pickup/dropoff).
+[click]  Time input (start or end time) -> CLICK
+[option]  {time-option, e.g. 2:00 pm, Noon} -> CLICK
+
+## submit_search_and_update_results
+Submits the current search form and confirms any "results not updated" alert.
+[button]  Submit / Search -> CLICK
+[button]  Update (if "results haven't been updated" alert appears) -> CLICK
+
+## sort_results_by_price
+Sorts search results to show cheapest or price-first listings.
+[click]  Sort control / tablist -> CLICK
+[option]  Price / Cheapest -> CLICK
+
+## filter_car_by_size
+Filters car rental results by vehicle size class.
+[click]  Car size filter control -> CLICK
+[switch/button]  {size-option, e.g. Medium, Small, Large, SUV} -> CLICK
+
+## track_flight_by_airline_and_number
+Tracks a flight by selecting the airline and entering the flight number.
+[textbox/combobox]  Airline -> TYPE: {airline-name}
+[li]  Airline suggestion -> CLICK
+[textbox]  Flight number -> TYPE: {flight-number}
+[button]  Track Flight / Submit -> CLICK
+
+## open_travel_restrictions_for_country
+Opens the travel restrictions tool and selects a country.
+[click]  Travel Restrictions / "Find out where you can" -> CLICK
+[textbox]  Country input -> TYPE: {country-name}
+[li/tab]  Country result / tab -> CLICK
+

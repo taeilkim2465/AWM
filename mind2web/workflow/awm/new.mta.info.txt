@@ -1,0 +1,37 @@
+Summary Workflows (new.mta.info)
+
+## enter_trip_endpoints
+Given the "Plan a Trip" widget, enter origin and destination and pick the suggested result.
+[input]  From -> TYPE: {origin-location}
+[li]   {best-suggestion-for-origin} -> CLICK
+[input]  To -> TYPE: {destination-location}
+[li]   {best-suggestion-for-destination} -> CLICK
+
+## set_trip_date_and_time
+Given the "Plan a Trip" widget, pick the travel date and target arrival/departure time and run the planner.
+[button]  Open date picker -> CLICK
+[link]    {travel-date} -> CLICK
+[select]  Hour -> SELECT: {hour}
+[select]  Minute -> SELECT: {minute}
+[button]  Plan My Trip -> CLICK
+
+## search_route_and_select
+Search for a route (e.g., bus/train) and choose it from the results.
+[input]  Route search -> TYPE: {route-id}
+[li]     {route-result} -> CLICK
+[button] Select routes (if present) -> CLICK
+
+## open_maps_and_pick_neighborhood
+Navigate to the neighborhood maps section and open a borough map.
+[link]  Maps -> CLICK
+[link]  Neighborhood maps -> CLICK
+[link]  {borough} (e.g., Brooklyn) -> CLICK
+
+## find_project_and_open_FEIS
+Search Projects, open a project page, and access the Final Environmental Impact Statement (FEIS) report volume.
+[link]/menu  Projects -> CLICK
+[input]     Project search -> TYPE: {project-name}
+[button]    Search -> CLICK
+[link]      {project-result} -> CLICK
+[summary]   Final Environmental Impact Statement -> CLICK
+[link]      {FEIS-volume-link} (e.g., Volume 2: FEIS Report) -> CLICK

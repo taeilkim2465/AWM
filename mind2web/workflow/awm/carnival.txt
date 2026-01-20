@@ -1,0 +1,19 @@
+## choose_sail_to_region
+Given that you are on the cruise search page, this workflow sets the cruise destination region.
+[link]  Sail To -> CLICK
+[button]  {region-name} -> CLICK
+
+## choose_sail_from_port
+Given that you are on the cruise search page, this workflow sets the departure port or city.
+[link]  Sail From -> CLICK
+[button]  {departure-port-or-city} -> CLICK
+
+## select_dates_and_duration
+Given that you are on the cruise search page, this workflow chooses the month (or date range) and the cruise length.
+[link]  Dates -> CLICK
+[button]  {month-year} -> CLICK
+[button]  {duration-option (e.g., 10+ Days)} -> CLICK
+
+## submit_cruise_search
+Given that you have configured destination, departure, dates and duration, this workflow runs the search.
+[button]  SEARCH CRUISES -> CLICK

@@ -1,0 +1,29 @@
+## Summary Workflows (last.fm)
+
+1) navigate_to_music_tracks  
+Given the site header, open the Tracks listing.  
+- CLICK: Music (primary navigation)  
+- CLICK: Tracks (secondary navigation)
+
+2) search_and_open_top_result  
+Search for an artist or track and open the top result.  
+- CLICK: Search (open search field)  
+- TYPE: {query} into the search input  
+- CLICK: Search (submit)  
+- CLICK: top result link (first artist/track in results)
+
+3) navigate_to_genre_subgenre  
+Open a genre then a subgenre (e.g., Indie → Indie rock).  
+- CLICK: Music (primary navigation)  
+- CLICK: {genre} (e.g., Indie)  
+- CLICK: {subgenre} (e.g., indie rock)
+
+4) set_opened_track_as_current_obsession  
+From an open track page or track form, set it as your current obsession.  
+- FOCUS/OPEN: the track page or track form (ensure the track is displayed)  
+- CLICK: Set as current obsession
+
+5) play_opened_track  
+Play a track using the page audio controls.  
+- FOCUS/OPEN: the track page or ensure the track is loaded in the player  
+- CLICK: Play (audio player Play button)

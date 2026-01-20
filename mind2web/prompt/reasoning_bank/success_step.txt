@@ -1,0 +1,35 @@
+Task: {task}
+Domain: {domain}
+
+Below are ONLY the SUCCESSFUL steps from a task execution:
+{trajectory}
+
+---
+Instructions:
+1. Analyze the successful steps above. These steps were executed CORRECTLY and achieved their intended goal.
+
+2. Identify what made these steps successful:
+   - What specific action patterns worked well? (e.g., clicking the right element type, typing in the correct format)
+   - What element selection strategies were effective? (e.g., choosing visible buttons over icons, selecting specific element types)
+   - What interaction sequences led to progress? (e.g., opening a dropdown before selecting, waiting for autocomplete)
+
+3. Abstract these insights into reusable "Memory Items" for future similar tasks:
+   - Focus on STRATEGIES that worked, not specific element IDs
+   - Generalize from specific actions (e.g., "CLICK [123]" → "Click the search button")
+   - Identify patterns that can be applied to similar scenarios
+
+4. Format each item as:
+   - **Title**: A short, catchy summary (3-5 words) that captures the key strategy.
+   - **Description**: A one-sentence explanation of when to apply this strategy.
+   - **Content**: The detailed reasoning explaining WHY this approach is effective and HOW to apply it.
+
+5. Output strictly a JSON list. Example:
+[
+  {{
+    "title": "Click Labeled Buttons First",
+    "description": "Use when multiple clickable elements are present in a form.",
+    "content": "When interacting with forms, prioritize clicking elements with explicit text labels (e.g., 'Search', 'Submit', 'Apply') over icons or images. Labeled buttons are more likely to trigger the intended action and provide clear feedback on what will happen."
+  }}
+]
+
+Generate the JSON now:

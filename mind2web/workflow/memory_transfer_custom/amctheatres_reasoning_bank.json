@@ -1,0 +1,62 @@
+[
+  {
+    "id": "451bf8ea-46d4-418a-9f55-ffe9ad2f3b36",
+    "source_task": "Book the lowest-priced and quickest flight for 5 adults and 1 child on May 20 from Mumbai to any airport near Washington.",
+    "domain": "Travel",
+    "title": "Select Labeled Suggestions",
+    "description": "When an autocomplete or suggestion list appears under an input field, click the clearly labeled suggestion.",
+    "content": "Autocomplete entries with explicit text (city names, airport codes, or full airport names) reliably represent the intended selection and often trigger the site to populate hidden fields. After typing or focusing the input, wait for the suggestion list to render and click the visible entry that matches the desired airport/city instead of attempting to type the entire value or clicking ambiguous icons.",
+    "score": 1.0,
+    "timestamp": "2026-01-15T19:58:53.341029"
+  },
+  {
+    "id": "47b902a7-bb09-4e67-be52-2ea9c155f57b",
+    "source_task": "Book the lowest-priced and quickest flight for 5 adults and 1 child on May 20 from Mumbai to any airport near Washington.",
+    "domain": "Travel",
+    "title": "Pick City-Level Code",
+    "description": "When a destination has multiple nearby airports, choose the aggregated city code (e.g., 'WAS') to include all airports.",
+    "content": "City-level codes represent a region rather than a single airport and return broader flight search results, increasing chances to find cheaper or faster itineraries. When the site offers both the city aggregate and individual airports, prefer the city aggregate if the task allows any nearby airport; this avoids missing good options limited to a secondary airport.",
+    "score": 1.0,
+    "timestamp": "2026-01-15T19:58:53.680124"
+  },
+  {
+    "id": "fe3766f6-447a-44d2-8cef-d75bc3a4fc99",
+    "source_task": "Book the lowest-priced and quickest flight for 5 adults and 1 child on May 20 from Mumbai to any airport near Washington.",
+    "domain": "Travel",
+    "title": "Click Visible Calendar Dates",
+    "description": "Select travel dates by clicking the date element shown in the calendar widget rather than typing them into the field.",
+    "content": "Calendar widgets usually enforce valid date formatting and availability rules; clicking a visible date element ensures the site registers the chosen date and applies any calendar-specific constraints (round-trip rules, minimum stay). Locate the clickable date within the active calendar panel and click that element rather than entering a string to avoid formatting or validation issues.",
+    "score": 1.0,
+    "timestamp": "2026-01-15T19:58:54.037147"
+  },
+  {
+    "id": "e16c6f41-caab-429e-8a48-ede5f0600765",
+    "source_task": "Check out my todos",
+    "domain": "gitlab",
+    "title": "Use navigation badges to infer list presence and item counts",
+    "description": "Badges next to navigation entries are reliable cues for the existence of list-type content and approximate item counts.",
+    "content": "When a navigation item shows a badge or count, use that to confirm the target (e.g., a to-do list) and to report how many items are likely present before opening the page. This saves an extra step of loading content just to check whether the list exists.",
+    "score": 1.0,
+    "timestamp": "2026-01-19T12:55:11.555286"
+  },
+  {
+    "id": "4567c270-65fd-479d-a961-1f3d6bb08700",
+    "source_task": "Check out my todos",
+    "domain": "gitlab",
+    "title": "Open the dedicated list page for \"view my items\" requests",
+    "description": "For requests to view a user's tasks or lists, go straight to the page specifically labeled for that list.",
+    "content": "If the UI has a clearly labeled page (like \"To-Do\", \"Tasks\", or similar), click that navigation entry rather than searching elsewhere in the app. This leads directly to the full list and any relevant controls or metadata.",
+    "score": 1.0,
+    "timestamp": "2026-01-19T12:55:12.736554"
+  },
+  {
+    "id": "5999c560-6522-4ded-9fd9-5b3dd20ddd84",
+    "source_task": "Check out my todos",
+    "domain": "gitlab",
+    "title": "Prefer clicking visible, labeled navigation elements",
+    "description": "Clicking a clearly labeled nav element is a quick, reliable action to reach the intended content.",
+    "content": "When multiple actions could reach content, choose the obvious navigation link with a matching label to avoid ambiguity. This reduces errors and aligns with user expectations for where lists are located.",
+    "score": 1.0,
+    "timestamp": "2026-01-19T12:55:13.019690"
+  }
+]

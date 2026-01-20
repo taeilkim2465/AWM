@@ -1,0 +1,23 @@
+## Workflows for kbb (Shopping, Auto)
+
+1) open_used_cars_section  
+- CLICK: "Used Car Prices" (or "Price New/Used") link/menu item  
+- WAIT/VERIFY: wait for the used-cars listing or the filters pane (e.g., "Sort By" dropdown) to appear
+
+2) select_car_make  
+- CLICK: "Filter by Make" or the makes list/menu  
+- CLICK: the specific make name -> CLICK {Make} (e.g., Audi, Mercedes-Benz)
+
+3) filter_to_used_condition  
+- OPEN: condition filters panel (if collapsed) or reveal filters in the sidebar  
+- CLICK: "Used" checkbox/label to enable filtering to used vehicles
+
+4) set_year_range  
+- OPEN: year or model-year filter control (e.g., year-range selector)  
+- SELECT/CLICK: the desired range or endpoints (e.g., "Before 2015" or "2004 - 2012") and APPLY/confirm
+
+5) sort_by_price  
+- CLICK: "Sort By" dropdown  
+- SELECT: "Price: Low to High" or "Price: High to Low" (parameterize as {order})
+
+Each workflow is a reusable subroutine that can be composed to perform the full tasks (e.g., open used cars -> select make -> set year range -> filter to used -> sort by price).

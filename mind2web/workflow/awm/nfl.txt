@@ -1,0 +1,16 @@
+## open_standings_page
+Given that you are on the NFL site, this workflow opens the league standings page.
+[link]  Standings -> CLICK  
+[main]  Standings content -> WAIT FOR PAGE OR TAB TO LOAD
+
+## filter_by_conference_and_division
+Given that the Standings page is open, this workflow filters standings to a specific conference and division.
+[button]  Conference filter -> CLICK  
+[option]  {conference} (e.g., AFC) -> CLICK  
+[button]  Division filter -> CLICK  
+[option]  {division} (e.g., East) -> CLICK
+
+## read_top_team_from_standings
+Given that the standings are filtered to the desired division, this workflow reads the team in first place.
+[section]  Standings table -> FOCUS  
+[row]  First row (top team) -> READ team name and position

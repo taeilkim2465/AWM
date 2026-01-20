@@ -1,0 +1,28 @@
+## Workflow: open_profile_editor
+Purpose: Open the user profile/edit form so fields (birthday, allergies, bio) are available.
+Steps:
+1. CLICK the profile/menu button.
+2. WAIT for the profile editor form or profile fields (birthday select, allergy controls, bio textarea) to appear.
+
+## Workflow: set_birthday
+Purpose: Select day and year for the user's birthday.
+Steps:
+1. CLICK the birthday day select control.
+2. CLICK the desired day option -> TYPE/SELECT: {day}
+3. CLICK the birthday year select control.
+4. CLICK the desired year option -> TYPE/SELECT: {year}
+
+## Workflow: add_allergy_and_note
+Purpose: Mark an allergy and provide an allergy note for the restaurant.
+Steps:
+1. CLICK the allergy checkbox for the allergen -> e.g., Peanuts.
+2. CLICK the allergy notes textarea.
+3. TYPE: {allergy-note} (e.g., "Dairy allergy — severe; please notify kitchen")
+
+## Workflow: update_bio_and_save
+Purpose: Edit the profile bio and persist changes.
+Steps:
+1. CLICK the bio/profile notes textarea.
+2. TYPE: {bio-text} (e.g., "Love ramen noodles")
+3. CLICK the Save/submit button.
+4. WAIT for a save confirmation or that the profile editor closes.

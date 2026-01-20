@@ -1,0 +1,49 @@
+## enter_origin_and_destination
+Purpose: Enter and select origin and destination locations (used for flights, packages, hotels).
+- [link] From Departure Airport or City / Flying from / Where from? -> CLICK
+- [textbox / input] Origin field -> TYPE: {origin-city-or-airport}
+- [link / button / list-item] {best-origin-suggestion} -> CLICK
+- [link] To Destination Airport or City / Where to? -> CLICK
+- [textbox / input] Destination field -> TYPE: {destination-city-or-airport}
+- [link / button / list-item] {best-destination-suggestion} -> CLICK
+
+## select_trip_type_one_way
+Purpose: Change the trip type to one-way.
+- [select / combobox / radiogroup] Trip Type control -> CLICK
+- [option / radio] One Way -> CLICK
+
+## select_dates
+Purpose: Open the date picker and choose travel dates.
+- [button / input] Depart and/or Return / Departing - returning / Dates -> CLICK
+- [link / button / td] {departure-date} -> CLICK
+- (for roundtrips) [link / button / td] {return-date} -> CLICK
+- [button] done / Done / Close calendar -> CLICK
+
+## enable_flexible_dates
+Purpose: Turn on the flexible-dates option on search forms that support it.
+- [span / label / button] Dates area -> CLICK (focus date control)
+- [button] Flexible dates -> CLICK
+
+## set_travelers_and_rooms
+Purpose: Open traveler/room selector and adjust counts (adults/rooms).
+- [button] Traveler / Room selector -> CLICK
+- [button] Increase Adults (or Rooms) -> CLICK (repeat as needed)
+- [button] Done / Close -> CLICK
+
+## submit_search_or_find_flights
+Purpose: Submit the current search (flights, hotels, packages).
+- [button] Find flights / Search / Find hotels / Find packages -> CLICK
+
+## check_in_with_confirmation_and_lastname
+Purpose: Use confirmation (or ticket) number and last name to find a booking / check in.
+- [tab] Check-in -> CLICK
+- [input] Confirmation or ticket number -> TYPE: {confirmation-number}
+- [input] Last name -> TYPE: {last-name}
+- [button] Search / Submit -> CLICK
+
+## sort_results_by_price_low_to_high
+Purpose: Reorder search results to show cheapest options first.
+- [link / button / menu] Price / Sort menu -> CLICK
+- [option / menuitem] Price (low to high) -> CLICK
+
+(Use the workflows above as reusable subroutines and substitute the placeholders in braces with the actual values for each task.)

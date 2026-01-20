@@ -1,0 +1,56 @@
+## open_inventory_search
+Given you are on the CarMax site, open the vehicle inventory search.
+[link or button] Shop / Search Cars -> CLICK
+[input] Search make, model, or keyword -> CLICK (focus)
+
+## enter_search_keyword_and_choose_suggestion
+Type a vehicle make/model/keyword and pick the suggested item.
+[input] Search make, model, or keyword -> TYPE: {make/model/keyword}
+[link or menuitem] {suggested-make-or-model} -> CLICK
+
+## choose_vehicle_type_or_category
+Switch to a specific vehicle category (e.g., Trucks, Pickup Trucks).
+<header or main> Trucks / Pickup Trucks -> CLICK
+[link or button] Pickup Trucks (or other category) -> CLICK
+
+## open_filter_panel
+Open the filters area to refine results.
+[button] Filters / Browse By / (panel) -> CLICK
+[aside or region] Filter panel visible -> CLICK (focus)
+
+## filter_by_make
+Filter results by one or more vehicle makes.
+[button] Make -> CLICK
+[checkbox] {Make Name} -> CLICK
+[checkbox] {Another Make} -> CLICK
+
+## filter_by_year
+Restrict results to a specific model year.
+[button] Year -> CLICK
+[menuitem or button] {year} -> CLICK
+
+## filter_by_price_max
+Set a maximum price for results.
+[button] Price -> CLICK
+[menuitem or button] Max price {value} -> CLICK
+
+## filter_by_mileage
+Limit results by mileage.
+[button] Mileage -> CLICK
+[option or menuitem] {max-mileage-option} -> CLICK
+
+## filter_by_exterior_color
+Show vehicles with a specific exterior color.
+[button] Exterior Color -> CLICK
+[link or menuitem] {color} -> CLICK
+
+## set_distance_and_location
+Search within a distance or around a ZIP/city.
+[button] Distance & Shipping / Distance -> CLICK
+[input] Location / ZIP -> TYPE: {zip or city}
+[button or apply] Apply / Update results -> CLICK
+
+## sort_results
+Change the result ordering (best match / most recent).
+[button] Sort by -> CLICK
+[option] {Best match | Most recent | Other} -> CLICK

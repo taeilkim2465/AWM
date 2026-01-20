@@ -1,0 +1,24 @@
+Summary Workflows:
+
+## open_gift_cards_category
+Given you are on Amazon's site, this workflow opens the Gift Cards category from the main navigation.
+- Click the main navigation/menu (e.g., "All" or categories) -> CLICK
+- Click "Gift Cards" -> CLICK
+
+## filter_gift_cards_by_ocasion_and_price
+Apply common filters to narrow gift card search results.
+- Click the occasion filter (e.g., "Congratulations") -> CLICK
+- Click the price range filter (e.g., "$50 to $100") -> CLICK
+
+## choose_denomination_and_quantity
+Select a specific gift card value and set how many to buy.
+- Select the denomination option/button (e.g., "$50") -> CLICK
+- Set the Quantity field to {quantity} -> TYPE: {quantity}
+
+## add_item_to_cart
+Add the selected gift card(s) to the shopping cart.
+- Click "Add to cart" -> CLICK
+- (Optional follow-up) Click "Cart" or proceed to checkout as needed -> CLICK/VIEW
+
+Notes:
+- Use {denomination} and {quantity} as placeholders to vary the workflow (e.g., $50 and 2).

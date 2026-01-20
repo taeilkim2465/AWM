@@ -1,0 +1,472 @@
+[
+  {
+    "id": "451bf8ea-46d4-418a-9f55-ffe9ad2f3b36",
+    "source_task": "Book the lowest-priced and quickest flight for 5 adults and 1 child on May 20 from Mumbai to any airport near Washington.",
+    "domain": "Travel",
+    "title": "Select Labeled Suggestions",
+    "description": "When an autocomplete or suggestion list appears under an input field, click the clearly labeled suggestion.",
+    "content": "Autocomplete entries with explicit text (city names, airport codes, or full airport names) reliably represent the intended selection and often trigger the site to populate hidden fields. After typing or focusing the input, wait for the suggestion list to render and click the visible entry that matches the desired airport/city instead of attempting to type the entire value or clicking ambiguous icons.",
+    "score": 1.0,
+    "timestamp": "2026-01-15T19:58:53.341029"
+  },
+  {
+    "id": "47b902a7-bb09-4e67-be52-2ea9c155f57b",
+    "source_task": "Book the lowest-priced and quickest flight for 5 adults and 1 child on May 20 from Mumbai to any airport near Washington.",
+    "domain": "Travel",
+    "title": "Pick City-Level Code",
+    "description": "When a destination has multiple nearby airports, choose the aggregated city code (e.g., 'WAS') to include all airports.",
+    "content": "City-level codes represent a region rather than a single airport and return broader flight search results, increasing chances to find cheaper or faster itineraries. When the site offers both the city aggregate and individual airports, prefer the city aggregate if the task allows any nearby airport; this avoids missing good options limited to a secondary airport.",
+    "score": 1.0,
+    "timestamp": "2026-01-15T19:58:53.680124"
+  },
+  {
+    "id": "fe3766f6-447a-44d2-8cef-d75bc3a4fc99",
+    "source_task": "Book the lowest-priced and quickest flight for 5 adults and 1 child on May 20 from Mumbai to any airport near Washington.",
+    "domain": "Travel",
+    "title": "Click Visible Calendar Dates",
+    "description": "Select travel dates by clicking the date element shown in the calendar widget rather than typing them into the field.",
+    "content": "Calendar widgets usually enforce valid date formatting and availability rules; clicking a visible date element ensures the site registers the chosen date and applies any calendar-specific constraints (round-trip rules, minimum stay). Locate the clickable date within the active calendar panel and click that element rather than entering a string to avoid formatting or validation issues.",
+    "score": 1.0,
+    "timestamp": "2026-01-15T19:58:54.037147"
+  },
+  {
+    "id": "e16c6f41-caab-429e-8a48-ede5f0600765",
+    "source_task": "Check out my todos",
+    "domain": "gitlab",
+    "title": "Use navigation badges to infer list presence and item counts",
+    "description": "Badges next to navigation entries are reliable cues for the existence of list-type content and approximate item counts.",
+    "content": "When a navigation item shows a badge or count, use that to confirm the target (e.g., a to-do list) and to report how many items are likely present before opening the page. This saves an extra step of loading content just to check whether the list exists.",
+    "score": 1.0,
+    "timestamp": "2026-01-19T12:55:11.555286"
+  },
+  {
+    "id": "4567c270-65fd-479d-a961-1f3d6bb08700",
+    "source_task": "Check out my todos",
+    "domain": "gitlab",
+    "title": "Open the dedicated list page for \"view my items\" requests",
+    "description": "For requests to view a user's tasks or lists, go straight to the page specifically labeled for that list.",
+    "content": "If the UI has a clearly labeled page (like \"To-Do\", \"Tasks\", or similar), click that navigation entry rather than searching elsewhere in the app. This leads directly to the full list and any relevant controls or metadata.",
+    "score": 1.0,
+    "timestamp": "2026-01-19T12:55:12.736554"
+  },
+  {
+    "id": "5999c560-6522-4ded-9fd9-5b3dd20ddd84",
+    "source_task": "Check out my todos",
+    "domain": "gitlab",
+    "title": "Prefer clicking visible, labeled navigation elements",
+    "description": "Clicking a clearly labeled nav element is a quick, reliable action to reach the intended content.",
+    "content": "When multiple actions could reach content, choose the obvious navigation link with a matching label to avoid ambiguity. This reduces errors and aligns with user expectations for where lists are located.",
+    "score": 1.0,
+    "timestamp": "2026-01-19T12:55:13.019690"
+  },
+  {
+    "id": "24fbcafc-d3db-4724-be0f-fd3edc595941",
+    "source_task": "Find a resort near Patong beach in Phuket, Thailand nearest to the airport from May 9 to May 12 for two with a pay-later option.",
+    "domain": "Travel",
+    "title": "Click Day Cells Directly",
+    "description": "Use when selecting dates in a calendar widget.",
+    "content": "Calendar widgets expose individual day cells (often as gridcell or span elements with the day number). Clicking the visible day cell or its contained text reliably triggers the date selection because that element is the interactive control the UI listens to. In practice: locate the calendar grid, find the cell or span showing the target day number, confirm it is visible and enabled, then click it.",
+    "score": 1.0,
+    "timestamp": "2026-01-20T14:21:32.805016"
+  },
+  {
+    "id": "2dc0cab9-8087-4e81-a58b-6e77af3a39cc",
+    "source_task": "Find a resort near Patong beach in Phuket, Thailand nearest to the airport from May 9 to May 12 for two with a pay-later option.",
+    "domain": "Travel",
+    "title": "Select Start Then End",
+    "description": "Apply when choosing a date range (check-in/check-out).",
+    "content": "Date-range pickers typically expect the check-in (start) to be chosen before the check-out (end). Clicking the start date first, then the end date in sequence ensures the widget records a proper range rather than toggling selection or resetting. In practice: click the intended check-in date element, then click the intended check-out date element; if the widget requires opening a specific month view, open that view before clicking the dates.",
+    "score": 1.0,
+    "timestamp": "2026-01-20T14:21:33.132194"
+  },
+  {
+    "id": "bdcfbf0d-18b8-4d7d-820e-ac27f8cb4ddc",
+    "source_task": "Find a resort near Patong beach in Phuket, Thailand nearest to the airport from May 9 to May 12 for two with a pay-later option.",
+    "domain": "Travel",
+    "title": "Prefer Visible Text Elements",
+    "description": "Use when multiple nested elements appear inside a clickable cell.",
+    "content": "When a clickable cell contains nested nodes, the visible text node (e.g., the span showing the numeric day) is often the safest target because it is the element users see and the interactive element most UIs wire up. Target the visible text/span rather than an outer non-interactive container or an invisible attribute. This reduces the chance of clicking a non-interactive wrapper and improves reliability.",
+    "score": 1.0,
+    "timestamp": "2026-01-20T14:21:33.376165"
+  },
+  {
+    "id": "85f08bb2-10b4-4e0e-9f91-91c826d90eaf",
+    "source_task": "Find a resort near Patong beach in Phuket, Thailand nearest to the airport from May 9 to May 12 for two with a pay-later option.",
+    "domain": "Travel",
+    "title": "Target Calendar Roles/Types",
+    "description": "Apply when selecting elements within structured widgets (calendars, grids).",
+    "content": "Elements labeled with semantic roles or types like 'grid', 'rowgroup', 'row', or 'gridcell' are part of the calendar structure and indicate where date selections live. Prioritize selecting elements with these roles because they reflect the calendar's accessible hierarchy and are less likely to be decorative. In practice: traverse the calendar's grid → rowgroup → row → gridcell hierarchy to find the correct day node to click.",
+    "score": 1.0,
+    "timestamp": "2026-01-20T14:21:33.832206"
+  },
+  {
+    "id": "b23f0fbe-59c2-4cc6-bebc-c5b754ed2497",
+    "source_task": "Find a resort near Patong beach in Phuket, Thailand nearest to the airport from May 9 to May 12 for two with a pay-later option.",
+    "domain": "Travel",
+    "title": "Check for Result Anchors",
+    "description": "Use after making selections to verify the page updated correctly.",
+    "content": "After interacting with the calendar or search controls, verify the action succeeded by locating visible result elements (for example, anchors with hotel names). These visible anchors confirm that the page registered the date inputs and produced results. In practice: after selecting dates, wait for DOM updates and look for expected result elements (hotel links, names, or listings) to ensure the selection took effect.",
+    "score": 1.0,
+    "timestamp": "2026-01-20T14:21:34.142280"
+  },
+  {
+    "id": "7f259bc9-f591-4dcd-9b75-0df62ac26dc8",
+    "source_task": "Find a resort near Patong beach in Phuket, Thailand nearest to the airport from May 9 to May 12 for two with a pay-later option.",
+    "domain": "Travel",
+    "title": "Wait and Confirm Visibility",
+    "description": "Apply when interacting with dynamic widgets that update the DOM.",
+    "content": "Calendar widgets and search results often change asynchronously; clicking too fast can miss the intended element. Wait until the target day cell is visible and enabled (and the calendar view is the correct month) before clicking, and wait for confirmation (e.g., highlighted date or result elements) after clicks. In practice: use short waits for element visibility/state and confirm visual changes or presence of result nodes before proceeding.",
+    "score": 1.0,
+    "timestamp": "2026-01-20T14:21:34.465840"
+  },
+  {
+    "id": "57cad2a8-a5e5-4b6e-b488-4cafdad8cc56",
+    "source_task": "Find a resort near Patong beach in Phuket, Thailand nearest to the airport from May 9 to May 12 for two with a pay-later option.",
+    "domain": "Travel",
+    "title": "Avoid Clicking Decorative Icons",
+    "description": "Don't click SVGs or visual icons near controls when trying to trigger an action.",
+    "content": "Decorative SVGs and icons are often purely visual and lack click handlers; clicking them does nothing even though they appear inside an interactive area. In the failure log the agent clicked an SVG next to a 'Distance' tab instead of the tab/button itself, which did not change sorting. To prevent this, target the containing button, link, or labelled control (e.g., the <button> or <a> element with text) rather than the icon element. If an icon is clicked and nothing happens, immediately retry on the nearest parent element that is semantically interactive and confirm a visible UI change.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:21:59.975903"
+  },
+  {
+    "id": "9aeae4e8-b1ae-49dc-bee1-cdf12de7622f",
+    "source_task": "Find a resort near Patong beach in Phuket, Thailand nearest to the airport from May 9 to May 12 for two with a pay-later option.",
+    "domain": "Travel",
+    "title": "Don't Click Non-interactive Spans",
+    "description": "Avoid clicking plain <span> or <div> elements that are visually part of a control but not the actual interactive element.",
+    "content": "Many UIs compose controls from nested spans/divs for styling; the click handler may be bound to an input/label/button, not the inner span. The agent clicked inner span elements representing checkboxes and labels which did not reliably toggle the input. Instead, click the actual input element (checkbox/radio) or its associated <label> or the root interactive element. Use element role/type checks (role='button', tagName='INPUT' or 'BUTTON', presence of onclick) and verify the control's checked/selected state after clicking. If the inner element lacks a state change, retry on the parent control.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:22:00.229836"
+  },
+  {
+    "id": "3c8becbd-9111-4998-ae2d-8ffff1448289",
+    "source_task": "Find a resort near Patong beach in Phuket, Thailand nearest to the airport from May 9 to May 12 for two with a pay-later option.",
+    "domain": "Travel",
+    "title": "Open Dropdowns Before Selecting",
+    "description": "Ensure dropdowns, menus or calendar panels are expanded before clicking their options.",
+    "content": "Options nested inside collapsed panels or tablists are often present in the DOM but not actionable until the list is expanded; clicking them prematurely can fail or select the wrong element. The agent clicked an airport option that resembled an option but the parent tab/list may not have been properly opened or focused. Always trigger the expand/open control first (click the dropdown arrow or tab), wait for the menu to be visible, then select the visible option. Add a visibility/aria-expanded check or a short wait for the options container to appear before interacting with its children.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:22:00.656994"
+  },
+  {
+    "id": "a8231964-6927-46e6-99b5-28b69b0f86db",
+    "source_task": "Find a resort near Patong beach in Phuket, Thailand nearest to the airport from May 9 to May 12 for two with a pay-later option.",
+    "domain": "Travel",
+    "title": "Prefer Native Controls",
+    "description": "Target native form controls (buttons, inputs, labels, anchors) rather than styled containers.",
+    "content": "Styled containers (divs, spans) are commonly used for layout and may not have the expected behavior; native elements expose accessibility hooks and predictable events. In the failures the agent clicked 'Couple/Pair' as a div and styled checkbox wrappers, which may not have been the intended anchors for state changes. Use input elements, <label for=> associations, <button>, or <a> elements when present. If only styled containers are available, inspect for a clickable role/attribute and validate that a subsequent state change occurred.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:22:01.002599"
+  },
+  {
+    "id": "4f0152b3-c35f-4983-ae87-0a1e38fe18d6",
+    "source_task": "Find a resort near Patong beach in Phuket, Thailand nearest to the airport from May 9 to May 12 for two with a pay-later option.",
+    "domain": "Travel",
+    "title": "Verify State After Actions",
+    "description": "Always confirm that a click produced the intended change before proceeding.",
+    "content": "Proceeding without validating the result leads to cascading errors: the agent clicked search and filter controls without verifying that dates, guests, or filters were applied, so later clicks targeted the wrong UI state. After each key action (open calendar, select dates, apply filter, click search), check a visible indicator: date text updated, checkbox checked, filter count changed, or results refreshed. If the verification fails, retry the action or choose an alternative selector instead of continuing.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:22:01.570713"
+  },
+  {
+    "id": "697bb0ce-fa14-4e97-8464-c2e7746f3336",
+    "source_task": "Find a resort near Patong beach in Phuket, Thailand nearest to the airport from May 9 to May 12 for two with a pay-later option.",
+    "domain": "Travel",
+    "title": "Follow Required Input Sequence",
+    "description": "Complete mandatory fields (dates, guests) in the order the UI expects before searching.",
+    "content": "Some booking flows require setting dates and guest counts before search will return relevant controls or options; skipping or doing them out of order can result in no-ops or incomplete results. The agent interacted with filters and sorting before ensuring dates and occupancy were set and confirmed. Adopt a canonical sequence: open calendar → select check-in/out → set rooms/guests → apply filters → search. Enforce checks that mandatory fields are present and valid before executing search actions.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:22:01.903805"
+  },
+  {
+    "id": "6416407d-8c3f-492a-ae49-b41ab43afa87",
+    "source_task": "Find a resort near Patong beach in Phuket, Thailand nearest to the airport from May 9 to May 12 for two with a pay-later option.",
+    "domain": "Travel",
+    "title": "Avoid Selecting Duplicate/Hidden Elements",
+    "description": "Be cautious when multiple visually similar controls exist; ensure you're interacting with the visible, enabled one.",
+    "content": "Pages often render duplicate elements (for different breakpoints, sticky headers, or hidden lists). Clicking an offscreen or duplicate control can appear successful but won't affect the visible UI. The logs show multiple 'Patong Beach' entries and similarly named checkbox groups; the agent clicked an element that did not affect the visible filter state. Use visibility checks (offsetParent, clientRect, computed style) and prefer the element that is displayed and enabled. If multiple candidates exist, pick the one closest to the visible label/text and confirm the visible state change.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:22:02.211556"
+  },
+  {
+    "id": "114dcdf7-c6e4-456d-a6c2-99407da02b02",
+    "source_task": "Find a resort near Patong beach in Phuket, Thailand nearest to the airport from May 9 to May 12 for two with a pay-later option.",
+    "domain": "Travel",
+    "title": "Use Stable Selectors, Not Visual Text Only",
+    "description": "Rely on element roles, attributes, or data-test IDs instead of only visual labels.",
+    "content": "Selecting elements solely by visible text can pick up the wrong node when duplicates or nested text appear. The agent clicked span labels and inner text fragments (e.g., duplicated 'Patong Beach' spans) which led to ambiguity. Prefer stable selectors (input IDs, data-testid, aria-labels, button role) and avoid clicking partial-text nodes. When using text matching, ensure it maps to the interactive ancestor node and validate by checking the element's tagName or role before clicking.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:22:02.500828"
+  },
+  {
+    "id": "edb0cc0f-ad49-43ad-b7e7-a11b096b8141",
+    "source_task": "Find a apartment in New Delhi for 5 days starting April 11.",
+    "domain": "Travel",
+    "title": "Choose Autocomplete Suggestion",
+    "description": "Use when the destination input shows a list of suggested places.",
+    "content": "Click the visible list item that most closely matches the intended location (e.g., a suggestion reading 'New Delhi and NCR, India') rather than trying to type the full name or click obscured elements. Autocomplete suggestions are authoritative and will populate the destination field and associated metadata (region, country) correctly, reducing ambiguity and ensuring downstream widgets (like calendars and filters) target the right place.",
+    "score": 1.0,
+    "timestamp": "2026-01-20T14:22:56.758761"
+  },
+  {
+    "id": "73f871e9-09f7-41e9-a5f8-a014e1f30fca",
+    "source_task": "Find a apartment in New Delhi for 5 days starting April 11.",
+    "domain": "Travel",
+    "title": "Select Calendar Day Cell",
+    "description": "Apply when selecting specific check-in or check-out dates from a date picker.",
+    "content": "Target the individual grid cell that displays the numeric day for the desired date (the element representing the day, often labeled as a 'gridcell'). Clicking the day cell directly registers the exact date in the picker. Prefer the cell that contains the visible day number instead of clicking surrounding whitespace or non-day elements to avoid missing the selection.",
+    "score": 1.0,
+    "timestamp": "2026-01-20T14:22:57.022970"
+  },
+  {
+    "id": "49cceff0-b4c0-4816-a453-226d568ca35e",
+    "source_task": "Find a apartment in New Delhi for 5 days starting April 11.",
+    "domain": "Travel",
+    "title": "Confirm Month Before Clicking",
+    "description": "Use when the date picker displays multiple months at once.",
+    "content": "First verify which month panel contains the intended date (check month headers or relative positioning). Then click the day cell within that specific month's grid to avoid selecting the same numeric day from a different month. This prevents off-by-month errors when calendars show adjacent months side-by-side.",
+    "score": 1.0,
+    "timestamp": "2026-01-20T14:22:57.362239"
+  },
+  {
+    "id": "3d1eea38-4494-4f20-850c-910396a73f79",
+    "source_task": "Find a apartment in New Delhi for 5 days starting April 11.",
+    "domain": "Travel",
+    "title": "Click Primary Search Button",
+    "description": "After destination, dates, and filters are set, trigger the main action with the labeled button.",
+    "content": "Prefer the clearly-labeled primary button (for example, a button element with text like 'SEARCH') to submit the query. Labeled buttons are more likely to be the intended action control and reliably start the search process; avoid ambiguous icons or secondary links that may only change views rather than execute the search.",
+    "score": 1.0,
+    "timestamp": "2026-01-20T14:22:57.731061"
+  },
+  {
+    "id": "95737f71-5508-4118-8054-f98638813517",
+    "source_task": "Find a apartment in New Delhi for 5 days starting April 11.",
+    "domain": "Travel",
+    "title": "Pick Visible Category Links",
+    "description": "When filtering by property type, select the clearly labeled category entry shown on the page.",
+    "content": "Click the category control that displays both the category name and context (for example 'Apartments' with a property count) to apply that filter. These visible anchors or links indicate the available filtered view and often load the appropriate subset of results; choosing them reduces reliance on hidden menus or manual filter toggles.",
+    "score": 1.0,
+    "timestamp": "2026-01-20T14:22:58.084016"
+  },
+  {
+    "id": "34f319ed-627a-43a9-a948-3724c9ce5ada",
+    "source_task": "Find a apartment in New Delhi for 5 days starting April 11.",
+    "domain": "Travel",
+    "title": "Avoid Duplicate Text Clicks",
+    "description": "Don't click the first text label you see when multiple identical labels exist on the page.",
+    "content": "Pages often repeat the same word or label in different spots (header, filter, search results). Clicking the wrong instance (e.g., a non-interactive label or a link that only toggles UI context) will not perform the intended action. Before clicking, confirm the element is the actionable control: look for buttons, anchors with distinct container structure, or nearby attributes like role, tabindex, or aria-label. If multiple identical labels exist, inspect the surrounding DOM or visual context (is it inside the search panel vs. a passive header) and prefer controls that visibly change state or are next to expected icons/inputs.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:23:26.170399"
+  },
+  {
+    "id": "687a2bd5-0179-4309-b9bc-926dfc7efe04",
+    "source_task": "Find a apartment in New Delhi for 5 days starting April 11.",
+    "domain": "Travel",
+    "title": "Choose Autocomplete Option",
+    "description": "Typing into a destination box is not enough—select the suggestion or submit the field.",
+    "content": "Many destination inputs use autocomplete; typing text without selecting a suggested entry or pressing Enter leaves the field unresolved and the search won't run. After typing, either (a) wait for suggestions and click the correct suggestion, (b) press Enter to submit the chosen value, or (c) confirm the input lost focus and the UI shows the selected destination. Add an explicit check for the appearance of the suggestion list and selection confirmation (e.g., text turns into a chip, suggestion list disappears, or a selected-item element appears).",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:23:26.506459"
+  },
+  {
+    "id": "8a63957b-2797-4a23-99c1-088a94de1e6e",
+    "source_task": "Find a apartment in New Delhi for 5 days starting April 11.",
+    "domain": "Travel",
+    "title": "Confirm Date Context",
+    "description": "Verify month and year before selecting a calendar cell to avoid choosing the wrong date.",
+    "content": "Calendar grids can show multiple months or default to a different year/month than expected; clicking a visible day number may pick the wrong month or a past year. Always ensure the calendar is displaying the intended month and year (e.g., April 2026 vs April 2023). If necessary, navigate the calendar to the correct month/year before choosing the day. Also explicitly compute end date from desired duration (5 nights from check-in) and select both check-in and check-out rather than relying on a single click.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:23:26.855365"
+  },
+  {
+    "id": "5dfebd7b-1ab1-4fc0-95dc-a63c9a10718d",
+    "source_task": "Find a apartment in New Delhi for 5 days starting April 11.",
+    "domain": "Travel",
+    "title": "Wait For UI Changes",
+    "description": "Give the interface time to update before interacting with newly visible elements.",
+    "content": "Interactions that open dropdowns, load suggestions, or render calendars require brief time to update the DOM; immediately clicking a presumed element may target an older or different element. After actions that should change the UI (clicking 'Apartments', typing destination, opening calendar), wait for a clear signal: a visible panel, suggestion list, calendar widget, or a button becoming enabled. Use explicit checks (element visibility, presence in DOM, stable bounding box) rather than fixed sleep durations where possible.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:23:27.142955"
+  },
+  {
+    "id": "91cb72f8-2ea1-427b-9c07-2887145f1ca3",
+    "source_task": "Find a apartment in New Delhi for 5 days starting April 11.",
+    "domain": "Travel",
+    "title": "Click Labeled Controls",
+    "description": "Prefer clicking full button elements or labels instead of decorative spans or icons.",
+    "content": "Decorative spans, icons, or duplicated text nodes may not have click handlers; clicking them yields no action. Target the semantic control (button, anchor, input) that contains the label text or an associated <label> element. If a label is inside a button, click the button element rather than the inner span. If a click on a label does nothing, look for the actual control nearby or use keyboard submission (e.g., Enter) to trigger the action.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:23:27.568221"
+  },
+  {
+    "id": "fb7b745d-9022-4a3e-bff8-3190e323b1c9",
+    "source_task": "Find a apartment in New Delhi for 5 days starting April 11.",
+    "domain": "Travel",
+    "title": "Confirm Element Interactivity",
+    "description": "Check that an element is visible, enabled, and not covered before clicking.",
+    "content": "An element may be present in the DOM but hidden, disabled, or overlapped by another element—clicking it will fail silently or hit the wrong target. Before interacting, verify the element is displayed (non-zero size and visible CSS), not aria-disabled or disabled, and not occluded (check computed z-index/overlays or bounding box). If an element is blocked, close overlays or wait for animations to finish. If the element is off-screen, scroll it into view first.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:23:27.923168"
+  },
+  {
+    "id": "6b4df7bd-36e4-4b01-9b53-b8fd27d4b91b",
+    "source_task": "Find a apartment in New Delhi for 5 days starting April 11.",
+    "domain": "Travel",
+    "title": "Don't Rely On Fragile IDs",
+    "description": "Avoid using opaque or transient identifiers to find controls across sessions.",
+    "content": "Element IDs or indexes can be dynamically generated and change between loads; clicking a hard-coded id or grid cell by index can pick the wrong item. Use stable selectors based on accessible name, role, text context, aria attributes, or relative structure (e.g., 'search button near destination input', 'calendar cell with aria-label=\"Apr 11 2026\"'). Build selectors that express intent (select the check-in date) rather than brittle pointers to specific nodes.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:23:28.300354"
+  },
+  {
+    "id": "d8bf69bd-c23f-46a1-ba68-2defa685696c",
+    "source_task": "Find a apartment in New Delhi for 5 days starting April 11.",
+    "domain": "Travel",
+    "title": "Validate After Each Action",
+    "description": "Immediately confirm the page responded as expected after each click or type.",
+    "content": "Treat each interaction as a transaction: after typing the destination, check that the destination was accepted; after opening the calendar, verify it is visible; after selecting a date, confirm both check-in and check-out values updated. If the expected change doesn't occur, retry visible alternatives (select suggestion, reopen calendar) and log the failure reason. Early validation prevents cascading errors later in the flow and makes recovery deterministic.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:23:28.882093"
+  },
+  {
+    "id": "97b74428-752f-4d3a-a139-8ef85a809917",
+    "source_task": "Book a flight for 2 adults from Belo Horizonte to Buenos Aires on April 24",
+    "domain": "Travel",
+    "title": "Choose City-Level Option",
+    "description": "When the user specifies a city (not an airport), select the city-level entry rather than a specific airport.",
+    "content": "If the traveler gives a city name (e.g., Belo Horizonte) but not an airport code, pick the listbox option that represents the city or 'All airports' first. This broad selection prevents accidentally locking the search to a single airport and yields more flight options; only choose a specific airport entry if the user explicitly requests it.",
+    "score": 1.0,
+    "timestamp": "2026-01-20T14:24:32.675363"
+  },
+  {
+    "id": "44f66df1-5ee2-4ebd-86c3-3bd6e94ac059",
+    "source_task": "Book a flight for 2 adults from Belo Horizonte to Buenos Aires on April 24",
+    "domain": "Travel",
+    "title": "Click Visible List Items",
+    "description": "Prefer clicking the visible listbox item element (the list item) instead of nested spans or icons.",
+    "content": "List items (li/options) are the interactive elements that reliably trigger selection in dropdowns and listboxes. Target the container element that displays the option text rather than inner child spans or decorative icons — this reduces missed clicks and ensures the UI registers the selected value.",
+    "score": 1.0,
+    "timestamp": "2026-01-20T14:24:33.045549"
+  },
+  {
+    "id": "4768f7c8-4a02-49ed-bb07-81ebe1381b83",
+    "source_task": "Book a flight for 2 adults from Belo Horizonte to Buenos Aires on April 24",
+    "domain": "Travel",
+    "title": "Type Full City in Combobox",
+    "description": "Enter the destination by typing the full city name into the combobox input before selecting an autocomplete suggestion.",
+    "content": "Typing the clear, complete city name (e.g., 'Buenos Aires') into the destination combobox helps the autocomplete populate predictable suggestions. After typing, choose the matching suggestion if it appears; if no suggestion appears, the typed input is usually accepted when you proceed to search.",
+    "score": 1.0,
+    "timestamp": "2026-01-20T14:24:33.479877"
+  },
+  {
+    "id": "069860bb-ced4-456b-ade2-58093818fd65",
+    "source_task": "Book a flight for 2 adults from Belo Horizonte to Buenos Aires on April 24",
+    "domain": "Travel",
+    "title": "Set Passengers & Class First",
+    "description": "Adjust passenger count and cabin class before initiating the flight search.",
+    "content": "Open and set the passengers/cabin control (e.g., '2 Passengers, Economy') prior to clicking search so the query reflects the correct traveler configuration. Doing this earlier avoids having to rerun or refine searches and ensures results are appropriate for party size and cabin preference.",
+    "score": 1.0,
+    "timestamp": "2026-01-20T14:24:33.839384"
+  },
+  {
+    "id": "cddc184c-25d2-4c61-9537-f8a6ee1e1666",
+    "source_task": "Book a flight for 2 adults from Belo Horizonte to Buenos Aires on April 24",
+    "domain": "Travel",
+    "title": "Click Labeled Search Button",
+    "description": "Trigger the search by clicking a clearly labeled 'Search Flights' button rather than unlabeled icons.",
+    "content": "Buttons with explicit text like 'Search Flights' are the most reliable action to start a query. Prefer those over adjacent unlabeled controls or generic icons — labeled buttons are less ambiguous, provide clear intent, and typically call the correct search API.",
+    "score": 1.0,
+    "timestamp": "2026-01-20T14:24:34.688882"
+  },
+  {
+    "id": "ddd14755-7efe-415c-8327-369eae5be086",
+    "source_task": "Book a flight for 2 adults from Belo Horizonte to Buenos Aires on April 24",
+    "domain": "Travel",
+    "title": "Follow Logical Interaction Order",
+    "description": "Execute form interactions in a natural sequence: origin → destination → passengers/cabin → search.",
+    "content": "A consistent sequence (select origin, enter destination, set passengers/cabin, then click search) mirrors user expectations and UI design, minimizes state conflicts, and reduces chances of missing required input fields. Use this ordered flow when filling travel booking forms to progress reliably.",
+    "score": 1.0,
+    "timestamp": "2026-01-20T14:24:35.003504"
+  },
+  {
+    "id": "137b887a-5127-46d2-94bb-d37afc5519e4",
+    "source_task": "Book a flight for 2 adults from Belo Horizonte to Buenos Aires on April 24",
+    "domain": "Travel",
+    "title": "Don't Click Decorative Icons",
+    "description": "Avoid clicking SVGs or images that sit next to real controls.",
+    "content": "Why this is a mistake: Decorative SVGs and icons are often present for visual affordance but do not have click handlers bound to them; clicking them does nothing or is ignored by the UI. What went wrong: the agent clicked an SVG that visually belonged to a 'Flights' tab, but the actionable element was the tab container or the labeled button, not the inner icon. How to prevent it: target the interactive control (the enclosing <button>, <li role=\"tab\">, or element with role/button semantics or a non-empty click handler) rather than inner artwork. If you're unsure, prefer clicking the nearest ancestor with tagName 'button', role='tab'/'button', or a non-zero tabindex. If an icon click has no visible effect, immediately retry on the labeled control.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:25:16.482706"
+  },
+  {
+    "id": "8c6540dc-6fed-43b2-9901-37f9b071911e",
+    "source_task": "Book a flight for 2 adults from Belo Horizonte to Buenos Aires on April 24",
+    "domain": "Travel",
+    "title": "Click Parent Controls",
+    "description": "Click the containing control instead of inner text nodes or child spans.",
+    "content": "Why this is a mistake: Inner spans or text nodes may not have the necessary event listeners; the parent gridcell or button usually handles the interaction. What went wrong: the agent clicked an inner <span> representing the date number instead of the date's gridcell element, which can leave the date unselected. How to prevent it: identify and click the intended control element (the calendar cell element or the container with role='gridcell' or the clickable button) rather than a child <span>. Use heuristics: prefer elements with known interactive tags (button, input, a) or ARIA roles, or walk upward to the first ancestor with a click handler or role before performing the click.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:25:17.465050"
+  },
+  {
+    "id": "39a3f88b-9c47-4c6f-aee3-ca5635673f73",
+    "source_task": "Book a flight for 2 adults from Belo Horizonte to Buenos Aires on April 24",
+    "domain": "Travel",
+    "title": "Avoid Clicking Icons Inside Buttons",
+    "description": "Don't click an inner SVG inside a button—click the button element itself.",
+    "content": "Why this is a mistake: SVG children sometimes don't propagate clicks the same way across browsers or the app attaches handlers to the button element only. What went wrong: the agent clicked an SVG inside the 'increase adults' control, which did not trigger the increment because the click handler was on the parent button. How to prevent it: always target the button element (or element with role='button') when changing counts or toggling controls; if only an SVG is found, climb to its parent until you find a clickable element and click that instead.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:25:17.756375"
+  },
+  {
+    "id": "3d305605-d44f-42ca-a019-6b09d12d471b",
+    "source_task": "Book a flight for 2 adults from Belo Horizonte to Buenos Aires on April 24",
+    "domain": "Travel",
+    "title": "Confirm Autocomplete Selection",
+    "description": "Typing in a combobox is not enough—explicitly select a suggested option.",
+    "content": "Why this is a mistake: Many comboboxes/autocomplete inputs only populate suggestions after typing and require selecting a suggestion to set the underlying value (and related IDs). What went wrong: the agent typed the city name but did not confirm the matched suggestion (or clicked the wrong nested option), so the form may not have registered the intended airport/destination. How to prevent it: after typing, wait for the listbox/list of options, then click the specific option item (option element or element with role='option') that corresponds to the intended city/airport. Alternatively, simulate keyboard navigation (ArrowDown + Enter) to accept the highlighted suggestion. Validate by checking the input value or a hidden field/ARIA attribute that indicates selection.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:25:18.100806"
+  },
+  {
+    "id": "9e288336-733c-4eab-bfe2-a9e9e1b98708",
+    "source_task": "Book a flight for 2 adults from Belo Horizonte to Buenos Aires on April 24",
+    "domain": "Travel",
+    "title": "Pick the Correct Option Level",
+    "description": "Choose the actionable option node, not an unrelated nested list or label.",
+    "content": "Why this is a mistake: Some dropdowns have nested entries (e.g., a group option 'All airports' plus specific airport options); clicking a group header or an outer wrapper may not select the precise choice. What went wrong: the agent clicked an option nested inside a list hierarchy without ensuring it's the actual selectable node, leading to no or wrong selection. How to prevent it: locate elements with role='option' or explicit click handlers and prefer leaf option nodes that include the full label (city + airport). If options are grouped, expand groups if necessary and then select the specific airport label. Verify selection by reading the input text or aria-selected attribute.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:25:18.568118"
+  },
+  {
+    "id": "927c7c0f-c958-4069-aece-2047b7fad270",
+    "source_task": "Book a flight for 2 adults from Belo Horizonte to Buenos Aires on April 24",
+    "domain": "Travel",
+    "title": "Wait for UI Updates",
+    "description": "Always wait for dialogs, listboxes, or calendars to finish rendering before interacting.",
+    "content": "Why this is a mistake: Rapid consecutive actions can target stale or not-yet-mounted elements, causing clicks to miss or interact with hidden duplicates. What went wrong: the agent proceeded to click elements immediately after previous actions (opening a picker or typing) without confirming the expected list/dialog was present and interactive. How to prevent it: after actions that open UI (dialogs, dropdowns, calendars), wait for a reliable indicator (presence of role='dialog', role='listbox', visible gridcells, or an option element) and ensure it's visible and enabled. Use short polling with a timeout to confirm readiness before the next action.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:25:19.259396"
+  },
+  {
+    "id": "61d2baa7-167a-4f37-88fa-eb4a21fcaa3e",
+    "source_task": "Book a flight for 2 adults from Belo Horizonte to Buenos Aires on April 24",
+    "domain": "Travel",
+    "title": "Validate Post-Action State",
+    "description": "After each click/typing, check that the expected state changed.",
+    "content": "Why this is a mistake: Silent failures are common if an action had no effect; without validation, subsequent steps operate on wrong assumptions. What went wrong: actions like clicking an icon or typing were assumed to have worked without verifying the input value, selected date, or passenger count changed, so the failure propagated. How to prevent it: after each interaction, assert the expected outcome—e.g., input.value equals typed text or selected option text, calendar cell has aria-selected='true', passenger count displayed incremented. If the validation fails, retry the action using a different, more reliable selector (parent button, role-based selector) or raise an explicit retry/error.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:25:19.689012"
+  },
+  {
+    "id": "d9367258-8727-4801-a82c-ccb5d4194c94",
+    "source_task": "Book a flight for 2 adults from Belo Horizonte to Buenos Aires on April 24",
+    "domain": "Travel",
+    "title": "Prefer Role-Based Selectors",
+    "description": "Use ARIA roles and semantic tags to choose interactive elements reliably.",
+    "content": "Why this is a mistake: Relying on visual elements or arbitrary IDs can target non-interactive nodes; ARIA roles and semantic tags are more stable indicators of behavior. What went wrong: the agent targeted icons, spans, and inner elements instead of items with roles like 'button', 'option', 'tab', 'gridcell', or inputs. How to prevent it: prioritize selectors that reference role attributes (role='button', role='option', role='listbox', role='tab', role='gridcell') or semantic tags (button, input, a). If roles are missing, fall back to the nearest ancestor with a click handler or check for actionable attributes (onclick, tabindex, aria-expanded). This reduces clicks on decorative or inert elements.",
+    "score": 0.0,
+    "timestamp": "2026-01-20T14:25:20.022769"
+  }
+]

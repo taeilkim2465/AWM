@@ -1,0 +1,59 @@
+Summary Workflows (Six Flags)
+
+## browse_and_select_park
+Given that you are on Six Flags site, this workflow opens the park browser, picks a park, and loads that park's site.
+[button] Browse the Parks Below -> CLICK
+[link or option] {park-name-or-option} -> CLICK
+[button] Go! -> CLICK
+
+## open_tickets_and_pass_options
+Opens the Tickets & Passes area and shows pass/add-on options.
+[link or nav] Tickets & Passes -> CLICK
+[link or button] View Pass Options (or Pass Add-Ons) -> CLICK
+
+## select_pass_and_set_quantity
+Selects a specific season pass (Gold/Platinum/Diamond) and sets the desired quantity before adding to cart.
+[link or card] {pass-card} (e.g., 2023 Diamond Pass) -> CLICK
+[button] Increase Qty (or quantity control) -> CLICK (repeat as needed)
+[button] Add to Cart (or Next / Checkout) -> CLICK
+
+## add_pass_addon_to_cart
+Adds a one-day or season add‑on (e.g., go‑kart pass) and chooses ticket delivery if available.
+[link or nav] Pass Add-Ons or One Day Add-Ons -> CLICK
+[item] {add-on-item} -> CLICK
+[button] Increase Qty -> CLICK (repeat as needed)
+[option or radio] {delivery-method: Digital / Print} -> CLICK (if shown)
+[button] Add to Cart (or Checkout) -> CLICK
+
+## fill_pass_purchaser_details
+Fills purchaser / pass-holder information required to continue checkout for passes.
+[input] First Name -> TYPE: {first-name}
+[input] Last Name -> TYPE: {last-name}
+[input] Age -> TYPE: {age}
+[input] Email Address -> TYPE: {email}
+[input] Zip/Postal Code -> TYPE: {zip}
+[button] Continue -> CLICK
+
+## enable_flexible_payment_plan
+Selects the flexible pay option and completes the pay-plan agreement flow.
+[input or radio] I would like to use the Flexible Pay Plan -> CLICK
+[button] Continue (or Next) -> CLICK
+[input] Email Address for agreement -> TYPE: {email}
+[button] Sign and Proceed (or OK / Checkout) -> CLICK
+
+## book_lodging_search_and_select_room
+Searches park lodging for given dates and selects a room (e.g., the cheapest themed room).
+[link or button] Book Lodging or Nearby Lodging -> CLICK
+[input/datepicker] Check-in date -> TYPE or CLICK: {check-in-date}
+[input/datepicker] Check-out date -> TYPE or CLICK: {check-out-date}
+[button] Check Rates (or Submit) -> CLICK
+[button or link] SELECT for desired room -> CLICK
+
+## view_rides_by_category
+From a selected park, opens the rides & experiences area and views a ride category (Thrill/Family/etc.).
+[nav or link] Rides & Experiences (or All Rides) -> CLICK
+[link] {category-name: Family Rides / Thrill Rides / All Rides} -> CLICK
+
+Notes:
+- Replace placeholders in braces { } with the actual park, pass, date, or user values.
+- These workflows are intended to be reused as subroutines when assembling full tasks (e.g., purchase a Diamond Pass + Flexible Pay uses: browse_and_select_park -> open_tickets_and_pass_options -> select_pass_and_set_quantity -> fill_pass_purchaser_details -> enable_flexible_payment_plan -> select_pass_and_set_quantity/checkout).

@@ -1,0 +1,24 @@
+Summary Workflows (bookdepository)
+
+1) set_search_language
+Given you are on a category/search page, restrict results to a specific language.
+- CLICK the language/filter link (e.g., "English") to open the language controls.
+- SELECT the desired language from the language dropdown (e.g., "English").
+- CLICK the "Refine results" / "Refine" button to apply the language filter.
+
+2) open_series_or_category
+Navigate into a specific series or category from the results or site navigation.
+- CLICK the series/category link (e.g., "Game of Thrones") shown on the page or in the “Books by Language / Series” area.
+- Wait for the series/category results page to load (page of items for that series).
+
+3) add_top_results_to_basket_and_checkout
+From a results or series page, add the top N items to the basket and proceed to checkout.
+- For each of the top N results:
+  - CLICK the result item to open its product page (or CLICK an "Add to basket" control if available directly on results).
+  - CLICK "Add to basket" (or equivalent).
+- After adding items, CLICK "Basket / Checkout" (or open the basket) to proceed to checkout.
+
+4) continue_shopping_from_basket
+When viewing the basket, return to browsing before finalizing purchase.
+- CLICK "Continue Shopping" from the basket/mini-basket view to return to browsing/search pages.
+- Resume browsing or repeat other workflows (e.g., open_series_or_category).

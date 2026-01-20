@@ -1,0 +1,36 @@
+## enter_destination
+Given that you are on the hotel booking page, this workflow enters the destination and selects a suggested match.
+- [input] Destination -> TYPE: {city, country}
+- [link] {suggested-destination} -> CLICK
+
+## select_dates_for_stay
+Select check-in and check-out dates from the calendar.
+- [button]  Open date picker -> CLICK
+- [link]  {check-in-date} -> CLICK
+- [link]  {check-out-date} -> CLICK
+- [button]  Done/Close calendar -> CLICK
+
+## set_guests_and_room
+Open the occupancy selector and set the number of adults/children/rooms.
+- [button]  Guests / Rooms -> CLICK
+- [option/input]  Adults -> SET/TYPE: {number-of-adults}
+- [option/input]  Children/Rooms (if needed) -> SET/TYPE: {numbers}
+- [button]  Done/Close occupancy -> CLICK
+
+## set_travel_purpose_work
+Mark the booking as for work/business travel.
+- [label/checkbox]  I'm travelling for work -> CLICK
+
+## apply_filter_free_wifi
+Filter search results to show only properties with free Wi‑Fi.
+- [checkbox/label]  Free WiFi -> CLICK
+- (optional) Wait for results/filters to refresh
+
+## submit_search
+Run the hotel search after inputs and filters are set.
+- [button]  Search -> CLICK
+
+## sort_results_by_business
+Order results for business travelers (used after search).
+- [button]  Sort menu -> CLICK
+- [option]  Top picks for business travellers -> CLICK

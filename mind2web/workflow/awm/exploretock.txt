@@ -1,0 +1,36 @@
+## Summary Workflows
+
+## select_reservation_experience
+Given that you are on the ExploreTock reservation/search page, this workflow chooses the reservation experience (e.g., Dine in).
+- [select] Experience type dropdown/button -> CLICK
+- [option] {experience-option} (e.g., Dine in) -> CLICK
+
+## set_location_via_search
+Given that you are on the ExploreTock reservation/search page, this workflow selects a location by searching and picking a result.
+- [button/input] Open location search or click location field -> CLICK
+- [input] Location search textbox -> TYPE: {city, state}
+- [result] Matching location result -> CLICK
+
+## select_date
+Given that you are on the ExploreTock reservation/search page, this workflow picks the desired reservation date.
+- [button] Open date picker/calendar -> CLICK
+- [button] {day-of-month} in calendar -> CLICK
+
+## select_time
+Given that you are on the ExploreTock reservation/search page, this workflow sets the reservation time.
+- [select] Time dropdown -> CLICK
+- [option] {time-slot} (e.g., 8:00 PM) -> CLICK/SELECT
+
+## set_party_size
+Given that you are on the ExploreTock reservation/search page, this workflow sets number of guests.
+- [select] Guests/party-size dropdown -> CLICK
+- [option] {number-of-guests} -> CLICK/SELECT
+
+## filter_by_cuisine
+Given that you are on the ExploreTock reservation/search page, this workflow filters results by cuisine type.
+- [button] Open cuisine filter panel -> CLICK
+- [checkbox] {cuisine-name} (e.g., Spanish) -> CLICK
+
+## submit_search
+Given that you have set search criteria on ExploreTock, this workflow runs the search and shows matching restaurants.
+- [button] Submit/Search -> CLICK

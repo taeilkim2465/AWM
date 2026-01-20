@@ -1,0 +1,41 @@
+## open_submission_guidelines_overview
+Description: Navigate to the Discogs submission guidelines overview page.
+Steps:
+1. Click the Submissions item in the marketplace/side navigation.
+2. Click Submission Guidelines.
+3. Click Overview Of Submission Guidelines For Releases.
+
+## header_search_query
+Description: Use the header search box to find artists, releases, or marketplace items.
+Steps:
+1. Focus/click the header search input.
+2. Type: {search-query}.
+3. Click the search/submit button (or choose a suggestion/result).
+
+## join_community_group
+Description: Find and join a community group.
+Steps:
+1. Click Community (or Community section in the main nav).
+2. Click Groups.
+3. Click Join Group (or click the group entry you want to join, then click Join Group).
+
+## add_release_to_wantlist
+Description: Add a release/album to your wantlist from its release or artist page.
+Steps:
+1. Open the release or the artist/release page (from search or browse).
+2. Click Add to Wantlist.
+
+## filter_marketplace_listings
+Description: Filter marketplace listings by genre, format and country.
+Steps:
+1. Open Explore or Marketplace.
+2. Click the desired genre/category (e.g., Rock).
+3. Select format filter (e.g., Vinyl).
+4. Select country filter (e.g., Germany).
+
+## sort_results_most_wanted
+Description: Sort a result list by Most Wanted.
+Steps:
+1. Open the results page (search/browse/genre view).
+2. Open the Sort dropdown.
+3. Select the "Most Wanted" (want,desc) sort option.

@@ -1,0 +1,36 @@
+Summary Workflows (Uniqlo — Men shopping)
+
+1) open_men_department
+Given you are on the Uniqlo homepage, open the Men department.
+- CLICK the "MEN" navigation/tab
+- WAIT for the Men tab content to load (tab panel visible)
+
+2) select_category
+Select a product category (e.g., Blazers, Bottoms, Tops) within the current department.
+- CLICK the "Category" filter/header
+- CLICK the category option -> CLICK {category} (e.g., "Blazers", "Bottoms")
+
+3) select_color
+Filter results by color.
+- CLICK the "Color" filter/header
+- CLICK the color option -> CLICK {color} (e.g., "BLACK")
+
+4) select_size
+Filter results by size (handles size groups and specific size options).
+- CLICK the "Size" filter/header
+- CLICK the size option -> CLICK {size} (e.g., "M", "XXL", "3XL")
+
+5) accept_modal_or_cookie
+Handle interstitials, cookies, or iframe consent that block interactions.
+- WAIT for consent/modal/iframe to appear
+- CLICK the consent button -> CLICK "AGREE AND CONTINUE" (or equivalent accept)
+
+6) add_top_product_to_cart
+Open the first/top product in the results and add it to the cart (after selecting size if required).
+- CLICK the top product in the product list (first result)
+- If product page requires size selection: CLICK the desired size -> CLICK {size}
+- CLICK the "Add to cart" button
+
+Notes:
+- Use these workflows as reusable building blocks in sequence (e.g., open_men_department → select_category → select_color → select_size → add_top_product_to_cart). 
+- Include accept_modal_or_cookie when an iframe/consent appears before interacting with filters or product pages.

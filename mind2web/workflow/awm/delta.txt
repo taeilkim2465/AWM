@@ -1,0 +1,35 @@
+Summary Workflows (non-overlapping, commonly reused):
+
+## enter_flight_locations
+Purpose: Enter the departure and arrival airport/city.
+Steps:
+- [link] From Departure Airport or City Your Origin -> CLICK
+- [textbox] Origin City or Airport -> TYPE: {origin-city}
+- [link] {matching-origin-popup-option} -> CLICK
+- [link] To Destination Airport or City Your Destination -> CLICK
+- [textbox] Destination City or Airport -> TYPE: {destination-city}
+- [link] {matching-destination-popup-option} -> CLICK
+
+## select_oneway_trip
+Purpose: Switch the trip type to one-way.
+Steps:
+- [combobox] Trip Type:, changes will reload the page -> CLICK
+- [option] One Way -> CLICK
+
+## select_date_for_travel
+Purpose: Choose a travel date from the calendar widget.
+Steps:
+- [button] Depart and Return Calendar (open calendar) -> CLICK
+- [link] {travel-date} -> CLICK
+- [button] done -> CLICK
+
+## find_trip_by_confirmation
+Purpose: Locate an existing booking using confirmation number and passenger name.
+Steps:
+- [tab] MY TRIPS -> CLICK
+- [combobox] Find Your Trip By -> CLICK
+- [option] Confirmation Number -> CLICK
+- [input] Confirmation Number field -> TYPE: {confirmation-number}
+- [input] First Name field -> TYPE: {first-name}
+- [input] Last Name field -> TYPE: {last-name}
+- [button] SUBMIT -> CLICK

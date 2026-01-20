@@ -1,0 +1,46 @@
+## open_gift_cards_and_check_balance
+Given that you are on the Marriott site, this workflow opens the Gift Cards area and checks a card balance.
+[link] Gift Cards -> CLICK
+[link] CHECK BALANCE -> CLICK
+[input] * Card Number -> TYPE: {card-number}
+[input] * PIN Number -> TYPE: {pin}
+[button] Get Balance -> CLICK
+
+## enter_hotel_destination
+Enter the hotel destination and pick the suggested match from the dropdown.
+[textbox] Destination -> TYPE: {city-or-location}
+[link] {matching-suggestion} -> CLICK
+
+## select_stay_dates
+Open the date picker and choose check‑in/check‑out dates.
+[button] Date picker / Nights button -> CLICK
+[link] {check-in-date} -> CLICK
+[link] {check-out-date} -> CLICK
+[button] Done / Confirm -> CLICK
+
+## set_rooms_and_guests
+Open the Rooms & Guests control and set rooms, adults and children (including child age).
+[button] Rooms & Guests -> CLICK
+[button] Add Rooms / Add Adults -> CLICK (repeat until desired count)
+[button] Add Children -> CLICK (repeat until desired count)
+[button] Add Age -> CLICK and choose {age} -> CLICK
+[button] Done / Close -> CLICK
+
+## sort_and_filter_results_by_price_and_brand
+Sort search results by price and apply a brand filter (e.g., Marriott, Sheraton).
+[combobox] Sort by -> CLICK
+[option] Price -> CLICK
+[label or control] Filter by: Brand -> CLICK
+[link or option] {brand-name} -> CLICK
+[button] Apply -> CLICK
+
+## submit_search_and_view_results
+Submit the hotel search and open the results for a property.
+[button] Find Hotels -> CLICK
+[link or button] View Rates / Select (on a property) -> CLICK
+
+## initiate_booking_and_continue
+Begin booking from a selected property and proceed through the booking steps.
+[button] Select (room/rate) -> CLICK
+[button] Continue -> CLICK
+[button] Continue (or Choose Room Features) -> CLICK

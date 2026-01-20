@@ -1,0 +1,21 @@
+## open_editor_s_choice_reviews_for_games
+Description: Navigate to the site's reviews section and open the Editor's Choice list filtered to game reviews.
+- [button] Reviews -> CLICK
+- [link] Editor's Choice -> CLICK
+- [tab or link] Games (tab) -> CLICK
+
+## filter_reviews_by_score_and_genre
+Description: Apply score and genre filters to a reviews list (commonly used after opening Editor's Choice).
+- [select] Score range / Score filter -> SELECT: {score-range} (e.g., 10,10)
+- [select] Genre -> SELECT: {genre} (e.g., Board)
+
+## open_rewards_and_show_available_view
+Description: Open the Rewards/Store rewards area and show available items, optionally filtering the view (Games / Plus / Free).
+- [link or button] Rewards -> CLICK
+- [button or tab] Available -> CLICK
+- [select] View (All Rewards / Games / Plus / Free) -> SELECT: {view-option}
+
+## search_for_game_guide_or_walkthrough
+Description: Search the site for a specific game guide or walkthrough and open the walkthrough/guide page.
+- [input] Search field -> TYPE: {game-title + " walkthrough" or guide query}
+- [link or result] Walkthrough or Guide -> CLICK

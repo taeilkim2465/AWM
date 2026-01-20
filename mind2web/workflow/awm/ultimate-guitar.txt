@@ -1,0 +1,19 @@
+## search_for_song_or_artist
+Given that you are on the Ultimate Guitar search page, this workflow searches for a song or artist.
+[input]  -> TYPE: {song-or-artist-name}
+[button]  Search -> CLICK
+
+## expand_genre_list
+Given search results showing genre snippets, this workflow expands the full genre list.
+[h4]  Genre -> CLICK
+[link]  Show All -> CLICK
+
+## open_reviews_tab
+Given search results or site navigation, this workflow switches to the Reviews section for the current query.
+[link]  Reviews -> CLICK
+[button]  Search/Submit -> CLICK
+
+## open_review_from_results
+Given search results or the Reviews list, this workflow opens a specific review entry.
+[section]  Search Results / Reviews List -> FOCUS/CLICK
+[link]  {result-title} -> CLICK

@@ -1,0 +1,22 @@
+## Workflows (Menards)
+
+1) add_pre_made_list_to_my_lists  
+Description: Add a pre-built list template (e.g., College Supply List) into your account lists.  
+Steps:
+- Click My Lists (or My Account → My Lists).  
+- Click the template's "View / Add List" link for the desired pre-made list.  
+- Click the "Add List" (submit) button (fill required fields if prompted).
+
+2) open_category_and_add_item_to_cart  
+Description: Navigate into a product category or search results and add a matching item to the cart (optionally after applying filters).  
+Steps:
+- Click the category or subcategory button (e.g., "Front-Load Washing Machines", "Front-Load Washers").  
+- (Optional) Apply filters such as maximum price (e.g., click Price Max and set value).  
+- Click the product's "ADD TO CART" button.
+
+3) find_weekly_ad_for_zip  
+Description: Locate the store for a ZIP code and open its weekly ad.  
+Steps:
+- Type the ZIP code into the store locator / ZIP input field in the header or Store Locator area.  
+- Submit / search (or set/make the displayed store active if shown).  
+- Click the store's "Weekly Ad" link.

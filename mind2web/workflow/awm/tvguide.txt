@@ -1,0 +1,9 @@
+## search_and_select_title
+Given you are on the site with the search/combobox for TV shows and movies, this workflow finds a title and opens it from the autocomplete/listbox.
+[input or combobox]  search box -> TYPE: {title}
+[ul listbox]  matching result -> CLICK
+
+## open_title_and_view_celebrity_biography
+Given you are on a page showing a title (from a list or search result), this workflow opens the title and then views a related person's biography (e.g., host, cast).
+[a or list item]  Title or show link -> CLICK
+[a or link]  Biography -> CLICK

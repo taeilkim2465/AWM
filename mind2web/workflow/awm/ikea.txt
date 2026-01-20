@@ -1,0 +1,17 @@
+Summary Workflows:
+## open_store_locator
+Given that you are on the IKEA site, this workflow opens the store locator page.
+[link]  Find a Location / IKEA Store Locator -> CLICK
+(wait for store locator page or search box to load)
+
+## search_and_select_store
+Given that you are on the IKEA Store Locator page, this workflow searches for a store by city or ZIP and selects a matching store from the results.
+[input / combobox]  Search by product / search box -> TYPE: {city-or-zip}
+[button]  Search (if present) -> CLICK
+[div / link / button]  Store result matching {city-or-zip} (e.g., Tempe) -> CLICK
+
+## set_my_store_and_view_store_events
+Given that a store card or store page is visible, this workflow sets that store as "My Store" and opens the store page to view in-store events/details.
+[div / button]  My store / Make this my store -> CLICK
+[link / button]  See what's happening in-store! -> CLICK
+[button / link]  See details (on store events section) -> CLICK

@@ -1,0 +1,47 @@
+Website: Travel, Airlines, jetblue
+
+Summary Workflows:
+
+## open_flights_tab
+Given the JetBlue booking page, this workflow opens the Flights booking panel.
+- CLICK the Flights tab/button
+- Wait for the Flights panel to become active (inputs and Search flights button visible)
+
+## enter_airports
+Enter origin and destination using the type-ahead suggestions.
+- CLICK the From input
+- TYPE: {origin-city-or-airport}
+- CLICK the matching origin suggestion from the suggestions list
+- CLICK the To input
+- TYPE: {destination-city-or-airport}
+- CLICK the matching destination suggestion from the suggestions list
+
+## select_date_range
+Pick departure and return dates in the date picker (round-trip).
+- OPEN the date picker (click the depart/return date input)
+- CLICK the depart date: {depart-date}
+- CLICK the return date: {return-date}
+- CLICK Done (or confirm) in the calendar
+
+## set_passenger_count
+Adjust number of adult passengers.
+- OPEN the passenger selector (click passenger control)
+- CLICK the add-adult button until the passenger count is {number-of-adults}
+- CLOSE the passenger selector (if required) or ensure the count is applied
+
+## apply_sort_and_filters
+Open and apply search filters / sort options.
+- CLICK Sort & Filter
+- SELECT desired filter(s) or sort option(s) (e.g., origin airport checkboxes, carrier, stops)
+- CLICK Apply
+
+## choose_fare_option
+Select a specific fare/class from search results.
+- REVIEW fares listed for a flight result
+- CLICK the fare/class button for the desired option (e.g., Economy, Business / Business Lie-Flat)
+
+## search_and_proceed_to_checkout
+Run the search and move to checkout from the selected flight/fare.
+- CLICK Search flights
+- From search results, CLICK the selected flight/fare entry
+- CLICK Next: Checkout (or equivalent proceed-to-checkout button)

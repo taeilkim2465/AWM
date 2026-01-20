@@ -1,0 +1,23 @@
+Summary Workflows (Entertainment — NYC site)
+
+1) search_hotels_in_neighborhood_for_dates_and_guests
+- Purpose: Find hotels in a specific neighborhood for particular check-in/out dates with a given room/guest configuration.
+- Steps:
+  1. Click the hotels/listings entry (e.g., "View all Hotels" / "hotels" link).
+  2. Type the check-in date into the check-in field -> TYPE: {checkin-date}
+  3. Click the checkout date field -> CLICK
+  4. Click/select the desired checkout date -> CLICK: {checkout-date}
+  5. Click the desired neighborhood (e.g., Harlem) -> CLICK: {neighborhood}
+  6. Select number of rooms from the Rooms dropdown -> SELECT: {rooms}
+  7. Select number of adults from the Guests/Adults dropdown -> SELECT: {adults}
+
+2) find_event_tickets_and_apply_quantity_and_sort_filters
+- Purpose: Open an event's ticket listing and filter results by ticket quantity (and apply a sort/filter).
+- Steps:
+  1. Click the event/tickets entry (e.g., "Get Tickets Now" / event link).
+  2. Open Filters -> CLICK: Filters
+  3. Select the desired ticket quantity (e.g., 2) -> CLICK/SELECT: {quantity}
+  4. (Optional) Choose sort option (e.g., "Price - Low to High") -> SELECT: {sort-option}
+  5. Apply/confirm filters -> CLICK: Done / Show Available Tickets
+
+These workflows capture the commonly repeated subroutines for hotel searches and event ticket filtering seen across the tasks.

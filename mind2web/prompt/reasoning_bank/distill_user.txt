@@ -1,0 +1,32 @@
+Task: {task}
+Domain: {domain}
+Outcome: {outcome}
+
+Trajectory:
+{trajectory}
+
+---
+Instructions:
+1. Analyze the trajectory above.
+   - If Outcome is SUCCESS: Identify the key strategic decisions or specific reasoning that led to success. What makes this approach effective?
+   - If Outcome is FAILURE: Identify the critical mistake or missing knowledge. What *should* the agent have done or known?
+
+2. Abstract these insights into "Memory Items". 
+   - A Memory Item should be reusable for similar future tasks.
+   - Do NOT include specific IDs (e.g., "CLICK [23]") in the abstracted content. Use descriptions (e.g., "Click the search icon").
+
+3. Format each item as:
+   - **Title**: A short, catchy summary (3-5 words).
+   - **Description**: A one-sentence explanation of when to apply this.
+   - **Content**: The detailed reasoning or strategy.
+
+4. Output strictly a JSON list. Example:
+[
+  {{
+    "title": "Handling Dynamic Dates",
+    "description": "Use when standard date input fields are read-only.",
+    "content": "On travel sites, date inputs are often read-only. Look for a calendar icon button next to the input to open the date picker widget."
+  }}
+]
+
+Generate the JSON now:

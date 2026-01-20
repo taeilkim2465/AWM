@@ -1,0 +1,22 @@
+## Summary Workflows
+
+## open_league_and_view_standings
+Purpose: Navigate from the homepage to a league/sport page and open its standings.
+- CLICK: league/sport tile (e.g., MLS, NFL, FORMULA 1, WWE)
+- CLICK: STANDINGS (or the "Standings" link/tab on the league page)
+
+## search_and_select_item
+Purpose: Find a league, team, player, show, or article via the site search and open its result.
+- CLICK: search input (or focus search field)
+- TYPE: {query}
+- CLICK: matching result card/link from the search results
+
+## follow_entity_from_listing
+Purpose: Add a league/team/player/show to your followed items from a listing or entity page.
+- CLICK: Follow / Add now button on the listing or entity page
+- CLICK: specific entity card or the entity's FOLLOW button (to confirm/complete follow)
+
+## open_stories_and_share_to_facebook
+Purpose: Open the site stories/articles area and share a story to Facebook.
+- CLICK: Stories (or navigate to the article list / open the article)
+- CLICK: Share to Facebook (share button / "share on facebook" control)

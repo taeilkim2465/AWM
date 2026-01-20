@@ -1,0 +1,37 @@
+Summary Workflows (Travelzoo)
+
+1) enter_deal_type_and_search
+Purpose: Enter what kind of deal you want and run the search.
+Steps:
+- [input] What type of deals? -> TYPE: {deal-type}
+- [button] Search Deals -> CLICK
+
+2) enter_location_and_search
+Purpose: Enter a location (Where?) and run the search.
+Steps:
+- [input] Where? -> TYPE: {location}
+- [button] Search Deals -> CLICK
+
+3) select_time_period / season
+Purpose: Choose a time frame (e.g., Summer) for results and apply filters/search.
+Steps:
+- [input] When? -> CLICK (or focus)
+- [link or option] {season-or-date-range} -> CLICK (e.g., Summer)
+- [button] Filter (or Search Deals) -> CLICK
+
+4) open_filter_panel_and_choose_option
+Purpose: Open the filter dialog and pick a sorting or facet (e.g., Highest Rated, Price: Low to High, Water Parks, Under $999).
+Steps:
+- [button] Filter -> CLICK (opens filter dialog)
+- [button or div] {filter-or-sort-option} -> CLICK (e.g., Highest Rated / Price: Low to High / Water Parks)
+- [button] Done -> CLICK
+
+5) open_result_and_continue_booking
+Purpose: Open a deal from the results list and proceed to the deal/booking page.
+Steps:
+- [link or card] {deal-result} -> CLICK (open the deal)
+- [link or button] Continue / Book / Continue to Experience Club -> CLICK
+
+Notes:
+- Use the placeholders in braces ({...}) for task-specific values.
+- These workflows are intentionally generic so they can be composed to perform complete tasks (e.g., enter_deal_type_and_search + open_filter_panel_and_choose_option + open_result_and_continue_booking).

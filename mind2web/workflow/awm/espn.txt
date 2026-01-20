@@ -1,0 +1,23 @@
+Summary Workflows:
+
+## open_soccer_and_select_tab
+Given the ESPN page header/navigation, open the Soccer section and choose a sub-tab (e.g., Upcoming, Schedule).
+[button or link] Soccer nav/button -> CLICK
+[tab or link] {tab-name (e.g., Upcoming, Schedule)} -> CLICK
+
+## search_and_open_player_profile
+Open search, enter a player/team name, and open the matching profile/result.
+[button or link] Search icon/button -> CLICK
+[input] Search box -> TYPE: {player-or-team-name}
+[link] {search-result matching the name} -> CLICK
+
+## open_player_stats_and_filter
+From a player's profile, open the Stats area and filter by competition (e.g., World Cup).
+[link] Stats (player page) -> CLICK
+[select] Competition dropdown -> SELECT: {competition-name}
+
+## view_league_fixtures_on_date
+From the Soccer Schedule view, open a league page, go to Fixtures & Results, and pick a specific date.
+[link] {league link (e.g., Italian Serie A)} -> CLICK
+[link or tab] Fixtures & Results -> CLICK
+[element] {date (day number or date cell)} -> CLICK

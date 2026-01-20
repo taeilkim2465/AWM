@@ -1,0 +1,40 @@
+## perform_site_search
+Given you are on the GameStop site, this workflow performs a product search.
+[input or search field] -> TYPE: {search-query}
+[button] (search/submit) -> CLICK
+(or)
+[link from autocomplete suggestions] -> CLICK
+
+## open_search_result_product
+Opens a product detail page from search results.
+[link] (product result matching query) -> CLICK
+
+## sort_search_results
+Changes the sort order on a search or reviews listing.
+[button] (Sort by) -> CLICK
+[link or option] ({sort-option}, e.g., Price Low To High / Highest to Lowest Rating / Most Helpful) -> CLICK
+
+## apply_product_filters
+Opens the filter panel, selects filters, and applies them.
+[link or button] (Filter) -> CLICK
+[checkbox or option] ({filter-name}, e.g., Platform: Xbox / Category: Gaming Accessories) -> CLICK
+[button] (Done / Apply) -> CLICK
+
+## view_and_sort_reviews
+From a product page, opens the reviews section and reorders reviews.
+[link or button] (Show All Reviews / Ratings and Reviews) -> CLICK
+[button] (Sort by) -> CLICK
+[link or option] ({review-sort-option}, e.g., Highest to Lowest Rating / Lowest to Highest Rating / Most Helpful) -> CLICK
+
+## find_stores_near_zip
+Locate stores near a postal code and restrict to GameStop brand.
+[link or nav] (Store locator / Store) -> CLICK
+[input] (Search by City, State, or Zip Code) -> TYPE: {zip-or-city}
+[select] (Radius) -> SELECT: {distance, e.g., 50 Miles}
+[input checkbox] (GameStop filter) -> CLICK
+[button] (Search) -> CLICK
+
+## set_store_as_home
+From store search results, open a store entry and set it as your home store.
+[link or result item] (store result) -> CLICK
+[link or button] (Set as Home Store) -> CLICK

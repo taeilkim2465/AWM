@@ -1,0 +1,46 @@
+## enter_pickup_location
+Given that you are on the car rental search page, this workflow enters the pick-up location.
+[textbox] Pick-up location -> TYPE: {your-pickup-location}
+[link / listbox option] {best-popup-option} -> CLICK
+
+## select_pickup_and_dropoff_dates
+Given that you are on the car rental search page, this workflow selects pick-up and drop-off dates.
+[button] Pick-up date calendar opener -> CLICK
+[gridcell / date checkbox] {pickup-date} -> CLICK
+[button] Drop-off date calendar opener -> CLICK
+[gridcell / date checkbox] {dropoff-date} -> CLICK
+
+## set_pickup_and_dropoff_times
+Given that you are on the car rental search page, this workflow sets pick-up and drop-off times.
+[select] Pick-up time dropdown -> SELECT: {pickup-time}
+[select] Drop-off time dropdown -> SELECT: {dropoff-time}
+
+## perform_search_and_open_result
+Given that you have set location, dates (and times), this workflow runs the search and opens a result.
+[button] Search -> CLICK
+[button] View deal (one of the search results) -> CLICK
+
+## filter_by_companies
+Given that you are viewing search results or filter panel, this workflow filters results to specific rental companies.
+[button / panel] Car Rental Companies filter -> CLICK
+[input checkbox] {company-name} (e.g., Avis, Enterprise) -> CLICK
+
+## choose_car_size
+Given that you are viewing search results or size filters, this workflow restricts results by car size.
+[input checkbox / label] {size-option} (e.g., Small, Medium, Large) -> CLICK
+[button] Show {size-option} cars (if present) -> CLICK
+
+## sort_by_price_lowest
+Given that you are viewing search results, this workflow sorts results by lowest price.
+[radio / sort control] Sort options -> CLICK
+[option / radio] Price (lowest first) -> CLICK
+
+## apply_feature_filters
+Given that you are viewing search results or filter panel, this workflow applies feature filters (e.g., air conditioning).
+[button / filters panel] Features filter -> CLICK
+[input checkbox] {feature} (e.g., Air Conditioning) -> CLICK
+
+## open_deal_and_add_collision_damage_coverage
+Given that you have opened a deal, this workflow chooses collision damage coverage before booking.
+[button] View deal details -> CLICK
+[button] Go to book With Collision Damage Coverage -> CLICK

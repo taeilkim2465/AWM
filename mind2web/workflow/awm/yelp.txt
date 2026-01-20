@@ -1,0 +1,59 @@
+## select_oneway_trip
+Purpose: Switch the trip to a one-way search.
+Steps:
+- [combobox] Trip Type:, changes will reload the page -> CLICK
+- [option] One Way -> CLICK
+
+## select_date_for_travel
+Purpose: Open the date picker and pick a travel date.
+Steps:
+- [button] Depart and Return Calendar Use enter to open, es... -> CLICK
+- [link] {travel-date} -> CLICK
+- [button] done -> CLICK
+
+## find_trip_by_confirmation
+Purpose: Lookup an existing booking by confirmation number and passenger name.
+Steps:
+- [tab] MY TRIPS -> CLICK
+- [combobox] Find Your Trip By -> CLICK
+- [option] Confirmation Number -> CLICK
+- [input] -> TYPE: {confirmation-number}
+- [input] -> TYPE: {passenger-first-name}
+- [input] -> TYPE: {passenger-last-name}
+- [button] SUBMIT -> CLICK
+
+Website: Travel — Restaurant (yelp)
+
+## select_category
+Purpose: Choose the business category to search (Restaurants, Shopping, Auto Services, etc.).
+Steps:
+- Click the category entry in the navigation (e.g., [a id=387] Restaurants, [a id=3671] Shopping, [a id=8391] Car Wash) -> CLICK
+- Confirm the category is active (category button or heading visible) -> (implicit page update)
+
+## enter_location_and_search
+Purpose: Enter the search location and perform the search.
+Steps:
+- [textbox] location input -> TYPE: {location} (e.g., "Central New York", "Chicago, IL", "San Francisco, CA")
+- Click the search/submit button -> CLICK
+
+## sort_by_most_reviewed
+Purpose: Sort results to show the most reviewed businesses first.
+Steps:
+- Click the Sort control (e.g., [span] Sort: -> CLICK)
+- In the sort menu, choose [button] Most Reviewed -> CLICK
+
+## apply_open_now_and_price_filters
+Purpose: Narrow results to businesses open now and within a specified price tier.
+Steps:
+- Click the Open Now filter/button -> CLICK
+- Click the Price filter and select the desired tier (e.g., $$) -> CLICK
+
+## create_collection_and_save_business
+Purpose: Create a new Collection and save a business to it.
+Steps:
+- Open Collections -> CLICK (e.g., [a id=17093] Collections)
+- Create a new collection named {collection-name} -> TYPE/CLICK as required
+- On the target business listing, choose Save -> CLICK and select the newly created collection -> CLICK
+
+Notes:
+- Workflows are intentionally modular (location/category/date/filters/collections) so they can be composed to reproduce the full task flows shown in the examples.

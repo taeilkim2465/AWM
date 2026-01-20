@@ -1,0 +1,10 @@
+webarena/.auth
+webarena/config_files/[0-9]*.json
+webarena/data
+webarena/prompt_logs
+webarena/results*
+mind2web/data/*
+mind2web/results*
+*.tar
+openstreetmap-website/*
+wiki

@@ -1,0 +1,16 @@
+## search_and_open_title
+Given that you are on the IMDb site, this workflow finds a specific title via the search box and opens the matching result.
+[input / combobox search field] -> CLICK or focus
+[input / combobox search field] -> TYPE: {movie-title}
+[listbox result item] -> CLICK (select the matching title)
+
+## open_browse_menu_and_select_option
+Given that you are on the IMDb site, this workflow opens the main navigation menu and selects a browse option (e.g., "Top 250 Movies").
+[label or button] Menu -> CLICK
+[menu item / link] {menu-item} -> CLICK
+
+## rate_movie
+Given that you are on a movie's page on IMDb, this workflow opens the rating control and submits a star rating.
+[button or control] Rate -> CLICK
+[button] rate {rating-value} (e.g., 10) -> CLICK
+[button] Confirm / Rate -> CLICK

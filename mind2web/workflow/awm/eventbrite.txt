@@ -1,0 +1,43 @@
+Summary Workflows:
+
+## set_location_via_picker
+Description: Choose a city/location using the location picker/autocomplete.
+Steps:
+- [link or button]  Location picker / "Popular in" -> CLICK
+- [textbox / combobox]  Location input -> TYPE: {city-name}
+- [link / button / li menuitem]  {best-popup-option matching city} -> CLICK
+
+## open_city_events_page
+Description: Open a city-specific Events page (e.g., "Chicago Events") when a direct city link is available.
+Steps:
+- [link / a]  {City Events link} -> CLICK
+- [input / textbox]  Search box on city page -> CLICK (or TYPE: {keyword} to begin searching)
+
+## search_events_by_keyword
+Description: Run a keyword search for events.
+Steps:
+- [textbox / input]  Search for events -> CLICK or FOCUS
+- [textbox / input]  Search for events -> TYPE: {search-keyword}
+- [button]  Search / Run Search -> CLICK
+
+## open_filters_and_select_option
+Description: Open the Filters / View more panel and choose a filter option (date, price, category, format, etc.). Parameterize {filter-area} and {option}.
+Steps:
+- [button / link]  Filters / View more -> CLICK
+- [label / radio / button]  {filter-area} -> CLICK (e.g., Date, Price, Category, Format)
+- [label / radio / button / option]  {option} -> CLICK (e.g., "This weekend", "Free", "Food & Drink", "Class")
+
+## open_top_results_and_save
+Description: Open the top N search results and save/bookmark them (used when you need to collect top results).
+Steps:
+- [section / list]  Results list -> LOCATE
+- repeat N times:
+  - [a / link / article]  Top result #{i} -> CLICK (open event)
+  - [button / link]  Save / Bookmark -> CLICK (or perform the site-specific save action)
+  - [button / link]  Back to results -> CLICK (if needed)
+
+## open_event_planning_article
+Description: Browse Eventbrite's Event Planning content and open an article.
+Steps:
+- [link / a]  Event Planning (page or section) -> CLICK
+- [link / a]  Specific article / entry -> CLICK

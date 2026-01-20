@@ -1,0 +1,17 @@
+Summary Workflows:
+
+## enter_parking_location_at_airport
+Given that you are on the SpotHero homepage, this workflow selects the Airport search mode and chooses an airport/location result.
+[button]  Airport tab -> CLICK
+[input]   Search input (address/place/city/venue) -> TYPE: {airport-name}
+[li or autocomplete item]  {airport-search-result} -> CLICK
+
+## sort_results_by_price_and_book
+Given that you are on SpotHero search results, this workflow sorts results by price and books the top (cheapest) option.
+[select]  Sort dropdown -> SELECT: Price
+[ul or results list > first Book Now link]  First "Book Now" -> CLICK
+
+## open_contact_support
+Given that you are on SpotHero, this workflow opens the customer support/contact flow.
+[link or nav]  Contact Us -> CLICK
+[button or link]  Contact our Heroes -> CLICK

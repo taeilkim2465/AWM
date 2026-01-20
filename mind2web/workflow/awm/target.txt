@@ -1,0 +1,28 @@
+Summary Workflows:
+
+## search_and_select_suggestion
+Given a product/site search box, enter a search term and pick a suggested query/result from the dropdown.
+[textbox] Search input -> TYPE: {search-term}
+[link]  {matching-suggestion} -> CLICK
+
+## open_search_result_item
+From a results or category/listing page, open a specific result (product, category, job, etc.).
+[link]  {result-item} -> CLICK
+(optional) [link]  Explore All / See more -> CLICK
+
+## open_filters_and_select_option
+Open the filters panel and choose a specific filter category and option (color, size, type, region, etc.).
+[button]  Filter / Filters -> CLICK
+[button]  {filter-category-button e.g., Color / Size / Type / State/Region} -> CLICK
+[checkbox|link|button]  {filter-option e.g., Black / Mega / 24 / Human Resources} -> CLICK
+
+## sort_results_by_price_low_to_high
+Change sorting to show lowest-price-first.
+[button]  Sort / Price -> CLICK
+[option|label]  Price - low to high -> CLICK
+
+## add_item_to_cart
+Add a found product to the cart (optionally selecting pick-up/delivery).
+[button]  Add to cart -> CLICK
+(optional) [tab|link|button]  Pickup & Delivery -> CLICK
+(optional) [option|button]  Pick up / Fulfillment option -> CLICK

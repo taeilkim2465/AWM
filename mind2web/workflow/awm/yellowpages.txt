@@ -1,0 +1,32 @@
+## enter_location_and_select_suggestion
+Use when providing the search location on YellowPages-style pages.
+[textbox]  where? / Location input -> TYPE: {city, state or neighborhood}
+[link]  {autocomplete suggestion matching typed location} -> CLICK
+
+## open_category_or_subcategory
+Open a main category page and (optionally) a more specific subcategory.
+[link]  {Main category e.g., Dentists / Attorneys / Restaurants / Coupons} -> CLICK
+[link]  {Subcategory if present e.g., Cosmetic Dentistry / Drug Charges / Bar & Grill} -> CLICK
+
+## select_and_apply_filters
+Choose one or more filter checkboxes (languages, features, insurance, neighborhood, etc.) and apply them.
+[input/label/checkbox]  {filter option(s) e.g., Speaks Spanish / Accepts Credit Cards / Good for Groups / Live Music / Medicaid / Coupons / Henderson} -> CLICK (repeat for each)
+[button]  Apply Filters -> CLICK
+
+## perform_find_search
+Run the search after entering criteria.
+[button]  Find / Submit / Search -> CLICK
+
+## sort_results_by
+Change result ordering.
+[div/link/button]  Sort control -> CLICK
+[link]  {sort option e.g., Distance / Rating} -> CLICK
+
+## search_person_by_address
+Find a person using an address lookup (common on People/Find People pages).
+[link]  Find People -> CLICK
+[link]  BY ADDRESS -> CLICK
+[input]  Street address -> TYPE: {street address}
+[input]  City or ZIP -> TYPE: {city or zip}
+[select]  State -> SELECT: {state}
+[input/button]  Search / Find -> CLICK

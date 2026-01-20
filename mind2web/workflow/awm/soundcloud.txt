@@ -1,0 +1,38 @@
+Summary Workflows (SoundCloud)
+
+1) perform_search
+Purpose: Run a search from the site header.
+Steps:
+- TYPE [search-input] -> TYPE: {search-query}
+- CLICK [search-submit-button]
+
+2) open_genre_or_category
+Purpose: From search results or the genre list, open a genre/category.
+Steps:
+- CLICK [genre-or-category-link] (e.g., Electronic, Indian classical)
+- CLICK [specific-genre-result] (if a second-level genre entry appears)
+
+3) apply_date_and_length_filters
+Purpose: Narrow results by when items were added and by track length.
+Steps:
+- CLICK [time-filter-control] (e.g., "Added in the past month", "Past month")
+- CLICK [length-filter-control] (e.g., "Any length" -> "> 30 min")
+
+4) add_track_to_playlist_with_create_if_needed
+Purpose: Add a track to an existing playlist or create the playlist if it doesn't exist.
+Steps:
+- CLICK [add-to-playlist-button] (on the track)
+- IF playlist exists: CLICK [playlist-name] to add
+  ELSE: CLICK [create-playlist-button] -> TYPE [playlist-name-input] -> TYPE: {playlist-name} -> CLICK [create/confirm]
+
+5) play_and_like_track
+Purpose: Play a track and mark it as liked.
+Steps:
+- CLICK [play-button] (on track or playlist entry)
+- CLICK [like-button] (on the playing track or track item)
+
+6) open_likes_list_and_view_all
+Purpose: Open your Likes and view the full list.
+Steps:
+- CLICK [Likes-link]
+- CLICK [View all likes] (or equivalent "View all" control)

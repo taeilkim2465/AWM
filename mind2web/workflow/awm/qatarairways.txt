@@ -1,0 +1,35 @@
+Summary Workflows (Qatar Airways)
+
+Note: use these when on the Qatar Airways site travel / travel-requirements UI.
+
+1) select_origin_and_destination_from_autocomplete
+Given a travel-requirements or flight-search form with autocomplete inputs, enter origin and destination airports.
+- CLICK the origin "From" input
+- TYPE: {origin-city}
+- CLICK the matching airport menuitem (the autocomplete suggestion for {origin-city})
+- CLICK the destination "To" input
+- TYPE: {destination-city}
+- CLICK the matching airport menuitem (the autocomplete suggestion for {destination-city})
+
+2) set_oneway_trip
+Set the trip type to one-way.
+- CLICK the Trip Type / trip-type combobox
+- CLICK the "One way" option
+
+3) select_date_and_confirm
+Pick a travel date from the calendar and confirm the selection.
+- CLICK the Depart/Return calendar control to open the calendar
+- CLICK the calendar cell for {travel-date} (e.g., "21 April 2023")
+- CLICK the calendar "Continue" / "Done" (confirm) button
+
+4) set_passengers_and_class
+Choose number of passengers and travel class.
+- CLICK the Passenger / Class input
+- TYPE or SELECT: {passenger-count} and {travel-class} (e.g., "1 passenger, Economy"/"1 passenger, First Class")
+
+5) submit_travel_requirements_search
+Run the travel-requirements lookup / show available flights.
+- CLICK the "Check requirements" button (or "Show flights" when shown)
+- CLICK the search/submit action if a second confirmation button appears (e.g., "Show flights" / "Search") or wait for results to load
+
+These workflows are intentionally non-overlapping and can be combined in sequence to cover the full tasks (e.g., select_origin_and_destination_from_autocomplete -> set_oneway_trip -> select_date_and_confirm -> set_passengers_and_class -> submit_travel_requirements_search).

@@ -1,0 +1,27 @@
+## search_for_item
+Given you are on the Kohl’s site, this workflow performs a keyword search.
+1. [textbox] Search input -> TYPE: {search-keywords}
+2. [input/submit] Search button -> CLICK
+
+## open_category_and_subcategory
+Navigate through Shop by Category to a specific category/subcategory.
+1. [link/button] Shop by Category -> CLICK
+2. [link] {main-category} (e.g., Women, Kids, Clearance, Accessories) -> CLICK
+3. [link] {subcategory} (e.g., Women's Plus Size, One-Piece Swimsuits, Loungewear) -> CLICK
+
+## sort_by_price_low_to_high
+Sort product listings from lowest to highest price.
+1. [link/button] Sort / Featured -> CLICK
+2. [link] Price Low-High -> CLICK
+
+## apply_filter_option
+Open a filter panel and select a specific filter option (color, size, rating, clearance, etc.).
+1. [button/link] {filter-name} (e.g., Color, Size, Rating, Category, Clearance) -> CLICK
+2. [link] {filter-option} (e.g., Black, 3XL, 5, Clearance) -> CLICK
+
+## find_store_by_state_and_city
+Locate a store by state and then city and view store details/directions.
+1. [link] Store Locator -> CLICK
+2. [link] {state} -> CLICK
+3. [link] {city} -> CLICK
+4. [link/button] Store Info or Directions -> CLICK

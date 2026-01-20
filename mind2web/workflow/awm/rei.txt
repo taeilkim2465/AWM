@@ -1,0 +1,34 @@
+Website: REI (shopping)
+
+Workflows (common reusable sub-routines)
+
+1) navigate_to_section
+Purpose: open a top-level site section (e.g., Gift Cards, Membership, Cleats).
+Steps:
+- Click the header/navigation primary link or menu.
+- Click the desired section/category link (e.g., Gift Cards, Membership, Cleats).
+
+2) filter_results_by_size
+Purpose: narrow product listings by size.
+Steps:
+- Click the "Filter by" / Size filter control.
+- Select the desired size option (e.g., Large).
+
+3) select_product_and_add_to_cart
+Purpose: choose a product and place it in the cart.
+Steps:
+- Click the product listing or product link to open/select the item.
+- Click the product's "Add to cart" (or "Add to Cart $X") button.
+
+4) create_and_add_e-gift_card
+Purpose: pick an e-gift design, enter recipient/sender info and add the e-gift to cart.
+Steps:
+- Open the E-Gift Cards section (use navigate_to_section if needed) and choose the E-Gift card tab.
+- Click the desired design (e.g., the Congrats SVG).
+- Type the recipient's name into the "To" field.
+- Type the sender's name into the "From" field (if required).
+- Type the recipient's email address into the email field.
+- Click "Add to cart".
+
+Notes:
+- Workflows are intentionally minimal and composable — e.g., navigate_to_section + filter_results_by_size + select_product_and_add_to_cart can be chained to find and buy a filtered product.
