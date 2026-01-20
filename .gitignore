@@ -1,10 +1,15 @@
+# WebArena 관련
 webarena/.auth
 webarena/config_files/[0-9]*.json
-webarena/data
-webarena/prompt_logs
-webarena/results*
-mind2web/data/*
-mind2web/results*
+webarena/data/
+webarena/prompt_logs/
+webarena/results*/
+
+# Mind2Web 관련
+mind2web/data/
+mind2web/results*/
+
+# 기타
 *.tar
-openstreetmap-website/*
-wiki
+openstreetmap-website/
+wiki/
