@@ -1,0 +1,1 @@
+{"id": 390, "eval_info": {"thoughts": "The activity feed shows a new comment \"lgtm\" by the user (Byte Blaze) \"just now\", and the comment box is back to its placeholder state \u2014 this matches fill('969','lgtm') followed by clicking the comment button. Therefore the requested \"lgtm\" was posted to the merge request successfully.", "status": "success"}}

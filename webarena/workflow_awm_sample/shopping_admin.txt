@@ -1,0 +1,55 @@
+Workflow 1: Open "My Orders"
+<think>
+To access the user's order history, open the account menu and then the My Orders page.
+</think>
+<action>
+click('227')
+</action>
+<action>
+click('1843')
+</action>
+
+Workflow 2: Navigate to the last page of a paginated table
+<think>
+To see the earliest/oldest entries in a paginated table, navigate the pagination controls to the last page.
+</think>
+<action>
+click('1788')
+</action>
+<action>
+click('1784')
+</action>
+
+Workflow 3: Obtain order information (date, order number, status) and report to user
+<think>
+To answer a question about orders (earliest date, most recent canceled order, order number, etc.), read the Orders table for the requested data and send the result to the user.
+</think>
+<action>
+send_msg_to_user('RESULT_TEXT')
+</action>
+
+Workflow 4: Browse products in a specific (sub-)category via menu hover
+<think>
+To open a specific product subcategory, hover over the top-level category, hover the intermediate category, then click the desired subcategory link.
+</think>
+<action>
+hover('735')
+</action>
+<action>
+hover('786')
+</action>
+<action>
+click('797')
+</action>
+
+Workflow 5: Confirm current page / ask clarification
+<think>
+When the page reached may not exactly match the user's intended target (similar category names or ambiguous results), ask the user to confirm or clarify.
+</think>
+<action>
+send_msg_to_user('CONFIRM_MESSAGE')
+</action>
+
+click('id') # input string id value for all actions
+
+select_option('id', 'value') # for dropdown menu

@@ -1,0 +1,9 @@
+{
+  "step": 1,
+  "action": "send_msg_to_user(\"Open issues (21) — sorted by Created date (newest first).\\n\\nTop open issues (most recent first):\\n\\n- #385 — Incorrect path (URL) to `css-utilities` under `../design/foundations` — created ~2 years ago — comments: 1\\n- #372 — Spinners: Create guidelines for using the correct size in its context — labels: area: design, area: documentation — created ~2 years ago — comments: 0\\n- #334 — Truncation page has been removed, but not from navigation menu — created ~3 years ago — comments: 0\\n- #316 — Clarify usage of flash alert — labels: area: documentation; effort: low; type: bug — created ~3 years ago — comments: 0\\n- #310 — Link to Primer Mobile Figma library is broken — created ~3 years ago — comments: 0\\n- #300 — Add guidelines for loading patterns — labels: area: accessibility, area: documentation — created ~3 years ago — comments: 1\\n- #295 — Alert dialog guidelines — labels: area: documentation — created ~3 years ago — comments: 2\\n- #290 — Improve cancel button guidelines — labels: area: accessibility, area: documentation — created ~3 years ago — comments: 0\\n\\nWould you like me to open any of these issues for more details, filter by a specific label, or show more items?\")",
+  "memory": null,
+  "think": "I will use the memories:\n- Memory 1: Use — it tells me to show the open issues filtered to \"Open\" and sorted by newest; the page already shows \"Open 21\" and Created date descending.\n- Memory 2: Use — it says to report the total count first; the UI shows \"Open 21\".\n- Memory 3: Use — it asks for a concise summary of the top items; I'll present a compact list with issue number, title, key labels, and relative age.\n\nPlan: confirm total open count and sort order, then report the top visible open issues from the list (issue number, short title, labels if present, relative age, and comment count).",
+  "has_reasoning_memories": true,
+  "n_retry": 0.0,
+  "error": null
+}

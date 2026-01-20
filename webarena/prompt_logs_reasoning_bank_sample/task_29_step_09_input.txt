@@ -1,0 +1,750 @@
+================================================================================
+STEP 9 INPUT
+================================================================================
+
+================================================================================
+SYSTEM PROMPT
+================================================================================
+You are an agent trying to solve a web task based on the content of the page and
+a user instructions. You can interact with the page and explore. Each time you
+submit an action it will be sent to the browser and you will receive a new page.
+
+================================================================================
+USER PROMPT
+================================================================================
+# Instructions
+
+You are a UI Assistant, your goal is to help the user perform tasks using a web browser. You can
+communicate with the user via a chat, in which the user gives you instructions and in which you
+can send back messages. You have access to a web browser that both you and the user can see,
+and with which only you can interact via specific commands.
+
+Review the instructions from the user, the current state of the page and all other information
+to find the best possible next action to accomplish your goal. Your answer will be interpreted
+and executed by a program, make sure to follow the formatting instructions.
+
+**Current Progress**: Step 9/10 (1 steps remaining)
+
+**Before choosing your next action:**
+- Check your action history below - are you repeating the same actions?
+- If yes, try a different approach (search, different menu, filters, etc.)
+- Make sure each action brings you closer to completing the goal
+
+## Chat messages:
+
+ - [assistant] Hi! I am your UI assistant, I can perform web tasks for you. What can I help you with?
+ - [user] Tell me the count of comments that have received more downvotes than upvotes for the user who made the latest post on the DIY forum.# Reasoning Memories
+
+Below are some memory items that I accumulated from past interaction from the environment that may be helpful to solve the task. You can use it when you feel it's relevant. In each step, please first explicitly discuss if you want to use each memory item or not, and then take action.
+
+Memory 1:
+- Title: Count comments with more downvotes than upvotes by checking net scores
+- Description: Determine which comments have received more downvotes than upvotes by inspecting each comment's net score.
+- Content: For each comment by the user, check its displayed score (net upvotes minus downvotes) and count those with a negative score; report the total and optionally cite a representative negative score for clarity.
+Memory 2:
+- Title: Count negative net scores as downvote-majority
+- Description: When a comment shows a single numeric score, treat negative values as indicators that downvotes exceed upvotes.
+- Content: If the interface displays one number per comment (rather than separate up/down counts), that number is typically the net score (upvotes minus downvotes). Counting comments with negative net scores is the simplest way to identify comments that received more downvotes than upvotes.
+Memory 3:
+- Title: Use the user's comment/activity page and handle pagination when comparing vote counts
+- Description: Count downvote-dominant comments by parsing the user's comments or activity feed directly and ensuring you traverse all pages of results.
+- Content: Open the author's profile and go to their comment or activity tab, then extract numeric upvote and downvote values for each comment. Account for pagination or lazy loading (load more buttons, infinite scroll) and normalize any abbreviated vote formats before comparing downvotes > upvotes.
+
+
+# Observation of current step:
+
+## AXTree:
+RootWebArea 'Sorkill', focused
+	[18] navigation ''
+		[19] link 'Jump to main content'
+		[20] link 'Jump to sidebar'
+	[21] navigation ''
+		[24] link 'Home'
+			StaticText 'Postmill'
+		[34] list ''
+			[35] listitem ''
+				[36] link 'Forums'
+			[37] listitem ''
+				[38] link 'Wiki'
+		[39] Section ''
+			[48] searchbox 'Search query'
+		[49] list ''
+			[50] listitem ''
+				[51] link 'Notifications (0)'
+					[54] image ''
+			[55] listitem ''
+				[56] link 'Submit'
+					[59] image ''
+					StaticText 'Submit'
+			[61] listitem ''
+				[62] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False
+					[65] image ''
+					[66] strong ''
+						StaticText 'MarvelsGrantMan136'
+	[107] main ''
+		[108] navigation ''
+			[109] list ''
+				[110] listitem ''
+					[111] link 'Overview'
+				[112] listitem ''
+					[113] link 'Submissions'
+				[114] listitem ''
+					[115] link 'Comments'
+		[117] article ''
+			[118] checkbox 'Hide −', checked='true'
+			[122] heading 'Sorkill Original poster [t1_j4afntv] wrote 3 years ago'
+				[124] link 'Sorkill', expanded=False
+					[125] strong ''
+						StaticText 'Sorkill'
+				StaticText ''
+				StaticText '['
+				StaticText 'OP'
+				StaticText ']'
+				StaticText ''
+				StaticText '['
+				StaticText 't1_j4afntv'
+				StaticText ']'
+				StaticText 'wrote'
+				[128] time 'January 14, 2023 at 3:05:04 AM EST'
+					StaticText '3 years ago'
+			[129] list ''
+				[130] listitem ''
+					[131] LabelText ''
+						StaticText 'Hide −'
+			[136] image ''
+			[137] paragraph ''
+				StaticText 'Reply to comment by'
+				[138] link 'HaveASeatChrisHansen', expanded=False
+					[139] strong ''
+						StaticText 'HaveASeatChrisHansen'
+				StaticText 'in'
+				[140] link "I made a makeup table for my girlfriend's birthday out of an old bar cabinet"
+					[141] strong ''
+						StaticText "I made a makeup table for my girlfriend's birthday out of an old bar cabinet"
+				StaticText 'by'
+				[142] link 'Sorkill', expanded=False
+					[143] strong ''
+						StaticText 'Sorkill'
+			[145] paragraph ''
+				StaticText "If you're seated and a bit closer to the mirror the top led strip reflects in the mirror so it gives direct light. My gf says its enough light so ill trust her on that. In any case its more light than we have in the bathroom so i think it is sufficient."
+			[146] navigation ''
+				[147] list ''
+					[148] listitem ''
+						[149] link 'Reply'
+							[150] strong ''
+								StaticText 'Reply'
+					[151] listitem ''
+						[152] link 'Permalink'
+					[153] listitem ''
+						[154] link 'Parent'
+			[156] Section ''
+				[158] button 'Upvote'
+				StaticText '1'
+				[168] button 'Downvote'
+		[173] article ''
+			[174] checkbox 'Hide −', checked='true'
+			[178] heading 'Sorkill Original poster [t1_j4725ic] wrote 3 years ago'
+				[180] link 'Sorkill', expanded=False
+					[181] strong ''
+						StaticText 'Sorkill'
+				StaticText ''
+				StaticText '['
+				StaticText 'OP'
+				StaticText ']'
+				StaticText ''
+				StaticText '['
+				StaticText 't1_j4725ic'
+				StaticText ']'
+				StaticText 'wrote'
+				[184] time 'January 13, 2023 at 11:50:23 AM EST'
+					StaticText '3 years ago'
+			[185] list ''
+				[186] listitem ''
+					[187] LabelText ''
+						StaticText 'Hide −'
+			[192] image ''
+			[193] paragraph ''
+				StaticText 'Reply to comment by'
+				[194] link 'poretabletti', expanded=False
+					[195] strong ''
+						StaticText 'poretabletti'
+				StaticText 'in'
+				[196] link "I made a makeup table for my girlfriend's birthday out of an old bar cabinet"
+					[197] strong ''
+						StaticText "I made a makeup table for my girlfriend's birthday out of an old bar cabinet"
+				StaticText 'by'
+				[198] link 'Sorkill', expanded=False
+					[199] strong ''
+						StaticText 'Sorkill'
+			[201] paragraph ''
+				StaticText 'Her reaction was very cute, a bit flabbergasted in the beginning. She really loves it. Makes all the effort worth it.'
+			[202] navigation ''
+				[203] list ''
+					[204] listitem ''
+						[205] link 'Reply'
+							[206] strong ''
+								StaticText 'Reply'
+					[207] listitem ''
+						[208] link 'Permalink'
+					[209] listitem ''
+						[210] link 'Parent'
+			[212] Section ''
+				[214] button 'Upvote'
+				StaticText '16'
+				[224] button 'Downvote'
+		[229] article ''
+			[230] checkbox 'Hide −', checked='true'
+			[234] heading 'Sorkill Original poster [t1_j471xde] wrote 3 years ago'
+				[236] link 'Sorkill', expanded=False
+					[237] strong ''
+						StaticText 'Sorkill'
+				StaticText ''
+				StaticText '['
+				StaticText 'OP'
+				StaticText ']'
+				StaticText ''
+				StaticText '['
+				StaticText 't1_j471xde'
+				StaticText ']'
+				StaticText 'wrote'
+				[240] time 'January 13, 2023 at 11:49:02 AM EST'
+					StaticText '3 years ago'
+			[241] list ''
+				[242] listitem ''
+					[243] LabelText ''
+						StaticText 'Hide −'
+			[248] image ''
+			[249] paragraph ''
+				StaticText 'Reply to comment by'
+				[250] link 'No-Hunt-7796', expanded=False
+					[251] strong ''
+						StaticText 'No-Hunt-7796'
+				StaticText 'in'
+				[252] link "I made a makeup table for my girlfriend's birthday out of an old bar cabinet"
+					[253] strong ''
+						StaticText "I made a makeup table for my girlfriend's birthday out of an old bar cabinet"
+				StaticText 'by'
+				[254] link 'Sorkill', expanded=False
+					[255] strong ''
+						StaticText 'Sorkill'
+			[257] paragraph ''
+				StaticText "Kept it to use later. Didn't have a good way to integrade in this piece."
+			[258] paragraph ''
+				StaticText 'It was also split in the original bar cabinet so will have to glue it.'
+			[259] navigation ''
+				[260] list ''
+					[261] listitem ''
+						[262] link 'Reply'
+							[263] strong ''
+								StaticText 'Reply'
+					[264] listitem ''
+						[265] link 'Permalink'
+					[266] listitem ''
+						[267] link 'Parent'
+			[269] Section ''
+				[271] button 'Upvote'
+				StaticText '6'
+				[281] button 'Downvote'
+		[286] article ''
+			[287] checkbox 'Hide −', checked='true'
+			[291] heading 'Sorkill Original poster [t1_j471o6n] wrote 3 years ago'
+				[293] link 'Sorkill', expanded=False
+					[294] strong ''
+						StaticText 'Sorkill'
+				StaticText ''
+				StaticText '['
+				StaticText 'OP'
+				StaticText ']'
+				StaticText ''
+				StaticText '['
+				StaticText 't1_j471o6n'
+				StaticText ']'
+				StaticText 'wrote'
+				[297] time 'January 13, 2023 at 11:47:29 AM EST'
+					StaticText '3 years ago'
+			[298] list ''
+				[299] listitem ''
+					[300] LabelText ''
+						StaticText 'Hide −'
+			[305] image ''
+			[306] paragraph ''
+				StaticText 'Reply to comment by'
+				[307] link 'SamfromRI', expanded=False
+					[308] strong ''
+						StaticText 'SamfromRI'
+				StaticText 'in'
+				[309] link "I made a makeup table for my girlfriend's birthday out of an old bar cabinet"
+					[310] strong ''
+						StaticText "I made a makeup table for my girlfriend's birthday out of an old bar cabinet"
+				StaticText 'by'
+				[311] link 'Sorkill', expanded=False
+					[312] strong ''
+						StaticText 'Sorkill'
+			[314] paragraph ''
+				StaticText 'No idea yet. I should test it sometime. For now, with limited use the power bank still indicates a full charge.'
+			[315] navigation ''
+				[316] list ''
+					[317] listitem ''
+						[318] link 'Reply'
+							[319] strong ''
+								StaticText 'Reply'
+					[320] listitem ''
+						[321] link 'Permalink'
+					[322] listitem ''
+						[323] link 'Parent'
+			[325] Section ''
+				[327] button 'Upvote'
+				StaticText '4'
+				[337] button 'Downvote'
+		[342] article ''
+			[343] checkbox 'Hide −', checked='true'
+			[347] heading 'Sorkill Original poster [t1_j470yjt] wrote 3 years ago'
+				[349] link 'Sorkill', expanded=False
+					[350] strong ''
+						StaticText 'Sorkill'
+				StaticText ''
+				StaticText '['
+				StaticText 'OP'
+				StaticText ']'
+				StaticText ''
+				StaticText '['
+				StaticText 't1_j470yjt'
+				StaticText ']'
+				StaticText 'wrote'
+				[353] time 'January 13, 2023 at 11:43:13 AM EST'
+					StaticText '3 years ago'
+			[354] list ''
+				[355] listitem ''
+					[356] LabelText ''
+						StaticText 'Hide −'
+			[361] image ''
+			[362] paragraph ''
+				StaticText 'Reply to comment by'
+				[363] link 'dariamorgenderper', expanded=False
+					[364] strong ''
+						StaticText 'dariamorgenderper'
+				StaticText 'in'
+				[365] link "I made a makeup table for my girlfriend's birthday out of an old bar cabinet"
+					[366] strong ''
+						StaticText "I made a makeup table for my girlfriend's birthday out of an old bar cabinet"
+				StaticText 'by'
+				[367] link 'Sorkill', expanded=False
+					[368] strong ''
+						StaticText 'Sorkill'
+			[370] paragraph ''
+				StaticText 'Indeed, when seated the top led strip also reflects in the mirror so it gives direct light to the face.'
+			[371] navigation ''
+				[372] list ''
+					[373] listitem ''
+						[374] link 'Reply'
+							[375] strong ''
+								StaticText 'Reply'
+					[376] listitem ''
+						[377] link 'Permalink'
+					[378] listitem ''
+						[379] link 'Parent'
+			[381] Section ''
+				[383] button 'Upvote'
+				StaticText '7'
+				[393] button 'Downvote'
+		[398] article ''
+			[399] checkbox 'Hide −', checked='true'
+			[403] heading 'Sorkill Original poster [t1_j470t4a] wrote 3 years ago'
+				[405] link 'Sorkill', expanded=False
+					[406] strong ''
+						StaticText 'Sorkill'
+				StaticText ''
+				StaticText '['
+				StaticText 'OP'
+				StaticText ']'
+				StaticText ''
+				StaticText '['
+				StaticText 't1_j470t4a'
+				StaticText ']'
+				StaticText 'wrote'
+				[409] time 'January 13, 2023 at 11:42:18 AM EST'
+					StaticText '3 years ago'
+			[410] list ''
+				[411] listitem ''
+					[412] LabelText ''
+						StaticText 'Hide −'
+			[417] image ''
+			[418] paragraph ''
+				StaticText 'Reply to comment by'
+				[419] link 'agent_kater', expanded=False
+					[420] strong ''
+						StaticText 'agent_kater'
+				StaticText 'in'
+				[421] link "I made a makeup table for my girlfriend's birthday out of an old bar cabinet"
+					[422] strong ''
+						StaticText "I made a makeup table for my girlfriend's birthday out of an old bar cabinet"
+				StaticText 'by'
+				[423] link 'Sorkill', expanded=False
+					[424] strong ''
+						StaticText 'Sorkill'
+			[426] paragraph ''
+				StaticText 'It is also a concern for me. But the top led strip also reflects in the mirror so it gives direct light to the face. I hope that will be enough. If it is not enough i have wound extra lights specialy made for makeup around the mirror.'
+			[427] navigation ''
+				[428] list ''
+					[429] listitem ''
+						[430] link 'Reply'
+							[431] strong ''
+								StaticText 'Reply'
+					[432] listitem ''
+						[433] link 'Permalink'
+					[434] listitem ''
+						[435] link 'Parent'
+			[437] Section ''
+				[439] button 'Upvote'
+				StaticText '13'
+				[449] button 'Downvote'
+		[454] article ''
+			[455] checkbox 'Hide −', checked='true'
+			[459] heading 'Sorkill Original poster [t1_j46zqez] wrote 3 years ago'
+				[461] link 'Sorkill', expanded=False
+					[462] strong ''
+						StaticText 'Sorkill'
+				StaticText ''
+				StaticText '['
+				StaticText 'OP'
+				StaticText ']'
+				StaticText ''
+				StaticText '['
+				StaticText 't1_j46zqez'
+				StaticText ']'
+				StaticText 'wrote'
+				[465] time 'January 13, 2023 at 11:35:41 AM EST'
+					StaticText '3 years ago'
+			[466] list ''
+				[467] listitem ''
+					[468] LabelText ''
+						StaticText 'Hide −'
+			[473] image ''
+			[474] paragraph ''
+				StaticText 'Reply to comment by'
+				[475] link 'Flip86', expanded=False
+					[476] strong ''
+						StaticText 'Flip86'
+				StaticText 'in'
+				[477] link "I made a makeup table for my girlfriend's birthday out of an old bar cabinet"
+					[478] strong ''
+						StaticText "I made a makeup table for my girlfriend's birthday out of an old bar cabinet"
+				StaticText 'by'
+				[479] link 'Sorkill', expanded=False
+					[480] strong ''
+						StaticText 'Sorkill'
+			[482] paragraph ''
+				StaticText 'TIL'
+			[483] navigation ''
+				[484] list ''
+					[485] listitem ''
+						[486] link 'Reply'
+							[487] strong ''
+								StaticText 'Reply'
+					[488] listitem ''
+						[489] link 'Permalink'
+					[490] listitem ''
+						[491] link 'Parent'
+			[493] Section ''
+				[495] button 'Upvote'
+				StaticText '12'
+				[505] button 'Downvote'
+		[510] article ''
+			[511] checkbox 'Hide −', checked='true'
+			[515] heading 'Sorkill Original poster [t1_j46zmzc] wrote 3 years ago'
+				[517] link 'Sorkill', expanded=False
+					[518] strong ''
+						StaticText 'Sorkill'
+				StaticText ''
+				StaticText '['
+				StaticText 'OP'
+				StaticText ']'
+				StaticText ''
+				StaticText '['
+				StaticText 't1_j46zmzc'
+				StaticText ']'
+				StaticText 'wrote'
+				[521] time 'January 13, 2023 at 11:35:05 AM EST'
+					StaticText '3 years ago'
+			[522] list ''
+				[523] listitem ''
+					[524] LabelText ''
+						StaticText 'Hide −'
+			[529] image ''
+			[530] paragraph ''
+				StaticText 'Reply to comment by'
+				[531] link 'veryverymango', expanded=False
+					[532] strong ''
+						StaticText 'veryverymango'
+				StaticText 'in'
+				[533] link "I made a makeup table for my girlfriend's birthday out of an old bar cabinet"
+					[534] strong ''
+						StaticText "I made a makeup table for my girlfriend's birthday out of an old bar cabinet"
+				StaticText 'by'
+				[535] link 'Sorkill', expanded=False
+					[536] strong ''
+						StaticText 'Sorkill'
+			[538] paragraph ''
+				StaticText 'I almost cried a bit when she got it and when i saw her genuine reaction. At that moment i got it that all the time and effort i put in it was really worth it!'
+			[539] navigation ''
+				[540] list ''
+					[541] listitem ''
+						[542] link 'Reply'
+							[543] strong ''
+								StaticText 'Reply'
+					[544] listitem ''
+						[545] link 'Permalink'
+					[546] listitem ''
+						[547] link 'Parent'
+			[549] Section ''
+				[551] button 'Upvote'
+				StaticText '281'
+				[561] button 'Downvote'
+		[566] article ''
+			[571] heading "I made a makeup table for my girlfriend's birthday out of an old bar cabinet"
+				[572] link "I made a makeup table for my girlfriend's birthday out of an old bar cabinet"
+			StaticText ''
+			[573] link 'imgur.com'
+			[574] paragraph ''
+				StaticText 'Submitted by'
+				[576] link 'Sorkill', expanded=False
+					[577] strong ''
+						StaticText 'Sorkill'
+				StaticText ''
+				StaticText '['
+				StaticText 't3_10aqhun'
+				StaticText ']'
+				StaticText ''
+				[579] time 'January 13, 2023 at 4:40:42 AM EST'
+					StaticText '3 years ago'
+				StaticText 'in'
+				[580] link 'DIY'
+					[581] strong ''
+						StaticText 'DIY'
+			[582] navigation ''
+				[583] list ''
+					[584] listitem ''
+						[585] link '173 comments'
+							[586] strong ''
+								StaticText '173 comments'
+			[589] Section ''
+				[591] button 'Upvote'
+				StaticText '5649'
+				[601] button 'Downvote'
+	[606] complementary ''
+		[607] Section ''
+			[609] heading 'Sorkill'
+				[610] link 'Sorkill'
+			[611] paragraph ''
+				StaticText 'Registered'
+				[613] time 'October 30, 2013 at 10:45:04 AM EDT'
+					StaticText '12 years ago'
+			[615] paragraph ''
+				StaticText 't2_dpjb8'
+		[616] Section ''
+			[617] heading 'Toolbox'
+			[618] list ''
+				[619] listitem ''
+					[620] link 'Block user'
+				[621] listitem ''
+					[622] link 'Send message'
+	[623] contentinfo ''
+		[624] paragraph ''
+			StaticText 'Running'
+			[626] link 'Postmill'
+
+
+# History of interaction with the task:
+
+## step 0
+
+### Action:
+click('42')
+
+## step 1
+
+### Action:
+scroll(0, 800)
+
+## step 2
+
+### Action:
+scroll(0, 1200)
+
+## step 3
+
+### Action:
+fill('50', 'DIY')
+press('50', 'Enter')
+
+## step 4
+
+### Action:
+click('133')
+
+## step 5
+
+### Action:
+click('156')
+
+### Error from previous action:
+TimeoutError: Locator.click: Timeout 500ms exceeded.
+Call log:
+waiting for get_by_test_id("156")
+  -   locator resolved to <a bid="156" href="/user/Sorkill" aria-expanded="fa…>…</a>
+  - attempting click action
+  -   waiting for element to be visible, enabled and stable
+  -   element is visible, enabled and stable
+  -   scrolling into view if needed
+  -   done scrolling
+  -   performing click action
+
+
+## step 6
+
+### Action:
+click('115')
+
+## step 7
+
+### Action:
+scroll(0, 1200)
+
+## step 8
+
+### Action:
+click('571')
+
+# Action space:
+
+13 different types of actions are available.
+
+noop(wait_ms: float = 1000)
+    Description: Do nothing, and optionally wait for the given time (in milliseconds).
+    Examples:
+        noop()
+
+        noop(500)
+
+send_msg_to_user(text: str)
+    Description: Sends a message to the user.
+    Examples:
+        send_msg_to_user('Based on the results of my search, the city was built in 1751.')
+
+scroll(delta_x: float, delta_y: float)
+    Description: Scroll horizontally and vertically. Amounts in pixels, positive for right or down scrolling, negative for left or up scrolling. Dispatches a wheel event.
+    Examples:
+        scroll(0, 200)
+
+        scroll(-50.2, -100.5)
+
+fill(bid: str, value: str, enable_autocomplete_menu: bool = False)
+    Description: Fill out a form field. It focuses the element and triggers an input event with the entered text. It works for <input>, <textarea> and [contenteditable] elements.
+    Examples:
+        fill('45', 'multi-line\nexample')
+
+        fill('a12', 'example with "quotes"')
+
+        fill('b534', 'Montre', True)
+
+select_option(bid: str, options: str | list[str])
+    Description: Select one or multiple options in a <select> element. You can specify option value or label to select. Multiple options can be selected.
+    Examples:
+        select_option('a48', 'blue')
+
+        select_option('c48', ['red', 'green', 'blue'])
+
+click(bid: str, button: Literal['left', 'middle', 'right'] = 'left', modifiers: list[typing.Literal['Alt', 'Control', 'ControlOrMeta', 'Meta', 'Shift']] = [])
+    Description: Click an element.
+    Examples:
+        click('a51')
+
+        click('b22', button='right')
+
+        click('48', button='middle', modifiers=['Shift'])
+
+dblclick(bid: str, button: Literal['left', 'middle', 'right'] = 'left', modifiers: list[typing.Literal['Alt', 'Control', 'ControlOrMeta', 'Meta', 'Shift']] = [])
+    Description: Double click an element.
+    Examples:
+        dblclick('12')
+
+        dblclick('ca42', button='right')
+
+        dblclick('178', button='middle', modifiers=['Shift'])
+
+hover(bid: str)
+    Description: Hover over an element.
+    Examples:
+        hover('b8')
+
+press(bid: str, key_comb: str)
+    Description: Focus the matching element and press a combination of keys. It accepts the logical key names that are emitted in the keyboardEvent.key property of the keyboard events: Backquote, Minus, Equal, Backslash, Backspace, Tab, Delete, Escape, ArrowDown, End, Enter, Home, Insert, PageDown, PageUp, ArrowRight, ArrowUp, F1 - F12, Digit0 - Digit9, KeyA - KeyZ, etc. You can alternatively specify a single character you'd like to produce such as "a" or "#". Following modification shortcuts are also supported: Shift, Control, Alt, Meta, ShiftLeft, ControlOrMeta. ControlOrMeta resolves to Control on Windows and Linux and to Meta on macOS.
+    Examples:
+        press('88', 'Backspace')
+
+        press('a26', 'ControlOrMeta+a')
+
+        press('a61', 'Meta+Shift+t')
+
+focus(bid: str)
+    Description: Focus the matching element.
+    Examples:
+        focus('b455')
+
+clear(bid: str)
+    Description: Clear the input field.
+    Examples:
+        clear('996')
+
+drag_and_drop(from_bid: str, to_bid: str)
+    Description: Perform a drag & drop. Hover the element that will be dragged. Press left mouse button. Move mouse to the element that will receive the drop. Release left mouse button.
+    Examples:
+        drag_and_drop('56', '498')
+
+upload_file(bid: str, file: str | list[str])
+    Description: Click an element and wait for a "filechooser" event, then select one or multiple input files for upload. Relative file paths are resolved relative to the current working directory. An empty list clears the selected files.
+    Examples:
+        upload_file('572', 'my_receipt.pdf')
+
+        upload_file('63', ['/home/bob/Documents/image.jpg', '/home/bob/Documents/file.zip'])
+
+Multiple actions can be provided at once, but will be executed sequentially without any feedback from the page.
+More than 2-3 actions usually leads to failure or unexpected behavior. Example:
+fill('b534', 'Montre', True)
+click('a51')
+click('48', button='middle', modifiers=['Shift'])
+
+
+# Abstract Example
+
+Here is an abstract version of the answer with description of the content of
+each tag. Make sure you follow this structure, but replace the content with your
+answer:
+
+<think>
+Think step by step. If you need to make calculations such as coordinates, write them here. Describe the effect
+that your previous action had on the current content of the page.
+</think>
+
+<action>
+One or several actions, separated by new lines.
+</action>
+
+# Concrete Example
+
+Here is a concrete example of how to format your answer.
+Make sure to follow the template with proper tags:
+
+<think>
+My memory says that I filled the first name and last name, but I can't see any
+content in the form. I need to explore different ways to fill the form. Perhaps
+the form is not visible yet or some fields are disabled. I need to replan.
+</think>
+
+<action>
+fill('b534', 'Montre', True)
+click('a51')
+click('48', button='middle', modifiers=['Shift'])
+</action>
+
+[IMAGE_1: data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD...]

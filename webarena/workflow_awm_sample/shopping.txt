@@ -1,0 +1,18 @@
+Workflow 1: Open Orders page
+- click('227')  // click "My Account"
+- click('1843') // click "My Orders" in the account sidebar
+
+Workflow 2: Locate a specific order or find earliest order date
+- (assumes already on Orders page) click('1788')   // go to last page of orders (if needed)
+- (if pagination shows page numbers) click('1784')  // navigate to the final page (optional alternate)
+- inspect orders table for row matching {criteria} (e.g., status = "Canceled", earliest date)
+- send_msg_to_user('{result_text}') // report the found order number / date / details
+
+Workflow 3: Browse a specific product subcategory
+- hover('735')  // hover main category (e.g., "Home & Kitchen")
+- hover('786')  // hover subcategory group (e.g., "Storage & Organization")
+- click('797')  // click the target subcategory (e.g., "Racks, Shelves & Drawers")
+
+click('id') # input string id value for all actions
+
+select_option('id', 'value') # for dropdown menu

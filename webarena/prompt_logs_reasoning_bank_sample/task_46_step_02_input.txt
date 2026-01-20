@@ -1,0 +1,789 @@
+================================================================================
+STEP 2 INPUT
+================================================================================
+
+================================================================================
+SYSTEM PROMPT
+================================================================================
+You are an agent trying to solve a web task based on the content of the page and
+a user instructions. You can interact with the page and explore. Each time you
+submit an action it will be sent to the browser and you will receive a new page.
+
+================================================================================
+USER PROMPT
+================================================================================
+# Instructions
+
+You are a UI Assistant, your goal is to help the user perform tasks using a web browser. You can
+communicate with the user via a chat, in which the user gives you instructions and in which you
+can send back messages. You have access to a web browser that both you and the user can see,
+and with which only you can interact via specific commands.
+
+Review the instructions from the user, the current state of the page and all other information
+to find the best possible next action to accomplish your goal. Your answer will be interpreted
+and executed by a program, make sure to follow the formatting instructions.
+
+**Current Progress**: Step 2/10 (8 steps remaining)
+
+**Before choosing your next action:**
+- Check your action history below - are you repeating the same actions?
+- If yes, try a different approach (search, different menu, filters, etc.)
+- Make sure each action brings you closer to completing the goal
+
+## Chat messages:
+
+ - [assistant] Hi! I am your UI assistant, I can perform web tasks for you. What can I help you with?
+ - [user] Check out the most recent open issues# Reasoning Memories
+
+Below are some memory items that I accumulated from past interaction from the environment that may be helpful to solve the task. You can use it when you feel it's relevant. In each step, please first explicitly discuss if you want to use each memory item or not, and then take action.
+
+Memory 1:
+- Title: Open the issues list sorted by recency and show total count
+- Description: When asked to check recent open issues, first navigate to the "open issues" list view sorted by most recent and note the total number of open issues.
+- Content: Open the list view filtered to open issues and ensure it's sorted by newest first so the most relevant items appear at the top. Report the total count (e.g., "Open issues (21)") so the user knows the list scope.
+Memory 2:
+- Title: Concise summary of recent open issues
+- Description: When showing recent open issues, present a compact, readable list of the top items sorted by the requested criterion.
+- Content: Display each item with its title, issue number, and a brief type/tag or one-line context, and state the sort order used (e.g., created date). Limit the initial view to the top items visible so the user can quickly scan and choose an action.
+Memory 3:
+- Title: Summarize the top N issues with numbers and short titles
+- Description: Present a concise, easy-to-scan list of the most recent open issues including their identifiers and one-line titles.
+- Content: Display the top 5–10 items as a numbered list showing each issue number and a short descriptive title on a single line. Keep entries brief so the user can quickly scan and pick an item to view in detail.
+
+
+# Observation of current step:
+
+## AXTree:
+RootWebArea 'Issues · Primer / design · GitLab', focused
+	[64] banner ''
+		[65] link 'Skip to content'
+		StaticText 'GitLab'
+		[71] link 'Dashboard'
+			[72] image ''
+		[75] list ''
+			[76] listitem ''
+				[77] button '', hasPopup='menu', expanded=False
+		[137] list ''
+			[138] listitem ''
+				[140] Section ''
+					[142] image ''
+					[143] textbox 'Search GitLab'
+		[155] list ''
+			[156] listitem ''
+				[157] link 'Create new...'
+					[158] image ''
+					[159] image ''
+			[177] listitem ''
+				[178] link 'Issues'
+					[179] image ''
+			[181] listitem ''
+				[182] link 'Merge requests'
+					[183] image ''
+					[185] image ''
+			[195] listitem ''
+				[196] link 'To-Do List'
+					[197] image ''
+					StaticText '5'
+			[199] listitem ''
+				[200] link 'Help'
+					StaticText 'Help'
+					[202] image ''
+					[204] image ''
+			[225] listitem ''
+				[226] link 'Byte Blaze'
+					[227] image 'Byte Blaze'
+					[228] image ''
+	[264] complementary 'Project navigation'
+		[266] list ''
+			[267] listitem 'design'
+				[268] link 'design'
+					StaticText 'D'
+					StaticText 'design'
+			[272] listitem ''
+				[273] link 'Project information'
+					[275] image ''
+					StaticText 'Project information'
+			[291] listitem ''
+				[292] link 'Repository'
+					[294] image ''
+					StaticText 'Repository'
+			[322] listitem ''
+				[323] link 'Issues'
+					[325] image ''
+					StaticText 'Issues'
+					StaticText '21'
+				[328] list ''
+					[334] listitem ''
+						[335] link 'Issues'
+							StaticText 'List'
+					[337] listitem ''
+						[338] link 'Boards'
+							StaticText 'Boards'
+					[340] listitem ''
+						[341] link 'Service Desk'
+							StaticText 'Service Desk'
+					[343] listitem ''
+						[344] link 'Milestones'
+							StaticText 'Milestones'
+			[346] listitem ''
+				[347] link 'Merge requests'
+					[349] image ''
+					StaticText 'Merge requests'
+					StaticText '16'
+			[357] listitem ''
+				[358] link 'CI/CD'
+					[360] image ''
+					StaticText 'CI/CD'
+			[379] listitem ''
+				[380] link 'Security & Compliance'
+					[382] image ''
+					StaticText 'Security & Compliance'
+			[392] listitem ''
+				[393] link 'Deployments'
+					[395] image ''
+					StaticText 'Deployments'
+			[411] listitem ''
+				[412] link 'Packages and registries'
+					[414] image ''
+					StaticText 'Packages and registries'
+			[427] listitem ''
+				[428] link 'Infrastructure'
+					[430] image ''
+					StaticText 'Infrastructure'
+			[443] listitem ''
+				[444] link 'Monitor'
+					[446] image ''
+					StaticText 'Monitor'
+			[465] listitem ''
+				[466] link 'Analytics'
+					[468] image ''
+					StaticText 'Analytics'
+			[484] listitem ''
+				[485] link 'Wiki'
+					[487] image ''
+					StaticText 'Wiki'
+			[493] listitem ''
+				[494] link 'Snippets'
+					[496] image ''
+					StaticText 'Snippets'
+		[514] button 'Collapse sidebar'
+			[515] image ''
+			StaticText 'Collapse sidebar'
+	[523] navigation 'Breadcrumbs'
+		[529] list ''
+			[530] listitem ''
+				[531] link 'Primer'
+				[532] image ''
+			[533] listitem ''
+				[534] link 'design'
+					StaticText 'design'
+				[536] image ''
+			[537] listitem ''
+				[538] link 'Issues'
+	[541] main ''
+		[549] tablist '', multiselectable=False, orientation='horizontal'
+			[551] tab 'Open 21', selected=True, controls='__BVID__9'
+				StaticText 'Open'
+				StaticText '21'
+			[554] tab 'Closed 35', selected=False, controls='__BVID__12'
+				StaticText 'Closed'
+				StaticText '35'
+			[557] tab 'All 56', selected=False, controls='__BVID__15'
+				StaticText 'All'
+				StaticText '56'
+		[560] tabpanel 'Open 21'
+		[564] link 'Subscribe to RSS feed'
+		[566] link 'Subscribe to calendar'
+		[569] group ''
+			[570] button 'Export as CSV'
+			[573] button 'Import issues', hasPopup='menu', expanded=False
+				StaticText 'Import issues'
+		[584] button 'Edit issues'
+			StaticText 'Edit issues'
+		[586] link 'New issue'
+			StaticText 'New issue'
+		[589] group ''
+			[592] button 'Toggle history', hasPopup='menu', expanded=False
+				StaticText 'Toggle history'
+			[610] textbox 'Search or filter results...'
+			[612] button 'Search'
+		[614] group ''
+			[616] button 'Created date', hasPopup='menu', expanded=False
+				StaticText 'Created date'
+			[672] button 'Sort direction: Descending'
+		[674] complementary '', live='polite', relevant='additions text'
+		[676] list ''
+			[850] listitem ''
+				[853] link 'Incorrect path (URL) to `css-utilities` under `../design/foundations`'
+				StaticText 'Issue'
+				StaticText '#385'
+				StaticText ''
+				StaticText 'created'
+				StaticText '2 years ago'
+				StaticText 'by'
+				[863] link 'eaccmk'
+					StaticText 'eaccmk'
+				StaticText ''
+				[867] list ''
+					[868] listitem ''
+					[869] list ''
+					[870] listitem ''
+						[871] link '1'
+				StaticText 'updated 2 years ago'
+			[874] listitem ''
+				[877] link "Spinners: Create guidelines for using the correct size in it's context"
+				StaticText 'Issue'
+				StaticText '#372'
+				StaticText ''
+				StaticText 'created'
+				StaticText '2 years ago'
+				StaticText 'by'
+				[887] link 'Maxime De Greve'
+					StaticText 'Maxime De Greve'
+				StaticText ''
+				[890] group 'Labels'
+					[892] link 'area: design'
+						StaticText 'area: design'
+					[895] link 'area: documentation'
+						StaticText 'area: documentation'
+				[898] list ''
+					[899] listitem ''
+					[900] list ''
+					[901] listitem ''
+						[902] link '0'
+				StaticText 'updated 2 years ago'
+			[905] listitem ''
+				[908] link 'Truncation page has been removed, but not from navigation menu'
+				StaticText 'Issue'
+				StaticText '#334'
+				StaticText ''
+				StaticText 'created'
+				StaticText '3 years ago'
+				StaticText 'by'
+				[918] link 'Pavel Keyzik'
+					StaticText 'Pavel Keyzik'
+				StaticText ''
+				[922] list ''
+					[923] listitem ''
+					[924] list ''
+					[925] listitem ''
+						[926] link '0'
+				StaticText 'updated 3 years ago'
+			[929] listitem ''
+				[932] link 'Clarify usage of flash alert'
+				StaticText 'Issue'
+				StaticText '#316'
+				StaticText ''
+				StaticText 'created'
+				StaticText '3 years ago'
+				StaticText 'by'
+				[942] link 'Lukas Oppermann'
+					StaticText 'Lukas Oppermann'
+				StaticText ''
+				[945] group 'Labels'
+					[947] link 'area: documentation'
+						StaticText 'area: documentation'
+					[950] link 'effort: low'
+						StaticText 'effort: low'
+					[953] link 'type: bug 🐞'
+						StaticText 'type: bug 🐞'
+				[956] list ''
+					[957] listitem ''
+					[958] list ''
+					[959] listitem ''
+						[960] link '0'
+				StaticText 'updated 3 years ago'
+			[963] listitem ''
+				[966] link 'Link to Primer Mobile Figma library is broken'
+				StaticText 'Issue'
+				StaticText '#310'
+				StaticText ''
+				StaticText 'created'
+				StaticText '3 years ago'
+				StaticText 'by'
+				[976] link 'samhenrigold'
+					StaticText 'samhenrigold'
+				StaticText ''
+				[980] list ''
+					[981] listitem ''
+					[982] list ''
+					[983] listitem ''
+						[984] link '0'
+				StaticText 'updated 3 years ago'
+			[987] listitem ''
+				[990] link 'Add guidelines for loading patterns 🔄'
+				StaticText 'Issue'
+				StaticText '#300'
+				StaticText ''
+				StaticText 'created'
+				StaticText '3 years ago'
+				StaticText 'by'
+				[1000] link 'Maxime De Greve'
+					StaticText 'Maxime De Greve'
+				StaticText ''
+				[1003] group 'Labels'
+					[1005] link 'area: accessibility'
+						StaticText 'area: accessibility'
+					[1008] link 'area: documentation'
+						StaticText 'area: documentation'
+				[1011] list ''
+					[1012] listitem ''
+					[1013] list ''
+					[1014] listitem ''
+						[1015] link '1'
+				StaticText 'updated 2 years ago'
+			[1018] listitem ''
+				[1021] link 'Alert dialog guidelines'
+				StaticText 'Issue'
+				StaticText '#295'
+				StaticText ''
+				StaticText 'created'
+				StaticText '3 years ago'
+				StaticText 'by'
+				[1031] link 'Josep Martins'
+					StaticText 'Josep Martins'
+				StaticText ''
+				[1034] group 'Labels'
+					[1036] link 'area: documentation'
+						StaticText 'area: documentation'
+				[1039] list ''
+					[1040] listitem ''
+					[1041] list ''
+					[1042] listitem ''
+						[1043] link '2'
+				StaticText 'updated 3 years ago'
+			[1046] listitem ''
+				[1049] link 'Improve cancel button guidelines'
+				StaticText 'Issue'
+				StaticText '#290'
+				StaticText ''
+				StaticText 'created'
+				StaticText '3 years ago'
+				StaticText 'by'
+				[1059] link 'Maxime De Greve'
+					StaticText 'Maxime De Greve'
+				StaticText ''
+				[1062] group 'Labels'
+					[1064] link 'area: accessibility'
+						StaticText 'area: accessibility'
+					[1067] link 'area: documentation'
+						StaticText 'area: documentation'
+				[1070] list ''
+					[1071] listitem ''
+					[1072] list ''
+					[1073] listitem ''
+						[1074] link '0'
+				StaticText 'updated 3 years ago'
+			[1077] listitem ''
+				[1080] link 'Add guidelines for inputs requiring numbers 🔢'
+				StaticText 'Issue'
+				StaticText '#288'
+				StaticText ''
+				StaticText 'created'
+				StaticText '3 years ago'
+				StaticText 'by'
+				[1090] link 'Maxime De Greve'
+					StaticText 'Maxime De Greve'
+				StaticText ''
+				[1093] group 'Labels'
+					[1095] link 'area: accessibility'
+						StaticText 'area: accessibility'
+					[1098] link 'area: documentation'
+						StaticText 'area: documentation'
+				[1101] list ''
+					[1102] listitem ''
+					[1103] list ''
+					[1104] listitem ''
+						[1105] link '0'
+				StaticText 'updated 3 years ago'
+			[1108] listitem ''
+				[1111] link 'ActionList: Needs better guidelines on not using single select items'
+				StaticText 'Issue'
+				StaticText '#260'
+				StaticText ''
+				StaticText 'created'
+				StaticText '3 years ago'
+				StaticText 'by'
+				[1121] link 'Maxime De Greve'
+					StaticText 'Maxime De Greve'
+				StaticText ''
+				[1124] group 'Labels'
+					[1126] link 'area: accessibility'
+						StaticText 'area: accessibility'
+					[1129] link 'area: design'
+						StaticText 'area: design'
+					[1132] link 'area: documentation'
+						StaticText 'area: documentation'
+				[1135] list ''
+					[1136] listitem ''
+					[1137] listitem ''
+						[1139] link 'Assigned to Maxime De Greve'
+							[1141] image 'Assigned to Maxime De Greve'
+					[1142] list ''
+					[1143] listitem ''
+						[1144] link '1'
+				StaticText 'updated 2 years ago'
+			[1147] listitem ''
+				[1150] link 'ActionList: Add guidelines for disabled items and how to hint why they are disabled'
+				StaticText 'Issue'
+				StaticText '#259'
+				StaticText ''
+				StaticText 'created'
+				StaticText '3 years ago'
+				StaticText 'by'
+				[1160] link 'Maxime De Greve'
+					StaticText 'Maxime De Greve'
+				StaticText ''
+				[1163] group 'Labels'
+					[1165] link 'area: design'
+						StaticText 'area: design'
+					[1168] link 'area: documentation'
+						StaticText 'area: documentation'
+				[1171] list ''
+					[1172] listitem ''
+					[1173] list ''
+					[1174] listitem ''
+						[1175] link '0'
+				StaticText 'updated 3 years ago'
+			[1178] listitem ''
+				[1181] link 'Add lint rule to ensure `<img>` is self closing'
+				StaticText 'Issue'
+				StaticText '#240'
+				StaticText ''
+				StaticText 'created'
+				StaticText '3 years ago'
+				StaticText 'by'
+				[1191] link 'Kate Higa'
+					StaticText 'Kate Higa'
+				StaticText ''
+				[1195] list ''
+					[1196] listitem ''
+					[1197] list ''
+					[1198] listitem ''
+						[1199] link '3'
+				StaticText 'updated 3 years ago'
+			[1202] listitem ''
+				[1205] link 'Add clearing guidelines for SelectPanel/SelectMenu with single/multi selections'
+				StaticText 'Issue'
+				StaticText '#229'
+				StaticText ''
+				StaticText 'created'
+				StaticText '3 years ago'
+				StaticText 'by'
+				[1215] link 'Maxime De Greve'
+					StaticText 'Maxime De Greve'
+				StaticText ''
+				[1218] group 'Labels'
+					[1220] link 'area: accessibility'
+						StaticText 'area: accessibility'
+					[1223] link 'area: design'
+						StaticText 'area: design'
+					[1226] link 'area: documentation'
+						StaticText 'area: documentation'
+				[1229] list ''
+					[1230] listitem ''
+					[1231] list ''
+					[1232] listitem ''
+						[1233] link '1'
+				StaticText 'updated 3 years ago'
+			[1236] listitem ''
+				[1239] link 'Add dialogs to Messaging section'
+				StaticText 'Issue'
+				StaticText '#105'
+				StaticText ''
+				StaticText 'created'
+				StaticText '5 years ago'
+				StaticText 'by'
+				[1249] link 'emplums'
+					StaticText 'emplums'
+				StaticText ''
+				[1252] group 'Labels'
+					[1254] link 'area: documentation'
+						StaticText 'area: documentation'
+				[1257] list ''
+					[1258] listitem ''
+					[1259] listitem ''
+						[1261] link 'Assigned to Inayaili León'
+							[1263] image 'Assigned to Inayaili León'
+					[1264] list ''
+					[1265] listitem ''
+						[1266] link '0'
+				StaticText 'updated 2 years ago'
+			[1269] listitem ''
+				[1272] link 'Add documentation on using Flash alerts in dialog components'
+				StaticText 'Issue'
+				StaticText '#104'
+				StaticText ''
+				StaticText 'created'
+				StaticText '5 years ago'
+				StaticText 'by'
+				[1282] link 'emplums'
+					StaticText 'emplums'
+				StaticText ''
+				[1285] group 'Labels'
+					[1287] link 'area: documentation'
+						StaticText 'area: documentation'
+				[1290] list ''
+					[1291] listitem ''
+					[1292] listitem ''
+						[1294] link 'Assigned to Inayaili León'
+							[1296] image 'Assigned to Inayaili León'
+					[1297] list ''
+					[1298] listitem ''
+						[1299] link '2'
+				StaticText 'updated 2 years ago'
+			[1302] listitem ''
+				[1305] link 'Guidelines should document our take on link targets'
+				StaticText 'Issue'
+				StaticText '#85'
+				StaticText ''
+				StaticText 'created'
+				StaticText '6 years ago'
+				StaticText 'by'
+				[1315] link 'Administrator'
+					StaticText 'Administrator'
+				StaticText ''
+				[1318] group 'Labels'
+					[1320] link 'area: documentation'
+						StaticText 'area: documentation'
+				[1323] list ''
+					[1324] listitem ''
+					[1325] list ''
+					[1326] listitem ''
+						[1327] link '0'
+				StaticText 'updated 5 years ago'
+			[1330] listitem ''
+				[1333] link 'primer/design Landing Page'
+				StaticText 'Issue'
+				StaticText '#54'
+				StaticText ''
+				StaticText 'created'
+				StaticText '6 years ago'
+				StaticText 'by'
+				[1343] link 'Administrator'
+					StaticText 'Administrator'
+				StaticText ''
+				[1346] group 'Labels'
+					[1348] link 'area: design'
+						StaticText 'area: design'
+				[1351] list ''
+					[1352] listitem ''
+					[1353] list ''
+					[1354] listitem ''
+						[1355] link '0'
+				StaticText 'updated 5 years ago'
+			[1358] listitem ''
+				[1361] link 'Add info about font usage in Figma'
+				StaticText 'Issue'
+				StaticText '#44'
+				StaticText ''
+				StaticText 'created'
+				StaticText '6 years ago'
+				StaticText 'by'
+				[1371] link 'Administrator'
+					StaticText 'Administrator'
+				StaticText ''
+				[1374] group 'Labels'
+					[1376] link 'area: documentation'
+						StaticText 'area: documentation'
+				[1379] list ''
+					[1380] listitem ''
+					[1381] list ''
+					[1382] listitem ''
+						[1383] link '0'
+				StaticText 'updated 5 years ago'
+			[1386] listitem ''
+				[1389] link "Path alias doesn't work"
+				StaticText 'Issue'
+				StaticText '#33'
+				StaticText ''
+				StaticText 'created'
+				StaticText '6 years ago'
+				StaticText 'by'
+				[1399] link 'Administrator'
+					StaticText 'Administrator'
+				StaticText ''
+				[1402] group 'Labels'
+					[1404] link 'type: bug 🐞'
+						StaticText 'type: bug 🐞'
+				[1407] list ''
+					[1408] listitem ''
+					[1409] list ''
+					[1410] listitem ''
+						[1411] link '0'
+				StaticText 'updated 2 years ago'
+			[1414] listitem ''
+				[1417] link 'Links w/ Octicons'
+				StaticText 'Issue'
+				StaticText '#30'
+				StaticText ''
+				StaticText 'created'
+				StaticText '6 years ago'
+				StaticText 'by'
+				[1427] link 'Emily Brick'
+					StaticText 'Emily Brick'
+				StaticText ''
+				[1430] group 'Labels'
+					[1432] link 'area: documentation'
+						StaticText 'area: documentation'
+				[1435] list ''
+					[1436] listitem ''
+					[1437] list ''
+					[1438] listitem ''
+						[1439] link '1'
+				StaticText 'updated 5 years ago'
+		[1442] group ''
+			[1443] button 'Prev', disabled=True
+				StaticText 'Prev'
+			[1447] button 'Next'
+				StaticText 'Next'
+		[1452] button 'Show 20 items', hasPopup='menu', expanded=False
+			StaticText 'Show 20 items'
+		[698] complementary 'Bulk update', live='polite', relevant='additions text'
+
+
+# History of interaction with the task:
+
+## step 0
+
+### Action:
+click('326')
+
+## step 1
+
+### Action:
+noop(1000)
+
+# Action space:
+
+13 different types of actions are available.
+
+noop(wait_ms: float = 1000)
+    Description: Do nothing, and optionally wait for the given time (in milliseconds).
+    Examples:
+        noop()
+
+        noop(500)
+
+send_msg_to_user(text: str)
+    Description: Sends a message to the user.
+    Examples:
+        send_msg_to_user('Based on the results of my search, the city was built in 1751.')
+
+scroll(delta_x: float, delta_y: float)
+    Description: Scroll horizontally and vertically. Amounts in pixels, positive for right or down scrolling, negative for left or up scrolling. Dispatches a wheel event.
+    Examples:
+        scroll(0, 200)
+
+        scroll(-50.2, -100.5)
+
+fill(bid: str, value: str, enable_autocomplete_menu: bool = False)
+    Description: Fill out a form field. It focuses the element and triggers an input event with the entered text. It works for <input>, <textarea> and [contenteditable] elements.
+    Examples:
+        fill('45', 'multi-line\nexample')
+
+        fill('a12', 'example with "quotes"')
+
+        fill('b534', 'Montre', True)
+
+select_option(bid: str, options: str | list[str])
+    Description: Select one or multiple options in a <select> element. You can specify option value or label to select. Multiple options can be selected.
+    Examples:
+        select_option('a48', 'blue')
+
+        select_option('c48', ['red', 'green', 'blue'])
+
+click(bid: str, button: Literal['left', 'middle', 'right'] = 'left', modifiers: list[typing.Literal['Alt', 'Control', 'ControlOrMeta', 'Meta', 'Shift']] = [])
+    Description: Click an element.
+    Examples:
+        click('a51')
+
+        click('b22', button='right')
+
+        click('48', button='middle', modifiers=['Shift'])
+
+dblclick(bid: str, button: Literal['left', 'middle', 'right'] = 'left', modifiers: list[typing.Literal['Alt', 'Control', 'ControlOrMeta', 'Meta', 'Shift']] = [])
+    Description: Double click an element.
+    Examples:
+        dblclick('12')
+
+        dblclick('ca42', button='right')
+
+        dblclick('178', button='middle', modifiers=['Shift'])
+
+hover(bid: str)
+    Description: Hover over an element.
+    Examples:
+        hover('b8')
+
+press(bid: str, key_comb: str)
+    Description: Focus the matching element and press a combination of keys. It accepts the logical key names that are emitted in the keyboardEvent.key property of the keyboard events: Backquote, Minus, Equal, Backslash, Backspace, Tab, Delete, Escape, ArrowDown, End, Enter, Home, Insert, PageDown, PageUp, ArrowRight, ArrowUp, F1 - F12, Digit0 - Digit9, KeyA - KeyZ, etc. You can alternatively specify a single character you'd like to produce such as "a" or "#". Following modification shortcuts are also supported: Shift, Control, Alt, Meta, ShiftLeft, ControlOrMeta. ControlOrMeta resolves to Control on Windows and Linux and to Meta on macOS.
+    Examples:
+        press('88', 'Backspace')
+
+        press('a26', 'ControlOrMeta+a')
+
+        press('a61', 'Meta+Shift+t')
+
+focus(bid: str)
+    Description: Focus the matching element.
+    Examples:
+        focus('b455')
+
+clear(bid: str)
+    Description: Clear the input field.
+    Examples:
+        clear('996')
+
+drag_and_drop(from_bid: str, to_bid: str)
+    Description: Perform a drag & drop. Hover the element that will be dragged. Press left mouse button. Move mouse to the element that will receive the drop. Release left mouse button.
+    Examples:
+        drag_and_drop('56', '498')
+
+upload_file(bid: str, file: str | list[str])
+    Description: Click an element and wait for a "filechooser" event, then select one or multiple input files for upload. Relative file paths are resolved relative to the current working directory. An empty list clears the selected files.
+    Examples:
+        upload_file('572', 'my_receipt.pdf')
+
+        upload_file('63', ['/home/bob/Documents/image.jpg', '/home/bob/Documents/file.zip'])
+
+Multiple actions can be provided at once, but will be executed sequentially without any feedback from the page.
+More than 2-3 actions usually leads to failure or unexpected behavior. Example:
+fill('b534', 'Montre', True)
+click('a51')
+click('48', button='middle', modifiers=['Shift'])
+
+
+# Abstract Example
+
+Here is an abstract version of the answer with description of the content of
+each tag. Make sure you follow this structure, but replace the content with your
+answer:
+
+<think>
+Think step by step. If you need to make calculations such as coordinates, write them here. Describe the effect
+that your previous action had on the current content of the page.
+</think>
+
+<action>
+One or several actions, separated by new lines.
+</action>
+
+# Concrete Example
+
+Here is a concrete example of how to format your answer.
+Make sure to follow the template with proper tags:
+
+<think>
+My memory says that I filled the first name and last name, but I can't see any
+content in the form. I need to explore different ways to fill the form. Perhaps
+the form is not visible yet or some fields are disabled. I need to replan.
+</think>
+
+<action>
+fill('b534', 'Montre', True)
+click('a51')
+click('48', button='middle', modifiers=['Shift'])
+</action>
+
+[IMAGE_1: data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD...]

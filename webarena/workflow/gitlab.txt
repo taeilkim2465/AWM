@@ -1,0 +1,55 @@
+Workflow 1: Open My Orders
+<think>
+To access the user's order history, first open the account menu, then navigate to the "My Orders" section.
+</think>
+<action>
+click('227')
+</action>
+
+<think>
+Now that the account menu is open, go to the "My Orders" page in the left sidebar to view order history.
+</think>
+<action>
+click('1843')
+</action>
+
+Workflow 2: Obtain order information from Orders page
+<think>
+On the "My Orders" page, locate the order(s) matching {order_condition} (e.g., most recent, status = "Canceled", earliest) and extract the requested {order_attribute} (e.g., order number, date).
+</think>
+<action>
+# locate order matching {order_condition} and extract {order_attribute}
+</action>
+
+<think>
+Report the extracted information back to the user.
+</think>
+<action>
+send_msg_to_user('{order_attribute} of the order matching {order_condition} is {extracted_value}.')
+</action>
+
+Workflow 3: Browse a product subcategory via site menu
+<think>
+To reach a specific product subcategory, hover the top-level menu item {top_level_menu} to open its submenu.
+</think>
+<action>
+hover('735')
+</action>
+
+<think>
+Hover the intermediate submenu item {intermediate_menu} to reveal its subcategories.
+</think>
+<action>
+hover('786')
+</action>
+
+<think>
+Click the target subcategory link {subcategory} to open the product listing.
+</think>
+<action>
+click('797')
+</action>
+
+click('id') # input string id value for all actions
+
+select_option('id', 'value') # for dropdown menu

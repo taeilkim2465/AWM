@@ -1,0 +1,71 @@
+You didn’t include a new list of tasks, so I’ll describe a precise, repeatable method you can use to extract common workflows from any set of web-navigation tasks, plus formatting rules and an illustrated example (using your provided concrete example).
+
+Rules / constraints to follow
+- A workflow must be a commonly-reused subroutine (a repeated subsequence of actions) appearing in at least two tasks.
+- Each workflow must contain at least two steps.
+- Replace non-fixed elements with descriptive variable names (e.g., input_text, button_text, category_name).
+- Keep invariant element values (IDs, stable labels) unchanged when they appear across tasks (e.g., click('227')).
+- Do not produce overlapping or highly similar workflows—prefer the largest, most useful repeated subsequence. If two candidate workflows overlap, choose the one that is longer or more frequent.
+- Try to produce workflows that together cover as many tasks as possible.
+
+Procedure (step‑by‑step)
+1. Parse tasks into ordered action sequences.
+   - Normalize action types to a small set (click, hover, type, select, submit, send_msg_to_user, etc.).
+   - Keep action parameters exactly as given; mark variable content as candidate variables (text typed, button labels).
+2. Identify repeated subsequences:
+   - Search for subsequences of length >= 2 that appear in at least two task sequences.
+   - Prefer contiguous subsequences (exact repeated order) but consider near-identical sequences where only a parameter differs.
+3. Generalize repeated subsequences into workflow templates:
+   - Replace differing values with descriptive variable names (input_text, menu_item, category_name, search_query, order_status).
+   - Keep invariant IDs/strings intact.
+4. De-duplicate and remove overlaps:
+   - If two workflows are similar, keep the more general or more frequently used one.
+   - Avoid producing two workflows where one is a strict subset of the other unless both are clearly useful in different contexts.
+5. Name each workflow concisely (e.g., "Open account order history", "Search site with query", "Navigate to product category").
+6. Validate coverage:
+   - Ensure each task's actions can be expressed as a composition of the extracted workflows plus a small task-specific tail.
+7. Format output as a list of workflows, each showing the thought and the action steps with variables where appropriate.
+
+Formatting template for each workflow
+- Workflow name
+- Optional brief description
+- Steps: alternating think/instruction and action lines
+- Use variable names for non-fixed elements
+
+Illustrated example (derived from your concrete examples)
+Workflow 1: Open account → My Orders
+- Description: Navigate from current page to the "My Orders" page in the user's account.
+- Steps:
+  - think: To view order history open My Account.
+  - action: click('227')
+  - think: To view orders click My Orders in the account sidebar.
+  - action: click('1843')
+
+Workflow 2: Extract order info from Orders table
+- Description: Read information shown on the My Orders page (e.g., earliest purchase date, recent canceled order number).
+- Steps:
+  - think: To obtain order information (date/order number/status) read the Orders table and identify the target row/value.
+  - action: send_msg_to_user('RESULT_VARIABLE') 
+  - (Note: RESULT_VARIABLE should be constructed from the table content, e.g., earliest_date or order_number)
+
+Workflow 3: Navigate site category via hover menus
+- Description: Open a top-level menu, hover submenus, then click specific subcategory.
+- Steps:
+  - think: To browse category_name open the top-level menu.
+  - action: hover('735')        (top-level menu ID)
+  - think: Reveal subcategories under parent_category.
+  - action: hover('786')        (submenu ID)
+  - think: Click the desired subcategory link to open its product listing.
+  - action: click('797')        (subcategory link ID)
+
+Notes and tips
+- When replacing a text parameter with a variable, choose a descriptive name: e.g., type(input_field='search_box', text=search_query) → type('search_box', search_query).
+- If an invariant appears with both ID and label across many tasks, keep the ID (it’s stable) and optionally annotate the label in the think text.
+- If a repeated action includes a different but semantically same target (e.g., two different IDs for similar menu items), consider creating a more general workflow only if both are same logical step; otherwise keep them separate.
+- If many tasks contain a common "open My Account" but only a few continue to "My Orders", you can still produce both workflows (one shorter, one longer) but avoid making them redundant—prefer the longer if it’s frequently used.
+
+If you want, paste a specific list of tasks now and I will run this procedure and return a set of extracted workflows formatted like in the example.
+
+click('id') # input string id value for all actions
+
+select_option('id', 'value') # for dropdown menu

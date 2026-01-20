@@ -1,0 +1,23 @@
+================================================================================
+STEP 0 OUTPUT
+================================================================================
+
+### LLM RESPONSE ###
+<think>
+Memory items 1-3 are about searching paginated reviews; they are not relevant to this query about locations, so I will not use them.
+
+I will search the map for "Portland, Maine" to locate the largest city in Maine on the OpenStreetMap page and then look for the nearest national park (likely Acadia National Park). First I'll center the map on Portland by using the search box.
+</think>
+
+<action>
+fill('145', 'Portland, Maine')
+click('147')
+</action>
+
+### PARSED ACTION ###
+Action: fill('145', 'Portland, Maine')
+click('147')
+Memory: None
+Think: Memory items 1-3 are about searching paginated reviews; they are not relevant to this query about locations, so I will not use them.
+
+I will search the map for "Portland, Maine" to locate the largest city in Maine on the OpenStreetMap page and then look for the nearest national park (likely Acadia National Park). First I'll center the map on Portland by using the search box.

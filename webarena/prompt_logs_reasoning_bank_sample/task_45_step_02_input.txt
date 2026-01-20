@@ -1,0 +1,860 @@
+================================================================================
+STEP 2 INPUT
+================================================================================
+
+================================================================================
+SYSTEM PROMPT
+================================================================================
+You are an agent trying to solve a web task based on the content of the page and
+a user instructions. You can interact with the page and explore. Each time you
+submit an action it will be sent to the browser and you will receive a new page.
+
+================================================================================
+USER PROMPT
+================================================================================
+# Instructions
+
+You are a UI Assistant, your goal is to help the user perform tasks using a web browser. You can
+communicate with the user via a chat, in which the user gives you instructions and in which you
+can send back messages. You have access to a web browser that both you and the user can see,
+and with which only you can interact via specific commands.
+
+Review the instructions from the user, the current state of the page and all other information
+to find the best possible next action to accomplish your goal. Your answer will be interpreted
+and executed by a program, make sure to follow the formatting instructions.
+
+**Current Progress**: Step 2/10 (8 steps remaining)
+
+**Before choosing your next action:**
+- Check your action history below - are you repeating the same actions?
+- If yes, try a different approach (search, different menu, filters, etc.)
+- Make sure each action brings you closer to completing the goal
+
+## Chat messages:
+
+ - [assistant] Hi! I am your UI assistant, I can perform web tasks for you. What can I help you with?
+ - [user] Check out the most recent open issues# Reasoning Memories
+
+Below are some memory items that I accumulated from past interaction from the environment that may be helpful to solve the task. You can use it when you feel it's relevant. In each step, please first explicitly discuss if you want to use each memory item or not, and then take action.
+
+Memory 1:
+- Title: Open-issues view: filter by Open and sort by newest
+- Description: When asked for recent open issues, open the issues list filtered to "Open" and sorted by creation date descending and report the top items.
+- Content: Navigate directly to the issues list with the "Open" filter active and the sort set to newest (created date descending). Report the total count and summarize the most recent items (issue number, short title, key tags/labels and relative age) so the user gets a quick snapshot of current open work.
+Memory 2:
+- Title: Open the issues list sorted by recency and show total count
+- Description: When asked to check recent open issues, first navigate to the "open issues" list view sorted by most recent and note the total number of open issues.
+- Content: Open the list view filtered to open issues and ensure it's sorted by newest first so the most relevant items appear at the top. Report the total count (e.g., "Open issues (21)") so the user knows the list scope.
+Memory 3:
+- Title: Concise summary of recent open issues
+- Description: When showing recent open issues, present a compact, readable list of the top items sorted by the requested criterion.
+- Content: Display each item with its title, issue number, and a brief type/tag or one-line context, and state the sort order used (e.g., created date). Limit the initial view to the top items visible so the user can quickly scan and choose an action.
+
+
+# Observation of current step:
+
+## AXTree:
+RootWebArea 'Issues · The A11Y Project / a11yproject.com · GitLab', focused
+	[64] banner ''
+		[65] link 'Skip to content'
+		StaticText 'GitLab'
+		[71] link 'Dashboard'
+			[72] image ''
+		[75] list ''
+			[76] listitem ''
+				[77] button '', hasPopup='menu', expanded=False
+		[137] list ''
+			[138] listitem ''
+				[140] Section ''
+					[142] image ''
+					[143] textbox 'Search GitLab'
+		[155] list ''
+			[156] listitem ''
+				[157] link 'Create new...'
+					[158] image ''
+					[159] image ''
+			[179] listitem ''
+				[180] link 'Issues'
+					[181] image ''
+			[183] listitem ''
+				[184] link 'Merge requests'
+					[185] image ''
+					[187] image ''
+			[197] listitem ''
+				[198] link 'To-Do List'
+					[199] image ''
+					StaticText '5'
+			[201] listitem ''
+				[202] link 'Help'
+					StaticText 'Help'
+					[204] image ''
+					[206] image ''
+			[227] listitem ''
+				[228] link 'Byte Blaze'
+					[229] image 'Byte Blaze'
+					[230] image ''
+	[266] complementary 'Project navigation'
+		[268] list ''
+			[269] listitem 'a11yproject.com'
+				[270] link 'a11yproject.com'
+					StaticText 'A'
+					StaticText 'a11yproject.com'
+			[274] listitem ''
+				[275] link 'Project information'
+					[277] image ''
+					StaticText 'Project information'
+			[293] listitem ''
+				[294] link 'Repository'
+					[296] image ''
+					StaticText 'Repository'
+			[324] listitem ''
+				[325] link 'Issues'
+					[327] image ''
+					StaticText 'Issues'
+					StaticText '40'
+				[330] list ''
+					[336] listitem ''
+						[337] link 'Issues'
+							StaticText 'List'
+					[339] listitem ''
+						[340] link 'Boards'
+							StaticText 'Boards'
+					[342] listitem ''
+						[343] link 'Service Desk'
+							StaticText 'Service Desk'
+					[345] listitem ''
+						[346] link 'Milestones'
+							StaticText 'Milestones'
+			[348] listitem ''
+				[349] link 'Merge requests'
+					[351] image ''
+					StaticText 'Merge requests'
+					StaticText '10'
+			[359] listitem ''
+				[360] link 'CI/CD'
+					[362] image ''
+					StaticText 'CI/CD'
+			[381] listitem ''
+				[382] link 'Security & Compliance'
+					[384] image ''
+					StaticText 'Security & Compliance'
+			[394] listitem ''
+				[395] link 'Deployments'
+					[397] image ''
+					StaticText 'Deployments'
+			[413] listitem ''
+				[414] link 'Packages and registries'
+					[416] image ''
+					StaticText 'Packages and registries'
+			[429] listitem ''
+				[430] link 'Infrastructure'
+					[432] image ''
+					StaticText 'Infrastructure'
+			[448] listitem ''
+				[449] link 'Monitor'
+					[451] image ''
+					StaticText 'Monitor'
+			[470] listitem ''
+				[471] link 'Analytics'
+					[473] image ''
+					StaticText 'Analytics'
+			[489] listitem ''
+				[490] link 'Wiki'
+					[492] image ''
+					StaticText 'Wiki'
+			[498] listitem ''
+				[499] link 'Snippets'
+					[501] image ''
+					StaticText 'Snippets'
+			[507] listitem ''
+				[508] link 'Settings'
+					[510] image ''
+					StaticText 'Settings'
+		[559] button 'Collapse sidebar'
+			[560] image ''
+			StaticText 'Collapse sidebar'
+	[568] navigation 'Breadcrumbs'
+		[574] list ''
+			[575] listitem ''
+				[576] link 'The A11Y Project'
+				[577] image ''
+			[578] listitem ''
+				[579] link 'a11yproject.com'
+					StaticText 'a11yproject.com'
+				[581] image ''
+			[582] listitem ''
+				[583] link 'Issues'
+	[586] main ''
+		[594] tablist '', multiselectable=False, orientation='horizontal'
+			[596] tab 'Open 40', selected=True, controls='__BVID__9'
+				StaticText 'Open'
+				StaticText '40'
+			[599] tab 'Closed 570', selected=False, controls='__BVID__12'
+				StaticText 'Closed'
+				StaticText '570'
+			[602] tab 'All 610', selected=False, controls='__BVID__15'
+				StaticText 'All'
+				StaticText '610'
+		[605] tabpanel 'Open 40'
+		[609] link 'Subscribe to RSS feed'
+		[611] link 'Subscribe to calendar'
+		[614] group ''
+			[615] button 'Export as CSV'
+			[618] button 'Import issues', hasPopup='menu', expanded=False
+				StaticText 'Import issues'
+		[633] button 'Edit issues'
+			StaticText 'Edit issues'
+		[635] link 'New issue'
+			StaticText 'New issue'
+		[638] group ''
+			[641] button 'Toggle history', hasPopup='menu', expanded=False
+				StaticText 'Toggle history'
+			[659] textbox 'Search or filter results...'
+			[661] button 'Search'
+		[663] group ''
+			[665] button 'Created date', hasPopup='menu', expanded=False
+				StaticText 'Created date'
+			[721] button 'Sort direction: Descending'
+		[723] complementary '', live='polite', relevant='additions text'
+		[725] list ''
+			[903] listitem ''
+				[906] link '[Post] HOWTO: Ajax with ARIA-LIVE'
+				StaticText '3 of 3 checklist items completed'
+				StaticText 'Issue'
+				StaticText '#1533'
+				StaticText ''
+				StaticText 'created'
+				StaticText '2 years ago'
+				StaticText 'by'
+				[917] link 'Paul McFedries'
+					StaticText 'Paul McFedries'
+				StaticText ''
+				[920] group 'Labels'
+					[922] link 'claimed'
+						StaticText 'claimed'
+					[925] link 'post'
+						StaticText 'post'
+				[928] list ''
+					[929] listitem ''
+					[930] listitem ''
+						[932] link 'Assigned to Roshan Jossy'
+							[934] image 'Assigned to Roshan Jossy'
+					[935] list ''
+					[936] listitem ''
+						[937] link '0'
+				StaticText 'updated 2 years ago'
+			[940] listitem ''
+				[943] link '[Post]: What is Semantic HTML?'
+				StaticText '3 of 3 checklist items completed'
+				StaticText 'Issue'
+				StaticText '#1530'
+				StaticText ''
+				StaticText 'created'
+				StaticText '2 years ago'
+				StaticText 'by'
+				[954] link 'David A. Kennedy'
+					StaticText 'David A. Kennedy'
+				StaticText ''
+				[957] group 'Labels'
+					[959] link 'claimed'
+						StaticText 'claimed'
+					[962] link 'post'
+						StaticText 'post'
+				[965] list ''
+					[966] listitem ''
+					[967] list ''
+					[968] listitem ''
+						[969] link '1'
+				StaticText 'updated 2 years ago'
+			[972] listitem ''
+				[975] link "[Post] Don't Wait Until Launch: Why Accessibility Testing Early On Can Save You Time and Money"
+				StaticText 'Issue'
+				StaticText '#1529'
+				StaticText ''
+				StaticText 'created'
+				StaticText '2 years ago'
+				StaticText 'by'
+				[985] link 'John Nyaruiru'
+					StaticText 'John Nyaruiru'
+				StaticText ''
+				[988] group 'Labels'
+					[990] link 'claimed'
+						StaticText 'claimed'
+					[993] link 'post'
+						StaticText 'post'
+				[996] list ''
+					[997] listitem ''
+					[998] list ''
+					[999] listitem ''
+						[1000] link '4'
+				StaticText 'updated 2 years ago'
+			[1003] listitem ''
+				[1006] link '[Post] HOWTO: Use JAWS on Windows'
+				StaticText '3 of 3 checklist items completed'
+				StaticText 'Issue'
+				StaticText '#1526'
+				StaticText ''
+				StaticText 'created'
+				StaticText '2 years ago'
+				StaticText 'by'
+				[1017] link 'ilknureren'
+					StaticText 'ilknureren'
+				StaticText ''
+				[1020] group 'Labels'
+					[1022] link 'claimed'
+						StaticText 'claimed'
+					[1025] link 'post'
+						StaticText 'post'
+				[1028] list ''
+					[1029] listitem ''
+					[1030] list ''
+					[1031] listitem ''
+						[1032] link '1'
+				StaticText 'updated 2 years ago'
+			[1035] listitem ''
+				[1038] link '[Feature] Add a broken link checker to the CI/CD pipeline'
+				StaticText '1 of 1 checklist item completed'
+				StaticText 'Issue'
+				StaticText '#1521'
+				StaticText ''
+				StaticText 'created'
+				StaticText '2 years ago'
+				StaticText 'by'
+				[1049] link 'Philip Wong'
+					StaticText 'Philip Wong'
+				StaticText ''
+				[1052] group 'Labels'
+					[1054] link 'feature'
+						StaticText 'feature'
+					[1057] link 'help wanted'
+						StaticText 'help wanted'
+				[1060] list ''
+					[1061] listitem ''
+					[1062] list ''
+					[1063] listitem ''
+						[1064] link '0'
+				StaticText 'updated 2 years ago'
+			[1067] listitem ''
+				[1070] link '`npm start` does not run `gulp-watch` (Windows)'
+				StaticText 'Issue'
+				StaticText '#1519'
+				StaticText ''
+				StaticText 'created'
+				StaticText '2 years ago'
+				StaticText 'by'
+				[1080] link 'Philip Wong'
+					StaticText 'Philip Wong'
+				StaticText ''
+				[1084] list ''
+					[1085] listitem ''
+					[1086] list ''
+					[1087] listitem ''
+						[1088] link '6'
+				StaticText 'updated 2 years ago'
+			[1091] listitem ''
+				[1094] link '[Post] Getting Started with TalkBack'
+				StaticText '3 of 3 checklist items completed'
+				StaticText 'Issue'
+				StaticText '#1509'
+				StaticText ''
+				StaticText 'created'
+				StaticText '2 years ago'
+				StaticText 'by'
+				[1105] link 'Cooper Hollmaier'
+					StaticText 'Cooper Hollmaier'
+				StaticText ''
+				[1108] group 'Labels'
+					[1110] link 'claimed'
+						StaticText 'claimed'
+					[1113] link 'post'
+						StaticText 'post'
+				[1116] list ''
+					[1117] listitem ''
+					[1118] list ''
+					[1119] listitem ''
+						[1120] link '1'
+				StaticText 'updated 2 years ago'
+			[1123] listitem ''
+				[1126] link '[Post] Article; Accessibility in Web; Content creation and ux writing.'
+				StaticText '0 of 3 checklist items completed'
+				StaticText 'Issue'
+				StaticText '#1491'
+				StaticText ''
+				StaticText 'created'
+				StaticText '3 years ago'
+				StaticText 'by'
+				[1137] link 'Victoria Ottah'
+					StaticText 'Victoria Ottah'
+				StaticText ''
+				[1140] group 'Labels'
+					[1142] link 'post'
+						StaticText 'post'
+				[1145] list ''
+					[1146] listitem ''
+					[1147] list ''
+					[1148] listitem ''
+						[1149] link '3'
+				StaticText 'updated 3 years ago'
+			[1152] listitem ''
+				[1155] link '[Bug] 404s, bad host, timeouts, bad urls for URLs linked from website'
+				StaticText '1 of 34 checklist items completed'
+				StaticText 'Issue'
+				StaticText '#1478'
+				StaticText ''
+				StaticText 'created'
+				StaticText '3 years ago'
+				StaticText 'by'
+				[1166] link 'Roshan Jossy'
+					StaticText 'Roshan Jossy'
+				StaticText ''
+				[1169] group 'Labels'
+					[1171] link 'bug'
+						StaticText 'bug'
+					[1174] link 'content'
+						StaticText 'content'
+					[1177] link 'good first issue'
+						StaticText 'good first issue'
+					[1180] link 'help wanted'
+						StaticText 'help wanted'
+				[1183] list ''
+					[1184] listitem ''
+					[1185] list ''
+					[1186] listitem ''
+						[1187] link '6'
+				StaticText 'updated 2 years ago'
+			[1190] listitem ''
+				[1193] link 'Link to WCAG 2.1 instead of 2.0?'
+				StaticText 'Issue'
+				StaticText '#1460'
+				StaticText ''
+				StaticText 'created'
+				StaticText '3 years ago'
+				StaticText 'by'
+				[1203] link 'Byte Blaze'
+					StaticText 'Byte Blaze'
+				StaticText ''
+				[1206] group 'Labels'
+					[1208] link 'claimed'
+						StaticText 'claimed'
+					[1211] link 'content'
+						StaticText 'content'
+				[1214] list ''
+					[1215] listitem ''
+					[1216] listitem ''
+						[1218] link 'Assigned to Byte Blaze'
+							[1220] image 'Assigned to Byte Blaze'
+					[1221] list ''
+					[1222] listitem ''
+						[1223] link '0'
+				StaticText 'updated 2 years ago'
+			[1226] listitem ''
+				[1229] link '[Post] What is WAI? The Web Accessibility Initiative'
+				StaticText '3 of 3 checklist items completed'
+				StaticText 'Issue'
+				StaticText '#1449'
+				StaticText ''
+				StaticText 'created'
+				StaticText '3 years ago'
+				StaticText 'by'
+				[1240] link 'ilknureren'
+					StaticText 'ilknureren'
+				StaticText ''
+				[1243] group 'Labels'
+					[1245] link 'claimed'
+						StaticText 'claimed'
+					[1248] link 'post'
+						StaticText 'post'
+				[1251] list ''
+					[1252] listitem ''
+					[1253] listitem ''
+						[1255] link 'Assigned to ilknureren'
+							[1257] image 'Assigned to ilknureren'
+					[1258] list ''
+					[1259] listitem ''
+						[1260] link '0'
+				StaticText 'updated 2 years ago'
+			[1263] listitem ''
+				[1266] link '[Post] Bake accessibility into your design and development process'
+				StaticText '3 of 3 checklist items completed'
+				StaticText 'Issue'
+				StaticText '#1447'
+				StaticText ''
+				StaticText 'created'
+				StaticText '3 years ago'
+				StaticText 'by'
+				[1277] link 'Matt Obee'
+					StaticText 'Matt Obee'
+				StaticText ''
+				[1280] group 'Labels'
+					[1282] link 'claimed'
+						StaticText 'claimed'
+					[1285] link 'post'
+						StaticText 'post'
+				[1288] list ''
+					[1289] listitem ''
+					[1290] listitem ''
+						[1292] link 'Assigned to Roshan Jossy'
+							[1294] image 'Assigned to Roshan Jossy'
+					[1295] list ''
+					[1296] listitem ''
+						[1297] link '1'
+				StaticText 'updated 2 years ago'
+			[1300] listitem ''
+				[1303] link '[Post] New Post: Text color contrasts on dynamic backgrounds'
+				StaticText '3 of 3 checklist items completed'
+				StaticText 'Issue'
+				StaticText '#1443'
+				StaticText ''
+				StaticText 'created'
+				StaticText '3 years ago'
+				StaticText 'by'
+				[1314] link 'Conor'
+					StaticText 'Conor'
+				StaticText ''
+				[1317] group 'Labels'
+					[1319] link 'claimed'
+						StaticText 'claimed'
+					[1322] link 'post'
+						StaticText 'post'
+				[1325] list ''
+					[1326] listitem ''
+					[1327] listitem ''
+						[1329] link 'Assigned to Conor'
+							[1331] image 'Assigned to Conor'
+					[1332] list ''
+					[1333] listitem ''
+						[1334] link '3'
+				StaticText 'updated 2 years ago'
+			[1337] listitem ''
+				[1340] link 'Investigate if <details>/<summary> is a good choice for our Checklist'
+				StaticText 'Issue'
+				StaticText '#1419'
+				StaticText ''
+				StaticText 'created'
+				StaticText '3 years ago'
+				StaticText 'by'
+				[1350] link 'Byte Blaze'
+					StaticText 'Byte Blaze'
+				StaticText ''
+				[1353] group 'Labels'
+					[1355] link 'bug'
+						StaticText 'bug'
+					[1358] link 'help wanted'
+						StaticText 'help wanted'
+				[1361] list ''
+					[1362] listitem ''
+					[1363] list ''
+					[1364] listitem ''
+						[1365] link '0'
+				StaticText 'updated 3 years ago'
+			[1368] listitem ''
+				[1371] link 'In error state, focused controls take on purple or red-and-purple focus indicator'
+				StaticText 'Issue'
+				StaticText '#1408'
+				StaticText ''
+				StaticText 'created'
+				StaticText '3 years ago'
+				StaticText 'by'
+				[1381] link 'EJ Mason'
+					StaticText 'EJ Mason'
+				StaticText ''
+				[1384] group 'Labels'
+					[1386] link 'bug'
+						StaticText 'bug'
+					[1389] link 'claimed'
+						StaticText 'claimed'
+					[1392] link 'design'
+						StaticText 'design'
+				[1395] list ''
+					[1396] listitem ''
+					[1397] listitem ''
+						[1399] link 'Assigned to EJ Mason'
+							[1401] image 'Assigned to EJ Mason'
+					[1402] list ''
+					[1403] listitem ''
+						[1404] link '0'
+				StaticText 'updated 2 years ago'
+			[1407] listitem ''
+				[1410] link 'The process for writing for us is both scattered and buried'
+				StaticText 'Issue'
+				StaticText '#1360'
+				StaticText ''
+				StaticText 'created'
+				StaticText '4 years ago'
+				StaticText 'by'
+				[1420] link 'Byte Blaze'
+					StaticText 'Byte Blaze'
+				StaticText ''
+				[1423] group 'Labels'
+					[1425] link 'content'
+						StaticText 'content'
+					[1428] link 'design'
+						StaticText 'design'
+				[1431] list ''
+					[1432] listitem ''
+					[1433] listitem ''
+						[1435] link 'Assigned to Byte Blaze'
+							[1437] image 'Assigned to Byte Blaze'
+					[1438] list ''
+					[1439] listitem ''
+						[1440] link '2'
+				StaticText 'updated 2 years ago'
+			[1443] listitem ''
+				[1446] link 'Our non-GitHub editorial process is opaque'
+				StaticText 'Issue'
+				StaticText '#1359'
+				StaticText ''
+				StaticText 'created'
+				StaticText '4 years ago'
+				StaticText 'by'
+				[1456] link 'Byte Blaze'
+					StaticText 'Byte Blaze'
+				StaticText ''
+				[1459] group 'Labels'
+					[1461] link 'administration'
+						StaticText 'administration'
+					[1464] link 'content'
+						StaticText 'content'
+				[1467] list ''
+					[1468] listitem ''
+					[1469] list ''
+					[1470] listitem ''
+						[1471] link '0'
+				StaticText 'updated 2 years ago'
+			[1474] listitem ''
+				[1477] link 'Article: Starting a design with accessibility'
+				StaticText 'Issue'
+				StaticText '#1334'
+				StaticText ''
+				StaticText 'created'
+				StaticText '4 years ago'
+				StaticText 'by'
+				[1487] link 'Steve Barnett'
+					StaticText 'Steve Barnett'
+				StaticText ''
+				[1490] group 'Labels'
+					[1492] link 'claimed'
+						StaticText 'claimed'
+					[1495] link 'post'
+						StaticText 'post'
+				[1498] list ''
+					[1499] listitem ''
+					[1500] listitem ''
+						[1502] link 'Assigned to Roshan Jossy'
+							[1504] image 'Assigned to Roshan Jossy'
+					[1505] list ''
+					[1506] listitem ''
+						[1507] link '1'
+				StaticText 'updated 2 years ago'
+			[1510] listitem ''
+				[1513] link 'We should provide syntactic sugar for creating figures in Markdown'
+				StaticText 'Issue'
+				StaticText '#1302'
+				StaticText ''
+				StaticText 'created'
+				StaticText '4 years ago'
+				StaticText 'by'
+				[1523] link 'EJ Mason'
+					StaticText 'EJ Mason'
+				StaticText ''
+				[1526] group 'Labels'
+					[1528] link 'content'
+						StaticText 'content'
+					[1531] link 'eleventy'
+						StaticText 'eleventy'
+					[1534] link 'enhancement'
+						StaticText 'enhancement'
+					[1537] link 'feature'
+						StaticText 'feature'
+				[1540] list ''
+					[1541] listitem ''
+					[1542] listitem ''
+						[1544] link 'Assigned to EJ Mason'
+							[1546] image 'Assigned to EJ Mason'
+					[1547] list ''
+					[1548] listitem ''
+						[1549] link '1'
+				StaticText 'updated 2 years ago'
+			[1552] listitem ''
+				[1555] link 'We should provide a callout card component for emphasizing content'
+				StaticText 'Issue'
+				StaticText '#1295'
+				StaticText ''
+				StaticText 'created'
+				StaticText '4 years ago'
+				StaticText 'by'
+				[1565] link 'EJ Mason'
+					StaticText 'EJ Mason'
+				StaticText ''
+				[1568] group 'Labels'
+					[1570] link 'claimed'
+						StaticText 'claimed'
+					[1573] link 'content'
+						StaticText 'content'
+					[1576] link 'design'
+						StaticText 'design'
+				[1579] list ''
+					[1580] listitem ''
+					[1581] listitem ''
+						[1583] link 'Assigned to EJ Mason'
+							[1585] image 'Assigned to EJ Mason'
+					[1586] list ''
+					[1587] listitem ''
+						[1588] link '1'
+				StaticText 'updated 2 years ago'
+		[1591] group ''
+			[1592] button 'Prev', disabled=True
+				StaticText 'Prev'
+			[1596] button 'Next'
+				StaticText 'Next'
+		[1601] button 'Show 20 items', hasPopup='menu', expanded=False
+			StaticText 'Show 20 items'
+		[747] complementary 'Bulk update', live='polite', relevant='additions text'
+
+
+# History of interaction with the task:
+
+## step 0
+
+### Action:
+click('328')
+
+## step 1
+
+### Action:
+noop(1500)
+scroll(0, 300)
+
+# Action space:
+
+13 different types of actions are available.
+
+noop(wait_ms: float = 1000)
+    Description: Do nothing, and optionally wait for the given time (in milliseconds).
+    Examples:
+        noop()
+
+        noop(500)
+
+send_msg_to_user(text: str)
+    Description: Sends a message to the user.
+    Examples:
+        send_msg_to_user('Based on the results of my search, the city was built in 1751.')
+
+scroll(delta_x: float, delta_y: float)
+    Description: Scroll horizontally and vertically. Amounts in pixels, positive for right or down scrolling, negative for left or up scrolling. Dispatches a wheel event.
+    Examples:
+        scroll(0, 200)
+
+        scroll(-50.2, -100.5)
+
+fill(bid: str, value: str, enable_autocomplete_menu: bool = False)
+    Description: Fill out a form field. It focuses the element and triggers an input event with the entered text. It works for <input>, <textarea> and [contenteditable] elements.
+    Examples:
+        fill('45', 'multi-line\nexample')
+
+        fill('a12', 'example with "quotes"')
+
+        fill('b534', 'Montre', True)
+
+select_option(bid: str, options: str | list[str])
+    Description: Select one or multiple options in a <select> element. You can specify option value or label to select. Multiple options can be selected.
+    Examples:
+        select_option('a48', 'blue')
+
+        select_option('c48', ['red', 'green', 'blue'])
+
+click(bid: str, button: Literal['left', 'middle', 'right'] = 'left', modifiers: list[typing.Literal['Alt', 'Control', 'ControlOrMeta', 'Meta', 'Shift']] = [])
+    Description: Click an element.
+    Examples:
+        click('a51')
+
+        click('b22', button='right')
+
+        click('48', button='middle', modifiers=['Shift'])
+
+dblclick(bid: str, button: Literal['left', 'middle', 'right'] = 'left', modifiers: list[typing.Literal['Alt', 'Control', 'ControlOrMeta', 'Meta', 'Shift']] = [])
+    Description: Double click an element.
+    Examples:
+        dblclick('12')
+
+        dblclick('ca42', button='right')
+
+        dblclick('178', button='middle', modifiers=['Shift'])
+
+hover(bid: str)
+    Description: Hover over an element.
+    Examples:
+        hover('b8')
+
+press(bid: str, key_comb: str)
+    Description: Focus the matching element and press a combination of keys. It accepts the logical key names that are emitted in the keyboardEvent.key property of the keyboard events: Backquote, Minus, Equal, Backslash, Backspace, Tab, Delete, Escape, ArrowDown, End, Enter, Home, Insert, PageDown, PageUp, ArrowRight, ArrowUp, F1 - F12, Digit0 - Digit9, KeyA - KeyZ, etc. You can alternatively specify a single character you'd like to produce such as "a" or "#". Following modification shortcuts are also supported: Shift, Control, Alt, Meta, ShiftLeft, ControlOrMeta. ControlOrMeta resolves to Control on Windows and Linux and to Meta on macOS.
+    Examples:
+        press('88', 'Backspace')
+
+        press('a26', 'ControlOrMeta+a')
+
+        press('a61', 'Meta+Shift+t')
+
+focus(bid: str)
+    Description: Focus the matching element.
+    Examples:
+        focus('b455')
+
+clear(bid: str)
+    Description: Clear the input field.
+    Examples:
+        clear('996')
+
+drag_and_drop(from_bid: str, to_bid: str)
+    Description: Perform a drag & drop. Hover the element that will be dragged. Press left mouse button. Move mouse to the element that will receive the drop. Release left mouse button.
+    Examples:
+        drag_and_drop('56', '498')
+
+upload_file(bid: str, file: str | list[str])
+    Description: Click an element and wait for a "filechooser" event, then select one or multiple input files for upload. Relative file paths are resolved relative to the current working directory. An empty list clears the selected files.
+    Examples:
+        upload_file('572', 'my_receipt.pdf')
+
+        upload_file('63', ['/home/bob/Documents/image.jpg', '/home/bob/Documents/file.zip'])
+
+Multiple actions can be provided at once, but will be executed sequentially without any feedback from the page.
+More than 2-3 actions usually leads to failure or unexpected behavior. Example:
+fill('b534', 'Montre', True)
+click('a51')
+click('48', button='middle', modifiers=['Shift'])
+
+
+# Abstract Example
+
+Here is an abstract version of the answer with description of the content of
+each tag. Make sure you follow this structure, but replace the content with your
+answer:
+
+<think>
+Think step by step. If you need to make calculations such as coordinates, write them here. Describe the effect
+that your previous action had on the current content of the page.
+</think>
+
+<action>
+One or several actions, separated by new lines.
+</action>
+
+# Concrete Example
+
+Here is a concrete example of how to format your answer.
+Make sure to follow the template with proper tags:
+
+<think>
+My memory says that I filled the first name and last name, but I can't see any
+content in the form. I need to explore different ways to fill the form. Perhaps
+the form is not visible yet or some fields are disabled. I need to replan.
+</think>
+
+<action>
+fill('b534', 'Montre', True)
+click('a51')
+click('48', button='middle', modifiers=['Shift'])
+</action>
+
+[IMAGE_1: data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD...]

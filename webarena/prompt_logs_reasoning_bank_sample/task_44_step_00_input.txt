@@ -1,0 +1,573 @@
+================================================================================
+STEP 0 INPUT
+================================================================================
+
+================================================================================
+SYSTEM PROMPT
+================================================================================
+You are an agent trying to solve a web task based on the content of the page and
+a user instructions. You can interact with the page and explore. Each time you
+submit an action it will be sent to the browser and you will receive a new page.
+
+================================================================================
+USER PROMPT
+================================================================================
+# Instructions
+
+You are a UI Assistant, your goal is to help the user perform tasks using a web browser. You can
+communicate with the user via a chat, in which the user gives you instructions and in which you
+can send back messages. You have access to a web browser that both you and the user can see,
+and with which only you can interact via specific commands.
+
+Review the instructions from the user, the current state of the page and all other information
+to find the best possible next action to accomplish your goal. Your answer will be interpreted
+and executed by a program, make sure to follow the formatting instructions.
+
+**Current Progress**: Step 0/10 (10 steps remaining)
+
+**Before choosing your next action:**
+- Check your action history below - are you repeating the same actions?
+- If yes, try a different approach (search, different menu, filters, etc.)
+- Make sure each action brings you closer to completing the goal
+
+## Chat messages:
+
+ - [assistant] Hi! I am your UI assistant, I can perform web tasks for you. What can I help you with?
+ - [user] Check out my todos# Reasoning Memories
+
+Below are some memory items that I accumulated from past interaction from the environment that may be helpful to solve the task. You can use it when you feel it's relevant. In each step, please first explicitly discuss if you want to use each memory item or not, and then take action.
+
+Memory 1:
+- Title: Use primary navigation control to open the task list
+- Description: Activate the main UI control (navigation link or button) for tasks/to‑dos to quickly display the user's to‑do list.
+- Content: When the user asks to check their to‑dos, prioritize clicking the primary tasks control in the interface rather than running extra searches or commands. Direct activation of that navigation element is usually the fastest and most reliable way to surface the to‑do list; prefer controls with stable identifiers or labels when available.
+Memory 2:
+- Title: Give a concise top-N summary with follow-up options
+- Description: Report the total count and a brief, ordered summary of the most recent items, then offer clear next actions.
+- Content: Provide the total number of open items and list the top N (e.g., 10) with: number, title, short tags/context, and created/updated timestamps in one-line entries. End by asking whether the user wants any specific item opened or the list filtered/sorted differently.
+Memory 3:
+- Title: Open task lists via primary navigation
+- Description: When a main navigation item corresponds to tasks, use it to access the user's to-do list quickly.
+- Content: If the interface includes a primary navigation control for tasks, clicking that control is typically the fastest, most direct way to open the user's task list rather than searching through page content or nested menus.
+
+
+# Observation of current step:
+
+## AXTree:
+RootWebArea 'Projects · Dashboard · GitLab', focused
+	[51] banner ''
+		[52] link 'Skip to content'
+		StaticText 'GitLab'
+		[58] link 'Dashboard'
+			[59] image ''
+		[62] list ''
+			[63] listitem ''
+				[64] button '', hasPopup='menu', expanded=False
+		[124] list ''
+			[125] listitem ''
+				[127] Section ''
+					[129] image ''
+					[130] textbox 'Search GitLab'
+		[139] list ''
+			[140] listitem ''
+				[141] link 'Create new...'
+					[142] image ''
+					[143] image ''
+			[152] listitem ''
+				[153] link 'Issues'
+					[154] image ''
+			[156] listitem ''
+				[157] link 'Merge requests'
+					[158] image ''
+					[160] image ''
+			[170] listitem ''
+				[171] link 'To-Do List'
+					[172] image ''
+					StaticText '5'
+			[174] listitem ''
+				[175] link 'Help'
+					StaticText 'Help'
+					[177] image ''
+					[179] image ''
+			[200] listitem ''
+				[201] link 'Byte Blaze'
+					[202] image 'Byte Blaze'
+					[203] image ''
+	[243] main ''
+		[246] heading 'Projects'
+		[248] link 'New project'
+			StaticText 'New project'
+		[256] list ''
+			[257] listitem ''
+				[258] link 'Yours 14'
+					StaticText '14'
+			[260] listitem ''
+				[261] link 'Starred 3'
+					StaticText '3'
+			[263] listitem ''
+				[264] link 'Explore'
+			[265] listitem ''
+				[266] link 'Topics'
+		[268] Section ''
+			[269] searchbox 'Filter by name'
+			[273] button 'Name'
+				StaticText 'Name'
+				[275] image ''
+		[305] list ''
+			[306] listitem ''
+				[307] link 'All'
+			[308] listitem ''
+				[309] link 'Personal'
+		[311] list ''
+			[312] listitem ''
+				[314] link 'A'
+					StaticText 'A'
+				[319] heading 'Byte Blaze / a11y-syntax-highlighting'
+					[320] link 'Byte Blaze / a11y-syntax-highlighting'
+						StaticText 'Byte Blaze /'
+						StaticText 'a11y-syntax-highlighting'
+				[324] image ''
+				StaticText 'Owner'
+				[327] paragraph ''
+					StaticText '💄'
+					StaticText 'Accessible light and dark syntax highlighting themes'
+				[338] link '1'
+					[339] image ''
+				[340] link '0'
+					[341] image ''
+				[342] link '0'
+					[343] image ''
+				[344] link '1'
+					[345] image ''
+				StaticText 'Updated'
+				[348] time 'Mar 28, 2023 8:22am GMT+0900'
+					StaticText '2 years ago'
+			[349] listitem ''
+				[351] link 'A'
+					StaticText 'A'
+				[356] heading 'Byte Blaze / a11y-webring.club'
+					[357] link 'Byte Blaze / a11y-webring.club'
+						StaticText 'Byte Blaze /'
+						StaticText 'a11y-webring.club'
+				[361] image ''
+				StaticText 'Owner'
+				[364] paragraph ''
+					StaticText '🌐'
+					StaticText 'A webring for digital accessibility practitioners.'
+				[375] link '2'
+					[376] image ''
+				[377] link '0'
+					[378] image ''
+				[379] link '1'
+					[380] image ''
+				[381] link '4'
+					[382] image ''
+				StaticText 'Updated'
+				[385] time 'Mar 28, 2023 8:22am GMT+0900'
+					StaticText '2 years ago'
+			[386] listitem ''
+				[388] link 'A'
+					StaticText 'A'
+				[393] heading 'The A11Y Project / a11yproject.com'
+					[394] link 'The A11Y Project / a11yproject.com'
+						StaticText 'The A11Y Project /'
+						StaticText 'a11yproject.com'
+				[398] image ''
+				StaticText 'Maintainer'
+				[401] paragraph ''
+					StaticText 'The A11Y Project is a community-driven effort to make digital accessibility easier.'
+				[412] link '21'
+					[413] image ''
+				[414] link '0'
+					[415] image ''
+				[416] link '10'
+					[417] image ''
+				[418] link '40'
+					[419] image ''
+				StaticText 'Updated'
+				[422] time 'Mar 28, 2023 5:15am GMT+0900'
+					StaticText '2 years ago'
+			[423] listitem ''
+				[425] link 'A'
+					StaticText 'A'
+				[430] heading 'Byte Blaze / accessible-html-content-patterns'
+					[431] link 'Byte Blaze / accessible-html-content-patterns'
+						StaticText 'Byte Blaze /'
+						StaticText 'accessible-html-content-patterns'
+				[435] image ''
+				StaticText 'Owner'
+				[438] paragraph ''
+					StaticText '♿'
+					StaticText '️ The full HTML5 Doctor Element Index as well as common markup patterns for quick reference.'
+				[449] link '1'
+					[450] image ''
+				[451] link '0'
+					[452] image ''
+				[453] link '0'
+					[454] image ''
+				[455] link '0'
+					[456] image ''
+				StaticText 'Updated'
+				[459] time 'Mar 28, 2023 8:22am GMT+0900'
+					StaticText '2 years ago'
+			[460] listitem ''
+				[462] link ''
+					[463] image ''
+				[467] heading 'Byte Blaze / cloud-to-butt'
+					[468] link 'Byte Blaze / cloud-to-butt'
+						StaticText 'Byte Blaze /'
+						StaticText 'cloud-to-butt'
+				[472] image ''
+				StaticText 'Owner'
+				[475] paragraph ''
+					StaticText "Chrome extension that replaces occurrences of 'the cloud' with 'my butt'"
+				[486] link '0'
+					[487] image ''
+				[488] link '0'
+					[489] image ''
+				[490] link '0'
+					[491] image ''
+				[492] link '0'
+					[493] image ''
+				StaticText 'Updated'
+				[496] time 'Mar 28, 2023 8:22am GMT+0900'
+					StaticText '2 years ago'
+			[497] listitem ''
+				[499] link 'D'
+					StaticText 'D'
+				[504] heading 'Primer / design'
+					[505] link 'Primer / design'
+						StaticText 'Primer /'
+						StaticText 'design'
+				[509] image ''
+				StaticText 'Developer'
+				[512] paragraph ''
+					StaticText 'Primer Design Guidelines'
+				[523] link '21'
+					[524] image ''
+				[525] link '0'
+					[526] image ''
+				[527] link '16'
+					[528] image ''
+				[529] link '21'
+					[530] image ''
+				StaticText 'Updated'
+				[533] time 'Mar 28, 2023 6:04am GMT+0900'
+					StaticText '2 years ago'
+			[534] listitem ''
+				[536] link 'D'
+					StaticText 'D'
+				[541] heading 'Byte Blaze / dotfiles'
+					[542] link 'Byte Blaze / dotfiles'
+						StaticText 'Byte Blaze /'
+						StaticText 'dotfiles'
+				[546] image ''
+				StaticText 'Owner'
+				[549] paragraph ''
+					StaticText '🤖'
+					StaticText 'Computer setup'
+				[560] link '0'
+					[561] image ''
+				[562] link '0'
+					[563] image ''
+				[564] link '0'
+					[565] image ''
+				[566] link '0'
+					[567] image ''
+				StaticText 'Updated'
+				[570] time 'Mar 28, 2023 8:22am GMT+0900'
+					StaticText '2 years ago'
+			[571] listitem ''
+				[573] link 'E'
+					StaticText 'E'
+				[578] heading 'Byte Blaze / empathy-prompts'
+					[579] link 'Byte Blaze / empathy-prompts'
+						StaticText 'Byte Blaze /'
+						StaticText 'empathy-prompts'
+				[583] image ''
+				StaticText 'Owner'
+				[586] paragraph ''
+					StaticText '💡'
+					StaticText 'Ideas to help consider Inclusive Design principles when making things for others to use.'
+				[597] link '6'
+					[598] image ''
+				[599] link '1'
+					[600] image ''
+				[601] link '2'
+					[602] image ''
+				[603] link '6'
+					[604] image ''
+				StaticText 'Updated'
+				[607] time 'Mar 28, 2023 8:22am GMT+0900'
+					StaticText '2 years ago'
+			[608] listitem ''
+				[610] link 'E'
+					StaticText 'E'
+				[615] heading 'Byte Blaze / ericwbailey.website'
+					[616] link 'Byte Blaze / ericwbailey.website'
+						StaticText 'Byte Blaze /'
+						StaticText 'ericwbailey.website'
+				[620] image ''
+				StaticText 'Owner'
+				[623] paragraph ''
+					StaticText '📐'
+					StaticText 'Repo for my personal website.'
+				[634] link '2'
+					[635] image ''
+				[636] link '0'
+					[637] image ''
+				[638] link '0'
+					[639] image ''
+				[640] link '0'
+					[641] image ''
+				StaticText 'Updated'
+				[644] time 'Mar 28, 2023 8:22am GMT+0900'
+					StaticText '2 years ago'
+			[645] listitem ''
+				[647] link 'G'
+					StaticText 'G'
+				[652] heading 'Byte Blaze / gimmiethat.space'
+					[653] link 'Byte Blaze / gimmiethat.space'
+						StaticText 'Byte Blaze /'
+						StaticText 'gimmiethat.space'
+				[657] image ''
+				StaticText 'Owner'
+				[660] paragraph ''
+					StaticText 'I need some space.'
+				[671] link '0'
+					[672] image ''
+				[673] link '0'
+					[674] image ''
+				[675] link '0'
+					[676] image ''
+				[677] link '0'
+					[678] image ''
+				StaticText 'Updated'
+				[681] time 'Apr 25, 2023 6:22am GMT+0900'
+					StaticText '2 years ago'
+			[682] listitem ''
+				[684] link 'M'
+					StaticText 'M'
+				[689] heading 'Byte Blaze / millennials-to-snake-people'
+					[690] link 'Byte Blaze / millennials-to-snake-people'
+						StaticText 'Byte Blaze /'
+						StaticText 'millennials-to-snake-people'
+				[694] image ''
+				StaticText 'Owner'
+				[697] paragraph ''
+					StaticText '🐍'
+					StaticText "Chrome extension that replaces occurrences of 'Millennials' with 'Snake People'"
+				[708] link '6'
+					[709] image ''
+				[710] link '0'
+					[711] image ''
+				[712] link '2'
+					[713] image ''
+				[714] link '4'
+					[715] image ''
+				StaticText 'Updated'
+				[718] time 'Mar 28, 2023 8:22am GMT+0900'
+					StaticText '2 years ago'
+			[719] listitem ''
+				[721] link 'R'
+					StaticText 'R'
+				[726] heading 'Byte Blaze / remove-board-movement-events-from-the-github-issue-timeline'
+					[727] link 'Byte Blaze / remove-board-movement-events-from-the-github-issue-timeline'
+						StaticText 'Byte Blaze /'
+						StaticText 'remove-board-movement-events-from-the-github-issue-timeline'
+				[731] image ''
+				StaticText 'Owner'
+				[734] paragraph ''
+					StaticText "This extension can remove and restore the presence of timeline items generated by a project board event from GitHub's timeline."
+				[745] link '0'
+					[746] image ''
+				[747] link '1'
+					[748] image ''
+				[749] link '0'
+					[750] image ''
+				[751] link '0'
+					[752] image ''
+				StaticText 'Updated'
+				[755] time 'Mar 28, 2023 8:22am GMT+0900'
+					StaticText '2 years ago'
+			[756] listitem ''
+				[758] link 'S'
+					StaticText 'S'
+				[763] heading 'Byte Blaze / solarized-prism-theme'
+					[764] link 'Byte Blaze / solarized-prism-theme'
+						StaticText 'Byte Blaze /'
+						StaticText 'solarized-prism-theme'
+				[768] image ''
+				StaticText 'Owner'
+				[771] paragraph ''
+					StaticText 'solarized theme for prism.js'
+				[782] link '0'
+					[783] image ''
+				[784] link '0'
+					[785] image ''
+				[786] link '0'
+					[787] image ''
+				[788] link '0'
+					[789] image ''
+				StaticText 'Updated'
+				[792] time 'Apr 25, 2023 6:23am GMT+0900'
+					StaticText '2 years ago'
+			[793] listitem ''
+				[795] link 'T'
+					StaticText 'T'
+				[800] heading 'Byte Blaze / timeit'
+					[801] link 'Byte Blaze / timeit'
+						StaticText 'Byte Blaze /'
+						StaticText 'timeit'
+				[805] image ''
+				StaticText 'Owner'
+				[808] paragraph ''
+					StaticText 'Rails implementation of time tracking tool timeit'
+				[819] link '0'
+					[820] image ''
+				[821] link '0'
+					[822] image ''
+				[823] link '0'
+					[824] image ''
+				[825] link '0'
+					[826] image ''
+				StaticText 'Updated'
+				[829] time 'Mar 28, 2023 8:22am GMT+0900'
+					StaticText '2 years ago'
+
+
+# History of interaction with the task:
+
+# Action space:
+
+13 different types of actions are available.
+
+noop(wait_ms: float = 1000)
+    Description: Do nothing, and optionally wait for the given time (in milliseconds).
+    Examples:
+        noop()
+
+        noop(500)
+
+send_msg_to_user(text: str)
+    Description: Sends a message to the user.
+    Examples:
+        send_msg_to_user('Based on the results of my search, the city was built in 1751.')
+
+scroll(delta_x: float, delta_y: float)
+    Description: Scroll horizontally and vertically. Amounts in pixels, positive for right or down scrolling, negative for left or up scrolling. Dispatches a wheel event.
+    Examples:
+        scroll(0, 200)
+
+        scroll(-50.2, -100.5)
+
+fill(bid: str, value: str, enable_autocomplete_menu: bool = False)
+    Description: Fill out a form field. It focuses the element and triggers an input event with the entered text. It works for <input>, <textarea> and [contenteditable] elements.
+    Examples:
+        fill('45', 'multi-line\nexample')
+
+        fill('a12', 'example with "quotes"')
+
+        fill('b534', 'Montre', True)
+
+select_option(bid: str, options: str | list[str])
+    Description: Select one or multiple options in a <select> element. You can specify option value or label to select. Multiple options can be selected.
+    Examples:
+        select_option('a48', 'blue')
+
+        select_option('c48', ['red', 'green', 'blue'])
+
+click(bid: str, button: Literal['left', 'middle', 'right'] = 'left', modifiers: list[typing.Literal['Alt', 'Control', 'ControlOrMeta', 'Meta', 'Shift']] = [])
+    Description: Click an element.
+    Examples:
+        click('a51')
+
+        click('b22', button='right')
+
+        click('48', button='middle', modifiers=['Shift'])
+
+dblclick(bid: str, button: Literal['left', 'middle', 'right'] = 'left', modifiers: list[typing.Literal['Alt', 'Control', 'ControlOrMeta', 'Meta', 'Shift']] = [])
+    Description: Double click an element.
+    Examples:
+        dblclick('12')
+
+        dblclick('ca42', button='right')
+
+        dblclick('178', button='middle', modifiers=['Shift'])
+
+hover(bid: str)
+    Description: Hover over an element.
+    Examples:
+        hover('b8')
+
+press(bid: str, key_comb: str)
+    Description: Focus the matching element and press a combination of keys. It accepts the logical key names that are emitted in the keyboardEvent.key property of the keyboard events: Backquote, Minus, Equal, Backslash, Backspace, Tab, Delete, Escape, ArrowDown, End, Enter, Home, Insert, PageDown, PageUp, ArrowRight, ArrowUp, F1 - F12, Digit0 - Digit9, KeyA - KeyZ, etc. You can alternatively specify a single character you'd like to produce such as "a" or "#". Following modification shortcuts are also supported: Shift, Control, Alt, Meta, ShiftLeft, ControlOrMeta. ControlOrMeta resolves to Control on Windows and Linux and to Meta on macOS.
+    Examples:
+        press('88', 'Backspace')
+
+        press('a26', 'ControlOrMeta+a')
+
+        press('a61', 'Meta+Shift+t')
+
+focus(bid: str)
+    Description: Focus the matching element.
+    Examples:
+        focus('b455')
+
+clear(bid: str)
+    Description: Clear the input field.
+    Examples:
+        clear('996')
+
+drag_and_drop(from_bid: str, to_bid: str)
+    Description: Perform a drag & drop. Hover the element that will be dragged. Press left mouse button. Move mouse to the element that will receive the drop. Release left mouse button.
+    Examples:
+        drag_and_drop('56', '498')
+
+upload_file(bid: str, file: str | list[str])
+    Description: Click an element and wait for a "filechooser" event, then select one or multiple input files for upload. Relative file paths are resolved relative to the current working directory. An empty list clears the selected files.
+    Examples:
+        upload_file('572', 'my_receipt.pdf')
+
+        upload_file('63', ['/home/bob/Documents/image.jpg', '/home/bob/Documents/file.zip'])
+
+Multiple actions can be provided at once, but will be executed sequentially without any feedback from the page.
+More than 2-3 actions usually leads to failure or unexpected behavior. Example:
+fill('b534', 'Montre', True)
+click('a51')
+click('48', button='middle', modifiers=['Shift'])
+
+
+# Abstract Example
+
+Here is an abstract version of the answer with description of the content of
+each tag. Make sure you follow this structure, but replace the content with your
+answer:
+
+<think>
+Think step by step. If you need to make calculations such as coordinates, write them here. Describe the effect
+that your previous action had on the current content of the page.
+</think>
+
+<action>
+One or several actions, separated by new lines.
+</action>
+
+# Concrete Example
+
+Here is a concrete example of how to format your answer.
+Make sure to follow the template with proper tags:
+
+<think>
+My memory says that I filled the first name and last name, but I can't see any
+content in the form. I need to explore different ways to fill the form. Perhaps
+the form is not visible yet or some fields are disabled. I need to replan.
+</think>
+
+<action>
+fill('b534', 'Montre', True)
+click('a51')
+click('48', button='middle', modifiers=['Shift'])
+</action>
+
+[IMAGE_1: data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD...]

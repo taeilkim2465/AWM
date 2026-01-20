@@ -1,0 +1,27 @@
+I can do that — extract non-overlapping, commonly reused workflows (each ≥2 steps) from a list of web navigation tasks. Please paste the list of tasks (each task should include the natural-language instruction and the action sequence). 
+
+Before you paste, here’s what I will produce and the rules I’ll follow:
+
+What I will return
+- A set of distinct workflows (subroutines) that recur across the tasks.
+- Each workflow will be a short ordered sequence of steps (2+ steps).
+- Non-fixed elements will be represented with descriptive variable names (e.g., enter_text("SEARCH_QUERY"), click("My Orders")).
+- Invariant elements (IDs or exact button/menu text that are constant in the actions) will be left as-is.
+- Workflows will not overlap or be nearly identical; I’ll merge/abstract where appropriate so each covers multiple tasks.
+
+Format example I’ll use
+- Workflow name: short descriptive name
+  Step 1: click('227')   (or click("My Account"))
+  Step 2: click('1843')  (or click("My Orders"))
+  Step 3: send_msg_to_user('The earliest purchase date is DATE')
+
+Notes / constraints I’ll follow
+- Each workflow captures a repeated sequence (not single isolated steps).
+- I’ll try to cover all tasks with as few workflows as necessary while avoiding overlap.
+- If a task contains unique steps that don’t repeat, I’ll not create a workflow for it unless it appears in ≥2 tasks.
+
+Paste your tasks now (instruction + actions). If you prefer, you can paste a small sample first and I’ll extract workflows from that.
+
+click('id') # input string id value for all actions
+
+select_option('id', 'value') # for dropdown menu

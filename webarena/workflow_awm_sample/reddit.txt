@@ -1,0 +1,40 @@
+Workflow 1: Open account and go to My Orders
+<think>
+To view a user's order history, open the account menu then navigate to the "My Orders" page.
+</think>
+<action>
+click('227')  // "My Account"
+</action>
+<action>
+click('1843') // "My Orders"
+</action>
+
+Workflow 2: Extract order information from Orders page and report it
+<think>
+To obtain specific info (order number, status, or date) from the orders list, locate the relevant row(s) in the Orders table and report the requested field(s) to the user.
+</think>
+<action>
+// Identify the target order row(s) by filtering/sorting (e.g., by status or date) and read the desired field(s)
+read_table_rows('Orders') -> {order_rows}
+</action>
+<action>
+send_msg_to_user('{result_message}') // e.g., 'The earliest purchase date is {earliest_date}.' or 'The most recent cancelled order number is {order_number}.'
+</action>
+
+Workflow 3: Navigate site categories via menu hover and click
+<think>
+To browse a specific product category, hover over the top-level menu, hover the subcategory group, then click the target subcategory link.
+</think>
+<action>
+hover('735')  // top-level category (e.g., "Home & Kitchen")
+</action>
+<action>
+hover('786')  // subcategory group (e.g., "Storage & Organization")
+</action>
+<action>
+click('797')  // target subcategory link (e.g., "Racks, Shelves & Drawers")
+</action>
+
+click('id') # input string id value for all actions
+
+select_option('id', 'value') # for dropdown menu

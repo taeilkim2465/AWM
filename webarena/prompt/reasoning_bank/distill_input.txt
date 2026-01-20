@@ -1,0 +1,2 @@
+Query: {task_query}
+Trajectory: {trajectory}

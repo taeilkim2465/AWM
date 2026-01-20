@@ -1,0 +1,1 @@
+{"id": 85, "eval_info": {"thoughts": "The agent filled origin/destination, generated the route, and the page shows \"Distance: 32km. Time: 0:30.\" The agent's reply correctly reported ~30 minutes (\u224832 km) and noted caveats. This satisfies the information-seeking intent.", "status": "success"}}

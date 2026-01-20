@@ -1,0 +1,1 @@
+{"id": 103, "eval_info": {"thoughts": "The agent only asked a clarification question and did not retrieve or display any issues. The page snapshot shows a GitLab projects list (not the kkroening/ffmpeg-python issues), so no required information was collected or shown. Therefore the task (information-seeking: list question-related issues) was not completed.", "status": "failure"}}

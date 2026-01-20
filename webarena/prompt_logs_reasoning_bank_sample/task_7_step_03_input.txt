@@ -1,0 +1,295 @@
+================================================================================
+STEP 3 INPUT
+================================================================================
+
+================================================================================
+SYSTEM PROMPT
+================================================================================
+You are an agent trying to solve a web task based on the content of the page and
+a user instructions. You can interact with the page and explore. Each time you
+submit an action it will be sent to the browser and you will receive a new page.
+
+================================================================================
+USER PROMPT
+================================================================================
+# Instructions
+
+You are a UI Assistant, your goal is to help the user perform tasks using a web browser. You can
+communicate with the user via a chat, in which the user gives you instructions and in which you
+can send back messages. You have access to a web browser that both you and the user can see,
+and with which only you can interact via specific commands.
+
+Review the instructions from the user, the current state of the page and all other information
+to find the best possible next action to accomplish your goal. Your answer will be interpreted
+and executed by a program, make sure to follow the formatting instructions.
+
+**Current Progress**: Step 3/10 (7 steps remaining)
+
+**Before choosing your next action:**
+- Check your action history below - are you repeating the same actions?
+- If yes, try a different approach (search, different menu, filters, etc.)
+- Make sure each action brings you closer to completing the goal
+
+## Chat messages:
+
+ - [assistant] Hi! I am your UI assistant, I can perform web tasks for you. What can I help you with?
+ - [user] Tell me the full address of all international airports that are within a driving distance of 50 km to Carnegie Mellon University# Reasoning Memories
+
+Below are some memory items that I accumulated from past interaction from the environment that may be helpful to solve the task. You can use it when you feel it's relevant. In each step, please first explicitly discuss if you want to use each memory item or not, and then take action.
+
+Memory 1:
+- Title: Default origin and how to report driving distance
+- Description: When no origin is given, use the city's downtown as the default start point and clearly state that assumption when reporting driving distance and time.
+- Content: Use a recognizable city center (e.g., downtown) as the default origin if the user doesn't provide an address, and say so. Compute driving distance and estimated driving time using a routing method (route API or road-network estimate), and present both distance and time with units (miles/km and hours/minutes).
+Memory 2:
+- Title: Cross-check with straight-line (great-circle) distance when needed
+- Description: Report both road distance and straight-line distance if geographic proximity vs. travel time could differ.
+- Content: If the user might care about geographic closeness rather than travel routes, compute or obtain the straight-line distance (great-circle) between points as a cross-check. Present both figures so users can choose the metric most relevant to them.
+Memory 3:
+- Title: Use the page's directions/map tool to get travel distance and time
+- Description: For questions about "closest" places, use the website or map directions feature to obtain road distance and estimated driving time.
+- Content: Fill the origin and destination fields in the site's directions or mapping widget and read the resulting route distance and drive-time — this gives a practical measure of closeness by travel. This approach is reliable for answering "closest" in terms of driving distance and duration.
+
+
+# Observation of current step:
+
+## AXTree:
+RootWebArea 'Carnegie Mellon University | OpenStreetMap', focused
+	[44] banner ''
+		[45] heading 'OpenStreetMap logo OpenStreetMap'
+			[46] link 'OpenStreetMap logo OpenStreetMap'
+				[49] image 'OpenStreetMap logo'
+				StaticText ''
+		[51] navigation ''
+			[95] link 'Edit'
+			[96] button ''
+			[102] link 'History'
+			[103] link 'Export'
+		[104] navigation ''
+			[105] list ''
+				[106] listitem ''
+					[107] link 'GPS Traces'
+				[108] listitem ''
+					[109] link 'User Diaries'
+				[110] listitem ''
+					[111] link 'Communities'
+				[112] listitem ''
+					[113] link 'Copyright'
+				[114] listitem ''
+					[115] link 'Help'
+				[116] listitem ''
+					[117] link 'About'
+			[134] link 'Log In'
+			[135] link 'Sign Up'
+	[151] Section ''
+		[153] button 'Close'
+		[156] image ''
+		[158] textbox 'From' value='Carnegie Mellon University, Tech Street, Squirrel Hill North, Pittsburgh, Allegheny County, 15213, United States'
+			StaticText 'Carnegie Mellon University, Tech Street, Squirrel Hill North, Pittsburgh, Allegheny County, 15213, United States'
+		[161] image ''
+		[163] textbox 'To' value='Pittsburgh International Airport, Fairway Drive, Cherrington Corporate Center, Moon Township, Allegheny County, 15108, United States'
+			StaticText 'Pittsburgh International Airport, Fairway Drive, Cherrington Corporate Center, Moon Township, Allegheny County, 15108, United States'
+		[166] combobox '' value='Car (OSRM)', hasPopup='menu', expanded=False
+			[167] option 'Bicycle (OSRM)', selected=False
+			[168] option 'Car (OSRM)', selected=True
+			[169] option 'Foot (OSRM)', selected=False
+		[171] button 'Go', focused
+		[174] button 'Reverse Directions'
+	[482] status '', live='polite', atomic, relevant='additions text'
+		StaticText 'Loading...'
+	[460] image ''
+	[461] image ''
+	[462] image ''
+	[463] image ''
+	[464] image ''
+	[465] image ''
+	[466] image ''
+	[467] image ''
+	[468] image ''
+	[469] image ''
+	[470] image ''
+	[471] image ''
+	[472] image ''
+	[473] image ''
+	[474] image ''
+	[475] image ''
+	[476] image ''
+	[477] image ''
+	[478] image ''
+	[479] image ''
+	[480] image ''
+	[484] image ''
+	[485] image ''
+	[486] button 'Marker'
+	[487] button 'Marker'
+	[394] link 'Zoom In'
+	[396] link 'Zoom Out'
+	[399] button 'Show My Location'
+	[402] link 'Layers'
+	[405] link ''
+	[408] link 'Share'
+	[411] link ''
+	[414] link ''
+	StaticText '100 m'
+	StaticText '500 ft'
+	StaticText '©'
+	[422] link 'OpenStreetMap contributors'
+	StaticText '♥'
+	[423] link 'Make a Donation'
+	StaticText '.'
+	[424] link 'Website and API terms'
+
+
+# History of interaction with the task:
+
+## step 0
+
+### Action:
+fill('145', 'Carnegie Mellon University')
+click('147')
+
+## step 1
+
+### Action:
+click('149')
+
+## step 2
+
+### Action:
+fill('158', 'Carnegie Mellon University', True)
+fill('163', 'Pittsburgh International Airport', True)
+click('171')
+
+# Action space:
+
+13 different types of actions are available.
+
+noop(wait_ms: float = 1000)
+    Description: Do nothing, and optionally wait for the given time (in milliseconds).
+    Examples:
+        noop()
+
+        noop(500)
+
+send_msg_to_user(text: str)
+    Description: Sends a message to the user.
+    Examples:
+        send_msg_to_user('Based on the results of my search, the city was built in 1751.')
+
+scroll(delta_x: float, delta_y: float)
+    Description: Scroll horizontally and vertically. Amounts in pixels, positive for right or down scrolling, negative for left or up scrolling. Dispatches a wheel event.
+    Examples:
+        scroll(0, 200)
+
+        scroll(-50.2, -100.5)
+
+fill(bid: str, value: str, enable_autocomplete_menu: bool = False)
+    Description: Fill out a form field. It focuses the element and triggers an input event with the entered text. It works for <input>, <textarea> and [contenteditable] elements.
+    Examples:
+        fill('45', 'multi-line\nexample')
+
+        fill('a12', 'example with "quotes"')
+
+        fill('b534', 'Montre', True)
+
+select_option(bid: str, options: str | list[str])
+    Description: Select one or multiple options in a <select> element. You can specify option value or label to select. Multiple options can be selected.
+    Examples:
+        select_option('a48', 'blue')
+
+        select_option('c48', ['red', 'green', 'blue'])
+
+click(bid: str, button: Literal['left', 'middle', 'right'] = 'left', modifiers: list[typing.Literal['Alt', 'Control', 'ControlOrMeta', 'Meta', 'Shift']] = [])
+    Description: Click an element.
+    Examples:
+        click('a51')
+
+        click('b22', button='right')
+
+        click('48', button='middle', modifiers=['Shift'])
+
+dblclick(bid: str, button: Literal['left', 'middle', 'right'] = 'left', modifiers: list[typing.Literal['Alt', 'Control', 'ControlOrMeta', 'Meta', 'Shift']] = [])
+    Description: Double click an element.
+    Examples:
+        dblclick('12')
+
+        dblclick('ca42', button='right')
+
+        dblclick('178', button='middle', modifiers=['Shift'])
+
+hover(bid: str)
+    Description: Hover over an element.
+    Examples:
+        hover('b8')
+
+press(bid: str, key_comb: str)
+    Description: Focus the matching element and press a combination of keys. It accepts the logical key names that are emitted in the keyboardEvent.key property of the keyboard events: Backquote, Minus, Equal, Backslash, Backspace, Tab, Delete, Escape, ArrowDown, End, Enter, Home, Insert, PageDown, PageUp, ArrowRight, ArrowUp, F1 - F12, Digit0 - Digit9, KeyA - KeyZ, etc. You can alternatively specify a single character you'd like to produce such as "a" or "#". Following modification shortcuts are also supported: Shift, Control, Alt, Meta, ShiftLeft, ControlOrMeta. ControlOrMeta resolves to Control on Windows and Linux and to Meta on macOS.
+    Examples:
+        press('88', 'Backspace')
+
+        press('a26', 'ControlOrMeta+a')
+
+        press('a61', 'Meta+Shift+t')
+
+focus(bid: str)
+    Description: Focus the matching element.
+    Examples:
+        focus('b455')
+
+clear(bid: str)
+    Description: Clear the input field.
+    Examples:
+        clear('996')
+
+drag_and_drop(from_bid: str, to_bid: str)
+    Description: Perform a drag & drop. Hover the element that will be dragged. Press left mouse button. Move mouse to the element that will receive the drop. Release left mouse button.
+    Examples:
+        drag_and_drop('56', '498')
+
+upload_file(bid: str, file: str | list[str])
+    Description: Click an element and wait for a "filechooser" event, then select one or multiple input files for upload. Relative file paths are resolved relative to the current working directory. An empty list clears the selected files.
+    Examples:
+        upload_file('572', 'my_receipt.pdf')
+
+        upload_file('63', ['/home/bob/Documents/image.jpg', '/home/bob/Documents/file.zip'])
+
+Multiple actions can be provided at once, but will be executed sequentially without any feedback from the page.
+More than 2-3 actions usually leads to failure or unexpected behavior. Example:
+fill('b534', 'Montre', True)
+click('a51')
+click('48', button='middle', modifiers=['Shift'])
+
+
+# Abstract Example
+
+Here is an abstract version of the answer with description of the content of
+each tag. Make sure you follow this structure, but replace the content with your
+answer:
+
+<think>
+Think step by step. If you need to make calculations such as coordinates, write them here. Describe the effect
+that your previous action had on the current content of the page.
+</think>
+
+<action>
+One or several actions, separated by new lines.
+</action>
+
+# Concrete Example
+
+Here is a concrete example of how to format your answer.
+Make sure to follow the template with proper tags:
+
+<think>
+My memory says that I filled the first name and last name, but I can't see any
+content in the form. I need to explore different ways to fill the form. Perhaps
+the form is not visible yet or some fields are disabled. I need to replan.
+</think>
+
+<action>
+fill('b534', 'Montre', True)
+click('a51')
+click('48', button='middle', modifiers=['Shift'])
+</action>
+
+[IMAGE_1: data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD...]

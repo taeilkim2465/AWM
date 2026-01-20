@@ -1,0 +1,9 @@
+{
+  "step": 2,
+  "action": "select_option('678', 'Year')\nfill('686', '01/01/2022')\nfill('691', '12/31/2022')\nclick('650')",
+  "memory": null,
+  "think": "I need to run the Bestsellers report for the year 2022. The page currently shows Period=Day and the From/To fields are required. I'll change Period to \"Year\", set From to 01/01/2022 and To to 12/31/2022, then click \"Show Report\" to generate the report and find the top-selling product.",
+  "has_reasoning_memories": false,
+  "n_retry": 0.0,
+  "error": null
+}

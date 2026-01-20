@@ -1,0 +1,1559 @@
+2026-01-20 11:21:41,736 - 1570258 - browsergym.experiments.loop - INFO - Running experiment GenericAgentArgs_on_webarena.103_2 in:
+  results/2026-01-20_11-21-41_GenericAgentArgs_on_webarena.103_2
+/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/beartype/_util/hint/pep/utilpeptest.py:345: BeartypeDecorHintPep585DeprecationWarning: PEP 484 type hint typing.Mapping[str, gymnasium.spaces.space.Space[typing.Any]] deprecated by PEP 585 scheduled for removal in the first Python version released after October 5th, 2025. To resolve this, import this hint from "beartype.typing" rather than "typing". See this discussion for further details and alternatives:
+    https://github.com/beartype/beartype#pep-585-deprecations
+  warn(
+2026-01-20 11:21:42,359 - 1570258 - browsergym.core.env - WARNING - Overriding the task's viewport parameter ({'width': 1280, 'height': 720} => {'width': 1280, 'height': 720}). This might change the task's behaviour and difficulty.
+2026-01-20 11:21:42,359 - 1570258 - browsergym.core.env - WARNING - Overriding the task's slow_mo parameter (1000 => 300). This might change the task's behaviour and difficulty.
+2026-01-20 11:21:56,070 - 1570258 - browsergym.experiments.loop - WARNING - Exception uncaught by agent or environment in task webarena.103.
+TimeoutError:
+Page.goto: Timeout 10000ms exceeded.
+Call log:
+navigating to "http://18.191.199.182:8023/users/sign_in", waiting until "load"
+
+Traceback (most recent call last):
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/experiments/loop.py", line 411, in run
+    step_info.from_reset(
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/experiments/loop.py", line 216, in from_reset
+    self.obs, env_info = env.reset(seed=seed)
+                         ^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/gymnasium/wrappers/common.py", line 146, in reset
+    return super().reset(seed=seed, options=options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/gymnasium/core.py", line 333, in reset
+    return self.env.reset(seed=seed, options=options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/gymnasium/wrappers/common.py", line 400, in reset
+    return super().reset(seed=seed, options=options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/gymnasium/core.py", line 333, in reset
+    return self.env.reset(seed=seed, options=options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/core/env.py", line 341, in reset
+    task_goal, task_info = self.task.setup(page=self.page)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/webarena/task.py", line 106, in setup
+    self.webarena_instance.ui_login(site=site, page=page)
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/webarena/instance.py", line 181, in ui_login
+    page.goto(f"{url}/users/sign_in")
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/sync_api/_generated.py", line 8686, in goto
+    self._sync(
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_page.py", line 519, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_frame.py", line 145, in goto
+    await self._channel.send("goto", locals_to_params(locals()))
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 59, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 514, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.goto: Timeout 10000ms exceeded.
+Call log:
+navigating to "http://18.191.199.182:8023/users/sign_in", waiting until "load"
+
+
+2026-01-20 11:21:56,073 - 1570258 - browsergym.experiments.loop - INFO - Saving summary info.
+WARNING this demo agent will soon be moved elsewhere. Expect it to be removed at some point.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/c2/taeil/AWM/webarena/autoeval/evaluate_trajectory.py", line 285, in <module>
+    main()
+  File "/c2/taeil/AWM/webarena/autoeval/evaluate_trajectory.py", line 228, in main
+    if "send_msg_to_user" in action_list[-1][0]:
+                             ~~~~~~~~~~~^^^^
+IndexError: list index out of range
+Waring: use vision prompt by default for gpt-5-mini.
+Collected 0 result directories.
+#0 result dirs after template dedup..
+Prompt:
+ Given a list of web navigation tasks, your task is to extract the common workflows to solve these tasks.
+Each given task contains a natural language instruction, and a series of actions to solve the task. You need to find the repetitive subset of actions across multiple tasks, and extract each of them out as a workflow.
+Each workflow should be a commonly-reused sub-routine of the tasks. Do not generate similar or overlapping workflows. Each workflow should have at least two steps. Represent the non-fixed elements (input text, button strings) with descriptive variable names as shown in the example.
+Keep the values of invariant elements, e.g., id of "Search" or "Customers", as they will share and stay invariant across tasks.
+Try to generate as many workflows that can cover all the tasks in the input list.
+
+## Concrete Examples
+
+Query: What is the date when I made my first purchase on this site?
+Actions:
+<think>
+To find the date of the first purchase, I need to navigate to the order history section of the user's account. I will start by clicking on the "My Account" link.
+</think>
+<action>
+click('227')
+</action>
+
+<think>
+To find the date of the first purchase, I need to navigate to the "My Orders" section where the order history is listed. From there, I can look for the earliest order date. I will start by clicking on the "My Orders" link in the left sidebar.
+</think>
+<action>
+click('1843')
+</action>
+
+<think>
+To find the date of the first purchase, I need to look at the earliest date in the "Date" column of the "Orders" table. The current page shows the first 10 orders, but there are multiple pages. I will navigate to the last page to find the earliest order date.
+</think>
+<action>
+click('1788')
+</action>
+
+<think>
+To find the date of the first purchase, I need to look for the earliest date in the "Date" column of the "My Orders" table. From the current view, the earliest date visible is "5/2/23". However, there might be more orders on other pages. I will navigate to the last page to ensure I find the earliest date.
+</think>
+<action>
+click('1784')
+</action>
+
+<think>
+To find the earliest purchase date, I need to look at the "Date" column in the "Orders" table and identify the earliest date listed. The dates currently visible are: 4/27/22, 4/5/22, 3/10/22, 3/2/22, 3/2/22. The earliest date visible is 3/2/22. I will respond with this date.
+</think>
+<action>
+send_msg_to_user('The earliest purchase date is 3/2/22.')
+</action>
+
+Query: I want to browse the products in the Cabinets, Racks & Shelves category
+
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to navigate to the "Home & Kitchen" section, which likely contains the Cabinets, Racks & Shelves category. I will start by hovering over the "Home & Kitchen" menu item to reveal the subcategories.
+</think>
+<action>
+hover('735')
+</action>
+
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to navigate to the "Storage & Organization" section under the "Home & Kitchen" menu. I will start by hovering over the "Storage & Organization" menu item to reveal the subcategories.
+</think>
+<action>
+hover('786')
+</action>
+
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to click on the "Racks, Shelves & Drawers" link under the "Storage & Organization" menu. This will take me to the desired category.
+</think>
+<action>
+click('797')
+</action>
+
+<think>
+The current page is displaying the "Racks, Shelves & Drawers" category under "Storage & Organization" in the "Home & Kitchen" section. The user wants to browse products in the "Cabinets, Racks & Shelves" category. Since "Racks, Shelves & Drawers" is already a subcategory of "Storage & Organization," I will confirm with the user if this is the correct category they want to browse.
+</think>
+<action>
+send_msg_to_user('You are currently viewing the "Racks, Shelves & Drawers" category under "Storage & Organization." Is this the correct category you want to browse, or are you looking for a different category?')
+</action>
+
+
+Query: Get the order number of my most recent cancelled order 
+<think>
+To get the order number of the most recent cancelled order, I need to navigate to the "My Account" section where order history is typically managed. From the current page, I can see the "My Account" link in the top right corner. I will click on the "My Account" link to proceed.
+</think>
+<action>
+click('227')
+</action>
+
+<think>
+To get the order number of the most recent cancelled order, I need to navigate to the "My Orders" section. From there, I can filter or sort the orders to find the most recent cancelled order. I will start by clicking on the "My Orders" link in the left sidebar.
+</think>
+<action>
+click('1843')
+</action>
+
+<think>
+To get the order number of the most recent cancelled order, I need to look for the order with the status "Canceled" and note its order number. From the current page, I can see that the most recent cancelled order is order number 000000170.
+</think>
+<action>
+send_msg_to_user('The order number of your most recent cancelled order is 000000170.')
+</action>
+
+
+## Summary Workflows
+
+Workflow 1: Find all orders
+<think>
+To find the date of the first purchase, I need to navigate to the order history section of the user's account. I will start by clicking on the "My Account" link.
+</think>
+<action>
+click('227')
+</action>
+
+<think>
+To find the date of the first purchase, I need to navigate to the "My Orders" section where the order history is listed. From there, I can look for the earliest order date. I will start by clicking on the "My Orders" link in the left sidebar.
+</think>
+<action>
+click('1843')
+</action>
+
+Workflow 2: Obtain order information, such as date or order number
+<think>
+To find the earliest purchase date, I need to look at the "Date" column in the "Orders" table and identify the earliest date listed. The dates currently visible are: 4/27/22, 4/5/22, 3/10/22, 3/2/22, 3/2/22. The earliest date visible is 3/2/22. I will respond with this date.
+</think>
+<action>
+send_msg_to_user('The earliest purchase date is 3/2/2022.')
+</action>
+
+Workflow 3: Browse products in a specific (sub-)category
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to navigate to the "Home & Kitchen" section, which likely contains the Cabinets, Racks & Shelves category. I will start by hovering over the "Home & Kitchen" menu item to reveal the subcategories.
+</think>
+<action>
+hover('735')
+</action>
+
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to navigate to the "Storage & Organization" section under the "Home & Kitchen" menu. I will start by hovering over the "Storage & Organization" menu item to reveal the subcategories.
+</think>
+<action>
+hover('786')
+</action>
+
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to click on the "Racks, Shelves & Drawers" link under the "Storage & Organization" menu. This will take me to the desired category.
+</think>
+<action>
+click('797')
+</action>
+
+## Concrete Examples
+
+## Summary Workflows 
+
+
+I can do that — please paste the list of web navigation tasks (each task should include the natural-language instruction and the sequence of actions). 
+
+A few notes on the expected input format so I can produce correct workflows:
+- For each task include the instruction and the action sequence (click/hover/type/send_msg_to_user/etc.).
+- Keep action ids and literal strings exactly as they appear (invariant elements).
+- If you like, separate tasks with a blank line.
+
+What I will produce:
+- A set of non-overlapping workflows (each 2+ steps) that capture commonly repeated sub-routines across the tasks.
+- Use descriptive variable names for non-fixed elements (e.g., click('My Account') → click('ACCOUNT_LINK')).
+- Avoid duplicate/overlapping workflows; aim to cover as many tasks as possible.
+
+If you want, you can also specify:
+- How many workflows you want at most, or
+- Whether to prefer more granular (many small workflows) or broader (fewer, longer workflows) routines.
+
+Paste the tasks and I’ll extract the workflows.
+2026-01-20 11:22:17,740 - 1571615 - browsergym.experiments.loop - INFO - Running experiment GenericAgentArgs_on_webarena.105_33 in:
+  results/2026-01-20_11-22-17_GenericAgentArgs_on_webarena.105_33
+/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/beartype/_util/hint/pep/utilpeptest.py:345: BeartypeDecorHintPep585DeprecationWarning: PEP 484 type hint typing.Mapping[str, gymnasium.spaces.space.Space[typing.Any]] deprecated by PEP 585 scheduled for removal in the first Python version released after October 5th, 2025. To resolve this, import this hint from "beartype.typing" rather than "typing". See this discussion for further details and alternatives:
+    https://github.com/beartype/beartype#pep-585-deprecations
+  warn(
+2026-01-20 11:22:18,321 - 1571615 - browsergym.core.env - WARNING - Overriding the task's viewport parameter ({'width': 1280, 'height': 720} => {'width': 1280, 'height': 720}). This might change the task's behaviour and difficulty.
+2026-01-20 11:22:18,322 - 1571615 - browsergym.core.env - WARNING - Overriding the task's slow_mo parameter (1000 => 300). This might change the task's behaviour and difficulty.
+2026-01-20 11:22:31,946 - 1571615 - browsergym.experiments.loop - WARNING - Exception uncaught by agent or environment in task webarena.105.
+TimeoutError:
+Page.goto: Timeout 10000ms exceeded.
+Call log:
+navigating to "http://18.191.199.182:8023/users/sign_in", waiting until "load"
+
+Traceback (most recent call last):
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/experiments/loop.py", line 411, in run
+    step_info.from_reset(
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/experiments/loop.py", line 216, in from_reset
+    self.obs, env_info = env.reset(seed=seed)
+                         ^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/gymnasium/wrappers/common.py", line 146, in reset
+    return super().reset(seed=seed, options=options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/gymnasium/core.py", line 333, in reset
+    return self.env.reset(seed=seed, options=options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/gymnasium/wrappers/common.py", line 400, in reset
+    return super().reset(seed=seed, options=options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/gymnasium/core.py", line 333, in reset
+    return self.env.reset(seed=seed, options=options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/core/env.py", line 341, in reset
+    task_goal, task_info = self.task.setup(page=self.page)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/webarena/task.py", line 106, in setup
+    self.webarena_instance.ui_login(site=site, page=page)
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/webarena/instance.py", line 181, in ui_login
+    page.goto(f"{url}/users/sign_in")
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/sync_api/_generated.py", line 8686, in goto
+    self._sync(
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_page.py", line 519, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_frame.py", line 145, in goto
+    await self._channel.send("goto", locals_to_params(locals()))
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 59, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 514, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.goto: Timeout 10000ms exceeded.
+Call log:
+navigating to "http://18.191.199.182:8023/users/sign_in", waiting until "load"
+
+
+2026-01-20 11:22:31,948 - 1571615 - browsergym.experiments.loop - INFO - Saving summary info.
+WARNING this demo agent will soon be moved elsewhere. Expect it to be removed at some point.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/c2/taeil/AWM/webarena/autoeval/evaluate_trajectory.py", line 285, in <module>
+    main()
+  File "/c2/taeil/AWM/webarena/autoeval/evaluate_trajectory.py", line 228, in main
+    if "send_msg_to_user" in action_list[-1][0]:
+                             ~~~~~~~~~~~^^^^
+IndexError: list index out of range
+Waring: use vision prompt by default for gpt-5-mini.
+Collected 0 result directories.
+#0 result dirs after template dedup..
+Prompt:
+ Given a list of web navigation tasks, your task is to extract the common workflows to solve these tasks.
+Each given task contains a natural language instruction, and a series of actions to solve the task. You need to find the repetitive subset of actions across multiple tasks, and extract each of them out as a workflow.
+Each workflow should be a commonly-reused sub-routine of the tasks. Do not generate similar or overlapping workflows. Each workflow should have at least two steps. Represent the non-fixed elements (input text, button strings) with descriptive variable names as shown in the example.
+Keep the values of invariant elements, e.g., id of "Search" or "Customers", as they will share and stay invariant across tasks.
+Try to generate as many workflows that can cover all the tasks in the input list.
+
+## Concrete Examples
+
+Query: What is the date when I made my first purchase on this site?
+Actions:
+<think>
+To find the date of the first purchase, I need to navigate to the order history section of the user's account. I will start by clicking on the "My Account" link.
+</think>
+<action>
+click('227')
+</action>
+
+<think>
+To find the date of the first purchase, I need to navigate to the "My Orders" section where the order history is listed. From there, I can look for the earliest order date. I will start by clicking on the "My Orders" link in the left sidebar.
+</think>
+<action>
+click('1843')
+</action>
+
+<think>
+To find the date of the first purchase, I need to look at the earliest date in the "Date" column of the "Orders" table. The current page shows the first 10 orders, but there are multiple pages. I will navigate to the last page to find the earliest order date.
+</think>
+<action>
+click('1788')
+</action>
+
+<think>
+To find the date of the first purchase, I need to look for the earliest date in the "Date" column of the "My Orders" table. From the current view, the earliest date visible is "5/2/23". However, there might be more orders on other pages. I will navigate to the last page to ensure I find the earliest date.
+</think>
+<action>
+click('1784')
+</action>
+
+<think>
+To find the earliest purchase date, I need to look at the "Date" column in the "Orders" table and identify the earliest date listed. The dates currently visible are: 4/27/22, 4/5/22, 3/10/22, 3/2/22, 3/2/22. The earliest date visible is 3/2/22. I will respond with this date.
+</think>
+<action>
+send_msg_to_user('The earliest purchase date is 3/2/22.')
+</action>
+
+Query: I want to browse the products in the Cabinets, Racks & Shelves category
+
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to navigate to the "Home & Kitchen" section, which likely contains the Cabinets, Racks & Shelves category. I will start by hovering over the "Home & Kitchen" menu item to reveal the subcategories.
+</think>
+<action>
+hover('735')
+</action>
+
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to navigate to the "Storage & Organization" section under the "Home & Kitchen" menu. I will start by hovering over the "Storage & Organization" menu item to reveal the subcategories.
+</think>
+<action>
+hover('786')
+</action>
+
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to click on the "Racks, Shelves & Drawers" link under the "Storage & Organization" menu. This will take me to the desired category.
+</think>
+<action>
+click('797')
+</action>
+
+<think>
+The current page is displaying the "Racks, Shelves & Drawers" category under "Storage & Organization" in the "Home & Kitchen" section. The user wants to browse products in the "Cabinets, Racks & Shelves" category. Since "Racks, Shelves & Drawers" is already a subcategory of "Storage & Organization," I will confirm with the user if this is the correct category they want to browse.
+</think>
+<action>
+send_msg_to_user('You are currently viewing the "Racks, Shelves & Drawers" category under "Storage & Organization." Is this the correct category you want to browse, or are you looking for a different category?')
+</action>
+
+
+Query: Get the order number of my most recent cancelled order 
+<think>
+To get the order number of the most recent cancelled order, I need to navigate to the "My Account" section where order history is typically managed. From the current page, I can see the "My Account" link in the top right corner. I will click on the "My Account" link to proceed.
+</think>
+<action>
+click('227')
+</action>
+
+<think>
+To get the order number of the most recent cancelled order, I need to navigate to the "My Orders" section. From there, I can filter or sort the orders to find the most recent cancelled order. I will start by clicking on the "My Orders" link in the left sidebar.
+</think>
+<action>
+click('1843')
+</action>
+
+<think>
+To get the order number of the most recent cancelled order, I need to look for the order with the status "Canceled" and note its order number. From the current page, I can see that the most recent cancelled order is order number 000000170.
+</think>
+<action>
+send_msg_to_user('The order number of your most recent cancelled order is 000000170.')
+</action>
+
+
+## Summary Workflows
+
+Workflow 1: Find all orders
+<think>
+To find the date of the first purchase, I need to navigate to the order history section of the user's account. I will start by clicking on the "My Account" link.
+</think>
+<action>
+click('227')
+</action>
+
+<think>
+To find the date of the first purchase, I need to navigate to the "My Orders" section where the order history is listed. From there, I can look for the earliest order date. I will start by clicking on the "My Orders" link in the left sidebar.
+</think>
+<action>
+click('1843')
+</action>
+
+Workflow 2: Obtain order information, such as date or order number
+<think>
+To find the earliest purchase date, I need to look at the "Date" column in the "Orders" table and identify the earliest date listed. The dates currently visible are: 4/27/22, 4/5/22, 3/10/22, 3/2/22, 3/2/22. The earliest date visible is 3/2/22. I will respond with this date.
+</think>
+<action>
+send_msg_to_user('The earliest purchase date is 3/2/2022.')
+</action>
+
+Workflow 3: Browse products in a specific (sub-)category
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to navigate to the "Home & Kitchen" section, which likely contains the Cabinets, Racks & Shelves category. I will start by hovering over the "Home & Kitchen" menu item to reveal the subcategories.
+</think>
+<action>
+hover('735')
+</action>
+
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to navigate to the "Storage & Organization" section under the "Home & Kitchen" menu. I will start by hovering over the "Storage & Organization" menu item to reveal the subcategories.
+</think>
+<action>
+hover('786')
+</action>
+
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to click on the "Racks, Shelves & Drawers" link under the "Storage & Organization" menu. This will take me to the desired category.
+</think>
+<action>
+click('797')
+</action>
+
+## Concrete Examples
+
+## Summary Workflows 
+
+
+I don't see the list of tasks to analyze. Please paste the tasks (each task should include the natural-language instruction and its sequence of actions/thinks, like in your examples). 
+
+Guidelines for best results:
+- Include all tasks you want processed in the same format as your examples (think/action entries).
+- Actions should show clicks/hovers/inputs (IDs or visible strings).
+- If some elements are variable (input text, button labels), that's fine — I'll replace them with descriptive variable names in the workflows.
+
+What I'll produce after you paste the tasks:
+- A set of non-overlapping common workflows (each with at least two steps).
+- Steps will use concrete invariant elements (IDs/strings) where present and descriptive variable names for non-fixed elements (e.g., enter_text('SEARCH_TERM')).
+- No redundant/overlapping workflows; as many workflows as needed to cover the tasks.
+
+Paste the tasks and I'll extract the workflows.
+2026-01-20 11:22:52,662 - 1572903 - browsergym.experiments.loop - INFO - Running experiment GenericAgentArgs_on_webarena.293_6 in:
+  results/2026-01-20_11-22-52_GenericAgentArgs_on_webarena.293_6
+/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/beartype/_util/hint/pep/utilpeptest.py:345: BeartypeDecorHintPep585DeprecationWarning: PEP 484 type hint typing.Mapping[str, gymnasium.spaces.space.Space[typing.Any]] deprecated by PEP 585 scheduled for removal in the first Python version released after October 5th, 2025. To resolve this, import this hint from "beartype.typing" rather than "typing". See this discussion for further details and alternatives:
+    https://github.com/beartype/beartype#pep-585-deprecations
+  warn(
+2026-01-20 11:22:53,323 - 1572903 - browsergym.core.env - WARNING - Overriding the task's viewport parameter ({'width': 1280, 'height': 720} => {'width': 1280, 'height': 720}). This might change the task's behaviour and difficulty.
+2026-01-20 11:22:53,323 - 1572903 - browsergym.core.env - WARNING - Overriding the task's slow_mo parameter (1000 => 300). This might change the task's behaviour and difficulty.
+2026-01-20 11:23:07,216 - 1572903 - browsergym.experiments.loop - WARNING - Exception uncaught by agent or environment in task webarena.293.
+TimeoutError:
+Page.goto: Timeout 10000ms exceeded.
+Call log:
+navigating to "http://18.191.199.182:8023/users/sign_in", waiting until "load"
+
+Traceback (most recent call last):
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/experiments/loop.py", line 411, in run
+    step_info.from_reset(
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/experiments/loop.py", line 216, in from_reset
+    self.obs, env_info = env.reset(seed=seed)
+                         ^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/gymnasium/wrappers/common.py", line 146, in reset
+    return super().reset(seed=seed, options=options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/gymnasium/core.py", line 333, in reset
+    return self.env.reset(seed=seed, options=options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/gymnasium/wrappers/common.py", line 400, in reset
+    return super().reset(seed=seed, options=options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/gymnasium/core.py", line 333, in reset
+    return self.env.reset(seed=seed, options=options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/core/env.py", line 341, in reset
+    task_goal, task_info = self.task.setup(page=self.page)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/webarena/task.py", line 106, in setup
+    self.webarena_instance.ui_login(site=site, page=page)
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/webarena/instance.py", line 181, in ui_login
+    page.goto(f"{url}/users/sign_in")
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/sync_api/_generated.py", line 8686, in goto
+    self._sync(
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_page.py", line 519, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_frame.py", line 145, in goto
+    await self._channel.send("goto", locals_to_params(locals()))
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 59, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 514, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.goto: Timeout 10000ms exceeded.
+Call log:
+navigating to "http://18.191.199.182:8023/users/sign_in", waiting until "load"
+
+
+2026-01-20 11:23:07,219 - 1572903 - browsergym.experiments.loop - INFO - Saving summary info.
+WARNING this demo agent will soon be moved elsewhere. Expect it to be removed at some point.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/c2/taeil/AWM/webarena/autoeval/evaluate_trajectory.py", line 285, in <module>
+    main()
+  File "/c2/taeil/AWM/webarena/autoeval/evaluate_trajectory.py", line 228, in main
+    if "send_msg_to_user" in action_list[-1][0]:
+                             ~~~~~~~~~~~^^^^
+IndexError: list index out of range
+Waring: use vision prompt by default for gpt-5-mini.
+Collected 0 result directories.
+#0 result dirs after template dedup..
+Prompt:
+ Given a list of web navigation tasks, your task is to extract the common workflows to solve these tasks.
+Each given task contains a natural language instruction, and a series of actions to solve the task. You need to find the repetitive subset of actions across multiple tasks, and extract each of them out as a workflow.
+Each workflow should be a commonly-reused sub-routine of the tasks. Do not generate similar or overlapping workflows. Each workflow should have at least two steps. Represent the non-fixed elements (input text, button strings) with descriptive variable names as shown in the example.
+Keep the values of invariant elements, e.g., id of "Search" or "Customers", as they will share and stay invariant across tasks.
+Try to generate as many workflows that can cover all the tasks in the input list.
+
+## Concrete Examples
+
+Query: What is the date when I made my first purchase on this site?
+Actions:
+<think>
+To find the date of the first purchase, I need to navigate to the order history section of the user's account. I will start by clicking on the "My Account" link.
+</think>
+<action>
+click('227')
+</action>
+
+<think>
+To find the date of the first purchase, I need to navigate to the "My Orders" section where the order history is listed. From there, I can look for the earliest order date. I will start by clicking on the "My Orders" link in the left sidebar.
+</think>
+<action>
+click('1843')
+</action>
+
+<think>
+To find the date of the first purchase, I need to look at the earliest date in the "Date" column of the "Orders" table. The current page shows the first 10 orders, but there are multiple pages. I will navigate to the last page to find the earliest order date.
+</think>
+<action>
+click('1788')
+</action>
+
+<think>
+To find the date of the first purchase, I need to look for the earliest date in the "Date" column of the "My Orders" table. From the current view, the earliest date visible is "5/2/23". However, there might be more orders on other pages. I will navigate to the last page to ensure I find the earliest date.
+</think>
+<action>
+click('1784')
+</action>
+
+<think>
+To find the earliest purchase date, I need to look at the "Date" column in the "Orders" table and identify the earliest date listed. The dates currently visible are: 4/27/22, 4/5/22, 3/10/22, 3/2/22, 3/2/22. The earliest date visible is 3/2/22. I will respond with this date.
+</think>
+<action>
+send_msg_to_user('The earliest purchase date is 3/2/22.')
+</action>
+
+Query: I want to browse the products in the Cabinets, Racks & Shelves category
+
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to navigate to the "Home & Kitchen" section, which likely contains the Cabinets, Racks & Shelves category. I will start by hovering over the "Home & Kitchen" menu item to reveal the subcategories.
+</think>
+<action>
+hover('735')
+</action>
+
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to navigate to the "Storage & Organization" section under the "Home & Kitchen" menu. I will start by hovering over the "Storage & Organization" menu item to reveal the subcategories.
+</think>
+<action>
+hover('786')
+</action>
+
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to click on the "Racks, Shelves & Drawers" link under the "Storage & Organization" menu. This will take me to the desired category.
+</think>
+<action>
+click('797')
+</action>
+
+<think>
+The current page is displaying the "Racks, Shelves & Drawers" category under "Storage & Organization" in the "Home & Kitchen" section. The user wants to browse products in the "Cabinets, Racks & Shelves" category. Since "Racks, Shelves & Drawers" is already a subcategory of "Storage & Organization," I will confirm with the user if this is the correct category they want to browse.
+</think>
+<action>
+send_msg_to_user('You are currently viewing the "Racks, Shelves & Drawers" category under "Storage & Organization." Is this the correct category you want to browse, or are you looking for a different category?')
+</action>
+
+
+Query: Get the order number of my most recent cancelled order 
+<think>
+To get the order number of the most recent cancelled order, I need to navigate to the "My Account" section where order history is typically managed. From the current page, I can see the "My Account" link in the top right corner. I will click on the "My Account" link to proceed.
+</think>
+<action>
+click('227')
+</action>
+
+<think>
+To get the order number of the most recent cancelled order, I need to navigate to the "My Orders" section. From there, I can filter or sort the orders to find the most recent cancelled order. I will start by clicking on the "My Orders" link in the left sidebar.
+</think>
+<action>
+click('1843')
+</action>
+
+<think>
+To get the order number of the most recent cancelled order, I need to look for the order with the status "Canceled" and note its order number. From the current page, I can see that the most recent cancelled order is order number 000000170.
+</think>
+<action>
+send_msg_to_user('The order number of your most recent cancelled order is 000000170.')
+</action>
+
+
+## Summary Workflows
+
+Workflow 1: Find all orders
+<think>
+To find the date of the first purchase, I need to navigate to the order history section of the user's account. I will start by clicking on the "My Account" link.
+</think>
+<action>
+click('227')
+</action>
+
+<think>
+To find the date of the first purchase, I need to navigate to the "My Orders" section where the order history is listed. From there, I can look for the earliest order date. I will start by clicking on the "My Orders" link in the left sidebar.
+</think>
+<action>
+click('1843')
+</action>
+
+Workflow 2: Obtain order information, such as date or order number
+<think>
+To find the earliest purchase date, I need to look at the "Date" column in the "Orders" table and identify the earliest date listed. The dates currently visible are: 4/27/22, 4/5/22, 3/10/22, 3/2/22, 3/2/22. The earliest date visible is 3/2/22. I will respond with this date.
+</think>
+<action>
+send_msg_to_user('The earliest purchase date is 3/2/2022.')
+</action>
+
+Workflow 3: Browse products in a specific (sub-)category
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to navigate to the "Home & Kitchen" section, which likely contains the Cabinets, Racks & Shelves category. I will start by hovering over the "Home & Kitchen" menu item to reveal the subcategories.
+</think>
+<action>
+hover('735')
+</action>
+
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to navigate to the "Storage & Organization" section under the "Home & Kitchen" menu. I will start by hovering over the "Storage & Organization" menu item to reveal the subcategories.
+</think>
+<action>
+hover('786')
+</action>
+
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to click on the "Racks, Shelves & Drawers" link under the "Storage & Organization" menu. This will take me to the desired category.
+</think>
+<action>
+click('797')
+</action>
+
+## Concrete Examples
+
+## Summary Workflows 
+
+
+I don't see the list of tasks to analyze. Please paste the tasks (each task should include the natural-language instruction and the sequence of actions). 
+
+Preferred format (one task per block):
+
+Task: <natural language instruction>
+Actions:
+<action>
+click('227')
+</action>
+<action>
+click('1843')
+</action>
+...
+
+I will extract non-overlapping common workflows (each with ≥2 steps), use descriptive variable names for non-fixed elements (e.g., BUTTON_TEXT, CATEGORY_NAME), and keep invariant element values (e.g., click('1843')) as-is.
+2026-01-20 11:23:28,722 - 1574598 - browsergym.experiments.loop - INFO - Running experiment GenericAgentArgs_on_webarena.297_10 in:
+  results/2026-01-20_11-23-28_GenericAgentArgs_on_webarena.297_10
+/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/beartype/_util/hint/pep/utilpeptest.py:345: BeartypeDecorHintPep585DeprecationWarning: PEP 484 type hint typing.Mapping[str, gymnasium.spaces.space.Space[typing.Any]] deprecated by PEP 585 scheduled for removal in the first Python version released after October 5th, 2025. To resolve this, import this hint from "beartype.typing" rather than "typing". See this discussion for further details and alternatives:
+    https://github.com/beartype/beartype#pep-585-deprecations
+  warn(
+2026-01-20 11:23:29,260 - 1574598 - browsergym.core.env - WARNING - Overriding the task's viewport parameter ({'width': 1280, 'height': 720} => {'width': 1280, 'height': 720}). This might change the task's behaviour and difficulty.
+2026-01-20 11:23:29,260 - 1574598 - browsergym.core.env - WARNING - Overriding the task's slow_mo parameter (1000 => 300). This might change the task's behaviour and difficulty.
+2026-01-20 11:23:42,873 - 1574598 - browsergym.experiments.loop - WARNING - Exception uncaught by agent or environment in task webarena.297.
+TimeoutError:
+Page.goto: Timeout 10000ms exceeded.
+Call log:
+navigating to "http://18.191.199.182:8023/users/sign_in", waiting until "load"
+
+Traceback (most recent call last):
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/experiments/loop.py", line 411, in run
+    step_info.from_reset(
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/experiments/loop.py", line 216, in from_reset
+    self.obs, env_info = env.reset(seed=seed)
+                         ^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/gymnasium/wrappers/common.py", line 146, in reset
+    return super().reset(seed=seed, options=options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/gymnasium/core.py", line 333, in reset
+    return self.env.reset(seed=seed, options=options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/gymnasium/wrappers/common.py", line 400, in reset
+    return super().reset(seed=seed, options=options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/gymnasium/core.py", line 333, in reset
+    return self.env.reset(seed=seed, options=options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/core/env.py", line 341, in reset
+    task_goal, task_info = self.task.setup(page=self.page)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/webarena/task.py", line 106, in setup
+    self.webarena_instance.ui_login(site=site, page=page)
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/webarena/instance.py", line 181, in ui_login
+    page.goto(f"{url}/users/sign_in")
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/sync_api/_generated.py", line 8686, in goto
+    self._sync(
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_page.py", line 519, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_frame.py", line 145, in goto
+    await self._channel.send("goto", locals_to_params(locals()))
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 59, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 514, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.goto: Timeout 10000ms exceeded.
+Call log:
+navigating to "http://18.191.199.182:8023/users/sign_in", waiting until "load"
+
+
+2026-01-20 11:23:42,876 - 1574598 - browsergym.experiments.loop - INFO - Saving summary info.
+WARNING this demo agent will soon be moved elsewhere. Expect it to be removed at some point.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/c2/taeil/AWM/webarena/autoeval/evaluate_trajectory.py", line 285, in <module>
+    main()
+  File "/c2/taeil/AWM/webarena/autoeval/evaluate_trajectory.py", line 228, in main
+    if "send_msg_to_user" in action_list[-1][0]:
+                             ~~~~~~~~~~~^^^^
+IndexError: list index out of range
+Waring: use vision prompt by default for gpt-5-mini.
+Collected 0 result directories.
+#0 result dirs after template dedup..
+Prompt:
+ Given a list of web navigation tasks, your task is to extract the common workflows to solve these tasks.
+Each given task contains a natural language instruction, and a series of actions to solve the task. You need to find the repetitive subset of actions across multiple tasks, and extract each of them out as a workflow.
+Each workflow should be a commonly-reused sub-routine of the tasks. Do not generate similar or overlapping workflows. Each workflow should have at least two steps. Represent the non-fixed elements (input text, button strings) with descriptive variable names as shown in the example.
+Keep the values of invariant elements, e.g., id of "Search" or "Customers", as they will share and stay invariant across tasks.
+Try to generate as many workflows that can cover all the tasks in the input list.
+
+## Concrete Examples
+
+Query: What is the date when I made my first purchase on this site?
+Actions:
+<think>
+To find the date of the first purchase, I need to navigate to the order history section of the user's account. I will start by clicking on the "My Account" link.
+</think>
+<action>
+click('227')
+</action>
+
+<think>
+To find the date of the first purchase, I need to navigate to the "My Orders" section where the order history is listed. From there, I can look for the earliest order date. I will start by clicking on the "My Orders" link in the left sidebar.
+</think>
+<action>
+click('1843')
+</action>
+
+<think>
+To find the date of the first purchase, I need to look at the earliest date in the "Date" column of the "Orders" table. The current page shows the first 10 orders, but there are multiple pages. I will navigate to the last page to find the earliest order date.
+</think>
+<action>
+click('1788')
+</action>
+
+<think>
+To find the date of the first purchase, I need to look for the earliest date in the "Date" column of the "My Orders" table. From the current view, the earliest date visible is "5/2/23". However, there might be more orders on other pages. I will navigate to the last page to ensure I find the earliest date.
+</think>
+<action>
+click('1784')
+</action>
+
+<think>
+To find the earliest purchase date, I need to look at the "Date" column in the "Orders" table and identify the earliest date listed. The dates currently visible are: 4/27/22, 4/5/22, 3/10/22, 3/2/22, 3/2/22. The earliest date visible is 3/2/22. I will respond with this date.
+</think>
+<action>
+send_msg_to_user('The earliest purchase date is 3/2/22.')
+</action>
+
+Query: I want to browse the products in the Cabinets, Racks & Shelves category
+
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to navigate to the "Home & Kitchen" section, which likely contains the Cabinets, Racks & Shelves category. I will start by hovering over the "Home & Kitchen" menu item to reveal the subcategories.
+</think>
+<action>
+hover('735')
+</action>
+
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to navigate to the "Storage & Organization" section under the "Home & Kitchen" menu. I will start by hovering over the "Storage & Organization" menu item to reveal the subcategories.
+</think>
+<action>
+hover('786')
+</action>
+
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to click on the "Racks, Shelves & Drawers" link under the "Storage & Organization" menu. This will take me to the desired category.
+</think>
+<action>
+click('797')
+</action>
+
+<think>
+The current page is displaying the "Racks, Shelves & Drawers" category under "Storage & Organization" in the "Home & Kitchen" section. The user wants to browse products in the "Cabinets, Racks & Shelves" category. Since "Racks, Shelves & Drawers" is already a subcategory of "Storage & Organization," I will confirm with the user if this is the correct category they want to browse.
+</think>
+<action>
+send_msg_to_user('You are currently viewing the "Racks, Shelves & Drawers" category under "Storage & Organization." Is this the correct category you want to browse, or are you looking for a different category?')
+</action>
+
+
+Query: Get the order number of my most recent cancelled order 
+<think>
+To get the order number of the most recent cancelled order, I need to navigate to the "My Account" section where order history is typically managed. From the current page, I can see the "My Account" link in the top right corner. I will click on the "My Account" link to proceed.
+</think>
+<action>
+click('227')
+</action>
+
+<think>
+To get the order number of the most recent cancelled order, I need to navigate to the "My Orders" section. From there, I can filter or sort the orders to find the most recent cancelled order. I will start by clicking on the "My Orders" link in the left sidebar.
+</think>
+<action>
+click('1843')
+</action>
+
+<think>
+To get the order number of the most recent cancelled order, I need to look for the order with the status "Canceled" and note its order number. From the current page, I can see that the most recent cancelled order is order number 000000170.
+</think>
+<action>
+send_msg_to_user('The order number of your most recent cancelled order is 000000170.')
+</action>
+
+
+## Summary Workflows
+
+Workflow 1: Find all orders
+<think>
+To find the date of the first purchase, I need to navigate to the order history section of the user's account. I will start by clicking on the "My Account" link.
+</think>
+<action>
+click('227')
+</action>
+
+<think>
+To find the date of the first purchase, I need to navigate to the "My Orders" section where the order history is listed. From there, I can look for the earliest order date. I will start by clicking on the "My Orders" link in the left sidebar.
+</think>
+<action>
+click('1843')
+</action>
+
+Workflow 2: Obtain order information, such as date or order number
+<think>
+To find the earliest purchase date, I need to look at the "Date" column in the "Orders" table and identify the earliest date listed. The dates currently visible are: 4/27/22, 4/5/22, 3/10/22, 3/2/22, 3/2/22. The earliest date visible is 3/2/22. I will respond with this date.
+</think>
+<action>
+send_msg_to_user('The earliest purchase date is 3/2/2022.')
+</action>
+
+Workflow 3: Browse products in a specific (sub-)category
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to navigate to the "Home & Kitchen" section, which likely contains the Cabinets, Racks & Shelves category. I will start by hovering over the "Home & Kitchen" menu item to reveal the subcategories.
+</think>
+<action>
+hover('735')
+</action>
+
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to navigate to the "Storage & Organization" section under the "Home & Kitchen" menu. I will start by hovering over the "Storage & Organization" menu item to reveal the subcategories.
+</think>
+<action>
+hover('786')
+</action>
+
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to click on the "Racks, Shelves & Drawers" link under the "Storage & Organization" menu. This will take me to the desired category.
+</think>
+<action>
+click('797')
+</action>
+
+## Concrete Examples
+
+## Summary Workflows 
+
+
+I don’t see the list of tasks to process. Please paste the tasks (each task should include the natural-language instruction and the sequence of actions). 
+
+Preferable formats:
+- Plain text: one task after another (include the actions like click('227'), hover('735'), send_msg_to_user(...)).
+- JSON array: each item with "instruction" and "actions" fields.
+
+Notes about the output I’ll produce:
+- I will extract distinct, non-overlapping workflows (each a commonly reused subroutine).
+- Each workflow will contain at least two steps, using descriptive variable names for non-fixed inputs (e.g., click('My Account') → click('ACCOUNT_LINK_ID') or send_msg_to_user('...') → send_msg_to_user('<RESPONSE_TEXT>')).
+- I will keep invariant element values exactly as they appear (e.g., click('Search')).
+- I’ll try to produce workflows that together cover as many tasks as possible.
+
+If you want, paste a small sample (3–10 tasks) and I’ll return the extracted workflows.
+2026-01-20 11:24:04,172 - 1576190 - browsergym.experiments.loop - INFO - Running experiment GenericAgentArgs_on_webarena.309_20 in:
+  results/2026-01-20_11-24-03_GenericAgentArgs_on_webarena.309_20
+/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/beartype/_util/hint/pep/utilpeptest.py:345: BeartypeDecorHintPep585DeprecationWarning: PEP 484 type hint typing.Mapping[str, gymnasium.spaces.space.Space[typing.Any]] deprecated by PEP 585 scheduled for removal in the first Python version released after October 5th, 2025. To resolve this, import this hint from "beartype.typing" rather than "typing". See this discussion for further details and alternatives:
+    https://github.com/beartype/beartype#pep-585-deprecations
+  warn(
+2026-01-20 11:24:04,701 - 1576190 - browsergym.core.env - WARNING - Overriding the task's viewport parameter ({'width': 1280, 'height': 720} => {'width': 1280, 'height': 720}). This might change the task's behaviour and difficulty.
+2026-01-20 11:24:04,701 - 1576190 - browsergym.core.env - WARNING - Overriding the task's slow_mo parameter (1000 => 300). This might change the task's behaviour and difficulty.
+2026-01-20 11:24:18,156 - 1576190 - browsergym.experiments.loop - WARNING - Exception uncaught by agent or environment in task webarena.309.
+TimeoutError:
+Page.goto: Timeout 10000ms exceeded.
+Call log:
+navigating to "http://18.191.199.182:8023/users/sign_in", waiting until "load"
+
+Traceback (most recent call last):
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/experiments/loop.py", line 411, in run
+    step_info.from_reset(
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/experiments/loop.py", line 216, in from_reset
+    self.obs, env_info = env.reset(seed=seed)
+                         ^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/gymnasium/wrappers/common.py", line 146, in reset
+    return super().reset(seed=seed, options=options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/gymnasium/core.py", line 333, in reset
+    return self.env.reset(seed=seed, options=options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/gymnasium/wrappers/common.py", line 400, in reset
+    return super().reset(seed=seed, options=options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/gymnasium/core.py", line 333, in reset
+    return self.env.reset(seed=seed, options=options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/core/env.py", line 341, in reset
+    task_goal, task_info = self.task.setup(page=self.page)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/webarena/task.py", line 106, in setup
+    self.webarena_instance.ui_login(site=site, page=page)
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/webarena/instance.py", line 181, in ui_login
+    page.goto(f"{url}/users/sign_in")
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/sync_api/_generated.py", line 8686, in goto
+    self._sync(
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_page.py", line 519, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_frame.py", line 145, in goto
+    await self._channel.send("goto", locals_to_params(locals()))
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 59, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 514, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.goto: Timeout 10000ms exceeded.
+Call log:
+navigating to "http://18.191.199.182:8023/users/sign_in", waiting until "load"
+
+
+2026-01-20 11:24:18,159 - 1576190 - browsergym.experiments.loop - INFO - Saving summary info.
+WARNING this demo agent will soon be moved elsewhere. Expect it to be removed at some point.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/c2/taeil/AWM/webarena/autoeval/evaluate_trajectory.py", line 285, in <module>
+    main()
+  File "/c2/taeil/AWM/webarena/autoeval/evaluate_trajectory.py", line 228, in main
+    if "send_msg_to_user" in action_list[-1][0]:
+                             ~~~~~~~~~~~^^^^
+IndexError: list index out of range
+Waring: use vision prompt by default for gpt-5-mini.
+Collected 0 result directories.
+#0 result dirs after template dedup..
+Prompt:
+ Given a list of web navigation tasks, your task is to extract the common workflows to solve these tasks.
+Each given task contains a natural language instruction, and a series of actions to solve the task. You need to find the repetitive subset of actions across multiple tasks, and extract each of them out as a workflow.
+Each workflow should be a commonly-reused sub-routine of the tasks. Do not generate similar or overlapping workflows. Each workflow should have at least two steps. Represent the non-fixed elements (input text, button strings) with descriptive variable names as shown in the example.
+Keep the values of invariant elements, e.g., id of "Search" or "Customers", as they will share and stay invariant across tasks.
+Try to generate as many workflows that can cover all the tasks in the input list.
+
+## Concrete Examples
+
+Query: What is the date when I made my first purchase on this site?
+Actions:
+<think>
+To find the date of the first purchase, I need to navigate to the order history section of the user's account. I will start by clicking on the "My Account" link.
+</think>
+<action>
+click('227')
+</action>
+
+<think>
+To find the date of the first purchase, I need to navigate to the "My Orders" section where the order history is listed. From there, I can look for the earliest order date. I will start by clicking on the "My Orders" link in the left sidebar.
+</think>
+<action>
+click('1843')
+</action>
+
+<think>
+To find the date of the first purchase, I need to look at the earliest date in the "Date" column of the "Orders" table. The current page shows the first 10 orders, but there are multiple pages. I will navigate to the last page to find the earliest order date.
+</think>
+<action>
+click('1788')
+</action>
+
+<think>
+To find the date of the first purchase, I need to look for the earliest date in the "Date" column of the "My Orders" table. From the current view, the earliest date visible is "5/2/23". However, there might be more orders on other pages. I will navigate to the last page to ensure I find the earliest date.
+</think>
+<action>
+click('1784')
+</action>
+
+<think>
+To find the earliest purchase date, I need to look at the "Date" column in the "Orders" table and identify the earliest date listed. The dates currently visible are: 4/27/22, 4/5/22, 3/10/22, 3/2/22, 3/2/22. The earliest date visible is 3/2/22. I will respond with this date.
+</think>
+<action>
+send_msg_to_user('The earliest purchase date is 3/2/22.')
+</action>
+
+Query: I want to browse the products in the Cabinets, Racks & Shelves category
+
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to navigate to the "Home & Kitchen" section, which likely contains the Cabinets, Racks & Shelves category. I will start by hovering over the "Home & Kitchen" menu item to reveal the subcategories.
+</think>
+<action>
+hover('735')
+</action>
+
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to navigate to the "Storage & Organization" section under the "Home & Kitchen" menu. I will start by hovering over the "Storage & Organization" menu item to reveal the subcategories.
+</think>
+<action>
+hover('786')
+</action>
+
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to click on the "Racks, Shelves & Drawers" link under the "Storage & Organization" menu. This will take me to the desired category.
+</think>
+<action>
+click('797')
+</action>
+
+<think>
+The current page is displaying the "Racks, Shelves & Drawers" category under "Storage & Organization" in the "Home & Kitchen" section. The user wants to browse products in the "Cabinets, Racks & Shelves" category. Since "Racks, Shelves & Drawers" is already a subcategory of "Storage & Organization," I will confirm with the user if this is the correct category they want to browse.
+</think>
+<action>
+send_msg_to_user('You are currently viewing the "Racks, Shelves & Drawers" category under "Storage & Organization." Is this the correct category you want to browse, or are you looking for a different category?')
+</action>
+
+
+Query: Get the order number of my most recent cancelled order 
+<think>
+To get the order number of the most recent cancelled order, I need to navigate to the "My Account" section where order history is typically managed. From the current page, I can see the "My Account" link in the top right corner. I will click on the "My Account" link to proceed.
+</think>
+<action>
+click('227')
+</action>
+
+<think>
+To get the order number of the most recent cancelled order, I need to navigate to the "My Orders" section. From there, I can filter or sort the orders to find the most recent cancelled order. I will start by clicking on the "My Orders" link in the left sidebar.
+</think>
+<action>
+click('1843')
+</action>
+
+<think>
+To get the order number of the most recent cancelled order, I need to look for the order with the status "Canceled" and note its order number. From the current page, I can see that the most recent cancelled order is order number 000000170.
+</think>
+<action>
+send_msg_to_user('The order number of your most recent cancelled order is 000000170.')
+</action>
+
+
+## Summary Workflows
+
+Workflow 1: Find all orders
+<think>
+To find the date of the first purchase, I need to navigate to the order history section of the user's account. I will start by clicking on the "My Account" link.
+</think>
+<action>
+click('227')
+</action>
+
+<think>
+To find the date of the first purchase, I need to navigate to the "My Orders" section where the order history is listed. From there, I can look for the earliest order date. I will start by clicking on the "My Orders" link in the left sidebar.
+</think>
+<action>
+click('1843')
+</action>
+
+Workflow 2: Obtain order information, such as date or order number
+<think>
+To find the earliest purchase date, I need to look at the "Date" column in the "Orders" table and identify the earliest date listed. The dates currently visible are: 4/27/22, 4/5/22, 3/10/22, 3/2/22, 3/2/22. The earliest date visible is 3/2/22. I will respond with this date.
+</think>
+<action>
+send_msg_to_user('The earliest purchase date is 3/2/2022.')
+</action>
+
+Workflow 3: Browse products in a specific (sub-)category
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to navigate to the "Home & Kitchen" section, which likely contains the Cabinets, Racks & Shelves category. I will start by hovering over the "Home & Kitchen" menu item to reveal the subcategories.
+</think>
+<action>
+hover('735')
+</action>
+
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to navigate to the "Storage & Organization" section under the "Home & Kitchen" menu. I will start by hovering over the "Storage & Organization" menu item to reveal the subcategories.
+</think>
+<action>
+hover('786')
+</action>
+
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to click on the "Racks, Shelves & Drawers" link under the "Storage & Organization" menu. This will take me to the desired category.
+</think>
+<action>
+click('797')
+</action>
+
+## Concrete Examples
+
+## Summary Workflows 
+
+
+Workflow 1: Open My Orders
+<think>
+Navigate from the current page to the user's order history page.
+</think>
+<action>
+click('227')           <!-- "My Account" -->
+</action>
+<action>
+click('1843')          <!-- "My Orders" -->
+</action>
+
+Workflow 2: Page to the last/other pages of the Orders table
+<think>
+Move through the orders table pagination to view earlier orders or additional pages.
+</think>
+<action>
+click('1788')          <!-- pagination control (e.g., "Last" or page group) -->
+</action>
+<action>
+click('1784')          <!-- specific pagination button (e.g., page number or "Previous/Next") -->
+</action>
+
+Workflow 3: Read/obtain order information and report to the user
+<think>
+After opening the orders page, extract the requested info (date, status, order number) from the Orders table and report it to the user.
+</think>
+<action>
+click('1843')          <!-- ensure we're on "My Orders" -->
+</action>
+<action>
+send_msg_to_user('<ORDER_INFO_MESSAGE>')  <!-- e.g., 'The earliest purchase date is {date}.' or 'The order number of your most recent cancelled order is {order_number}.' -->
+</action>
+
+Workflow 4: Browse a specific product subcategory via top menu
+<think>
+Open the top-level menu, reveal the subcategory group, and click the desired subcategory link.
+</think>
+<action>
+hover('735')           <!-- top-level category, e.g., "Home & Kitchen" -->
+</action>
+<action>
+hover('786')           <!-- subcategory group, e.g., "Storage & Organization" -->
+</action>
+<action>
+click('797')           <!-- specific subcategory link, e.g., "Racks, Shelves & Drawers" -->
+</action>
+2026-01-20 11:25:06,117 - 1578322 - browsergym.experiments.loop - INFO - Running experiment GenericAgentArgs_on_webarena.310_9 in:
+  results/2026-01-20_11-25-05_GenericAgentArgs_on_webarena.310_9
+/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/beartype/_util/hint/pep/utilpeptest.py:345: BeartypeDecorHintPep585DeprecationWarning: PEP 484 type hint typing.Mapping[str, gymnasium.spaces.space.Space[typing.Any]] deprecated by PEP 585 scheduled for removal in the first Python version released after October 5th, 2025. To resolve this, import this hint from "beartype.typing" rather than "typing". See this discussion for further details and alternatives:
+    https://github.com/beartype/beartype#pep-585-deprecations
+  warn(
+2026-01-20 11:25:06,759 - 1578322 - browsergym.core.env - WARNING - Overriding the task's viewport parameter ({'width': 1280, 'height': 720} => {'width': 1280, 'height': 720}). This might change the task's behaviour and difficulty.
+2026-01-20 11:25:06,760 - 1578322 - browsergym.core.env - WARNING - Overriding the task's slow_mo parameter (1000 => 300). This might change the task's behaviour and difficulty.
+2026-01-20 11:25:20,245 - 1578322 - browsergym.experiments.loop - WARNING - Exception uncaught by agent or environment in task webarena.310.
+TimeoutError:
+Page.goto: Timeout 10000ms exceeded.
+Call log:
+navigating to "http://18.191.199.182:8023/users/sign_in", waiting until "load"
+
+Traceback (most recent call last):
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/experiments/loop.py", line 411, in run
+    step_info.from_reset(
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/experiments/loop.py", line 216, in from_reset
+    self.obs, env_info = env.reset(seed=seed)
+                         ^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/gymnasium/wrappers/common.py", line 146, in reset
+    return super().reset(seed=seed, options=options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/gymnasium/core.py", line 333, in reset
+    return self.env.reset(seed=seed, options=options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/gymnasium/wrappers/common.py", line 400, in reset
+    return super().reset(seed=seed, options=options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/gymnasium/core.py", line 333, in reset
+    return self.env.reset(seed=seed, options=options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/core/env.py", line 341, in reset
+    task_goal, task_info = self.task.setup(page=self.page)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/webarena/task.py", line 106, in setup
+    self.webarena_instance.ui_login(site=site, page=page)
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/webarena/instance.py", line 181, in ui_login
+    page.goto(f"{url}/users/sign_in")
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/sync_api/_generated.py", line 8686, in goto
+    self._sync(
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_page.py", line 519, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_frame.py", line 145, in goto
+    await self._channel.send("goto", locals_to_params(locals()))
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 59, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 514, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.goto: Timeout 10000ms exceeded.
+Call log:
+navigating to "http://18.191.199.182:8023/users/sign_in", waiting until "load"
+
+
+2026-01-20 11:25:20,250 - 1578322 - browsergym.experiments.loop - INFO - Saving summary info.
+WARNING this demo agent will soon be moved elsewhere. Expect it to be removed at some point.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/c2/taeil/AWM/webarena/autoeval/evaluate_trajectory.py", line 285, in <module>
+    main()
+  File "/c2/taeil/AWM/webarena/autoeval/evaluate_trajectory.py", line 228, in main
+    if "send_msg_to_user" in action_list[-1][0]:
+                             ~~~~~~~~~~~^^^^
+IndexError: list index out of range
+Waring: use vision prompt by default for gpt-5-mini.
+Collected 0 result directories.
+#0 result dirs after template dedup..
+Prompt:
+ Given a list of web navigation tasks, your task is to extract the common workflows to solve these tasks.
+Each given task contains a natural language instruction, and a series of actions to solve the task. You need to find the repetitive subset of actions across multiple tasks, and extract each of them out as a workflow.
+Each workflow should be a commonly-reused sub-routine of the tasks. Do not generate similar or overlapping workflows. Each workflow should have at least two steps. Represent the non-fixed elements (input text, button strings) with descriptive variable names as shown in the example.
+Keep the values of invariant elements, e.g., id of "Search" or "Customers", as they will share and stay invariant across tasks.
+Try to generate as many workflows that can cover all the tasks in the input list.
+
+## Concrete Examples
+
+Query: What is the date when I made my first purchase on this site?
+Actions:
+<think>
+To find the date of the first purchase, I need to navigate to the order history section of the user's account. I will start by clicking on the "My Account" link.
+</think>
+<action>
+click('227')
+</action>
+
+<think>
+To find the date of the first purchase, I need to navigate to the "My Orders" section where the order history is listed. From there, I can look for the earliest order date. I will start by clicking on the "My Orders" link in the left sidebar.
+</think>
+<action>
+click('1843')
+</action>
+
+<think>
+To find the date of the first purchase, I need to look at the earliest date in the "Date" column of the "Orders" table. The current page shows the first 10 orders, but there are multiple pages. I will navigate to the last page to find the earliest order date.
+</think>
+<action>
+click('1788')
+</action>
+
+<think>
+To find the date of the first purchase, I need to look for the earliest date in the "Date" column of the "My Orders" table. From the current view, the earliest date visible is "5/2/23". However, there might be more orders on other pages. I will navigate to the last page to ensure I find the earliest date.
+</think>
+<action>
+click('1784')
+</action>
+
+<think>
+To find the earliest purchase date, I need to look at the "Date" column in the "Orders" table and identify the earliest date listed. The dates currently visible are: 4/27/22, 4/5/22, 3/10/22, 3/2/22, 3/2/22. The earliest date visible is 3/2/22. I will respond with this date.
+</think>
+<action>
+send_msg_to_user('The earliest purchase date is 3/2/22.')
+</action>
+
+Query: I want to browse the products in the Cabinets, Racks & Shelves category
+
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to navigate to the "Home & Kitchen" section, which likely contains the Cabinets, Racks & Shelves category. I will start by hovering over the "Home & Kitchen" menu item to reveal the subcategories.
+</think>
+<action>
+hover('735')
+</action>
+
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to navigate to the "Storage & Organization" section under the "Home & Kitchen" menu. I will start by hovering over the "Storage & Organization" menu item to reveal the subcategories.
+</think>
+<action>
+hover('786')
+</action>
+
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to click on the "Racks, Shelves & Drawers" link under the "Storage & Organization" menu. This will take me to the desired category.
+</think>
+<action>
+click('797')
+</action>
+
+<think>
+The current page is displaying the "Racks, Shelves & Drawers" category under "Storage & Organization" in the "Home & Kitchen" section. The user wants to browse products in the "Cabinets, Racks & Shelves" category. Since "Racks, Shelves & Drawers" is already a subcategory of "Storage & Organization," I will confirm with the user if this is the correct category they want to browse.
+</think>
+<action>
+send_msg_to_user('You are currently viewing the "Racks, Shelves & Drawers" category under "Storage & Organization." Is this the correct category you want to browse, or are you looking for a different category?')
+</action>
+
+
+Query: Get the order number of my most recent cancelled order 
+<think>
+To get the order number of the most recent cancelled order, I need to navigate to the "My Account" section where order history is typically managed. From the current page, I can see the "My Account" link in the top right corner. I will click on the "My Account" link to proceed.
+</think>
+<action>
+click('227')
+</action>
+
+<think>
+To get the order number of the most recent cancelled order, I need to navigate to the "My Orders" section. From there, I can filter or sort the orders to find the most recent cancelled order. I will start by clicking on the "My Orders" link in the left sidebar.
+</think>
+<action>
+click('1843')
+</action>
+
+<think>
+To get the order number of the most recent cancelled order, I need to look for the order with the status "Canceled" and note its order number. From the current page, I can see that the most recent cancelled order is order number 000000170.
+</think>
+<action>
+send_msg_to_user('The order number of your most recent cancelled order is 000000170.')
+</action>
+
+
+## Summary Workflows
+
+Workflow 1: Find all orders
+<think>
+To find the date of the first purchase, I need to navigate to the order history section of the user's account. I will start by clicking on the "My Account" link.
+</think>
+<action>
+click('227')
+</action>
+
+<think>
+To find the date of the first purchase, I need to navigate to the "My Orders" section where the order history is listed. From there, I can look for the earliest order date. I will start by clicking on the "My Orders" link in the left sidebar.
+</think>
+<action>
+click('1843')
+</action>
+
+Workflow 2: Obtain order information, such as date or order number
+<think>
+To find the earliest purchase date, I need to look at the "Date" column in the "Orders" table and identify the earliest date listed. The dates currently visible are: 4/27/22, 4/5/22, 3/10/22, 3/2/22, 3/2/22. The earliest date visible is 3/2/22. I will respond with this date.
+</think>
+<action>
+send_msg_to_user('The earliest purchase date is 3/2/2022.')
+</action>
+
+Workflow 3: Browse products in a specific (sub-)category
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to navigate to the "Home & Kitchen" section, which likely contains the Cabinets, Racks & Shelves category. I will start by hovering over the "Home & Kitchen" menu item to reveal the subcategories.
+</think>
+<action>
+hover('735')
+</action>
+
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to navigate to the "Storage & Organization" section under the "Home & Kitchen" menu. I will start by hovering over the "Storage & Organization" menu item to reveal the subcategories.
+</think>
+<action>
+hover('786')
+</action>
+
+<think>
+To browse the products in the Cabinets, Racks & Shelves category, I need to click on the "Racks, Shelves & Drawers" link under the "Storage & Organization" menu. This will take me to the desired category.
+</think>
+<action>
+click('797')
+</action>
+
+## Concrete Examples
+
+## Summary Workflows 
+
+
+Workflow 1: Open My Orders
+<think>
+To access the user's order history, first open the account menu, then navigate to the "My Orders" section.
+</think>
+<action>
+click('227')
+</action>
+
+<think>
+Now that the account menu is open, go to the "My Orders" page in the left sidebar to view order history.
+</think>
+<action>
+click('1843')
+</action>
+
+Workflow 2: Obtain order information from Orders page
+<think>
+On the "My Orders" page, locate the order(s) matching {order_condition} (e.g., most recent, status = "Canceled", earliest) and extract the requested {order_attribute} (e.g., order number, date).
+</think>
+<action>
+# locate order matching {order_condition} and extract {order_attribute}
+</action>
+
+<think>
+Report the extracted information back to the user.
+</think>
+<action>
+send_msg_to_user('{order_attribute} of the order matching {order_condition} is {extracted_value}.')
+</action>
+
+Workflow 3: Browse a product subcategory via site menu
+<think>
+To reach a specific product subcategory, hover the top-level menu item {top_level_menu} to open its submenu.
+</think>
+<action>
+hover('735')
+</action>
+
+<think>
+Hover the intermediate submenu item {intermediate_menu} to reveal its subcategories.
+</think>
+<action>
+hover('786')
+</action>
+
+<think>
+Click the target subcategory link {subcategory} to open the product listing.
+</think>
+<action>
+click('797')
+</action>
+2026-01-20 11:25:54,381 - 1579815 - browsergym.experiments.loop - INFO - Running experiment GenericAgentArgs_on_webarena.312_17 in:
+  results/2026-01-20_11-25-54_GenericAgentArgs_on_webarena.312_17
+/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/beartype/_util/hint/pep/utilpeptest.py:345: BeartypeDecorHintPep585DeprecationWarning: PEP 484 type hint typing.Mapping[str, gymnasium.spaces.space.Space[typing.Any]] deprecated by PEP 585 scheduled for removal in the first Python version released after October 5th, 2025. To resolve this, import this hint from "beartype.typing" rather than "typing". See this discussion for further details and alternatives:
+    https://github.com/beartype/beartype#pep-585-deprecations
+  warn(
+2026-01-20 11:25:54,808 - 1579815 - browsergym.core.env - WARNING - Overriding the task's viewport parameter ({'width': 1280, 'height': 720} => {'width': 1280, 'height': 720}). This might change the task's behaviour and difficulty.
+2026-01-20 11:25:54,808 - 1579815 - browsergym.core.env - WARNING - Overriding the task's slow_mo parameter (1000 => 300). This might change the task's behaviour and difficulty.
+2026-01-20 11:26:08,385 - 1579815 - browsergym.experiments.loop - WARNING - Exception uncaught by agent or environment in task webarena.312.
+TimeoutError:
+Page.goto: Timeout 10000ms exceeded.
+Call log:
+navigating to "http://18.191.199.182:8023/users/sign_in", waiting until "load"
+
+Traceback (most recent call last):
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/experiments/loop.py", line 411, in run
+    step_info.from_reset(
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/experiments/loop.py", line 216, in from_reset
+    self.obs, env_info = env.reset(seed=seed)
+                         ^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/gymnasium/wrappers/common.py", line 146, in reset
+    return super().reset(seed=seed, options=options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/gymnasium/core.py", line 333, in reset
+    return self.env.reset(seed=seed, options=options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/gymnasium/wrappers/common.py", line 400, in reset
+    return super().reset(seed=seed, options=options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/gymnasium/core.py", line 333, in reset
+    return self.env.reset(seed=seed, options=options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/core/env.py", line 341, in reset
+    task_goal, task_info = self.task.setup(page=self.page)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/webarena/task.py", line 106, in setup
+    self.webarena_instance.ui_login(site=site, page=page)
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/browsergym/webarena/instance.py", line 181, in ui_login
+    page.goto(f"{url}/users/sign_in")
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/sync_api/_generated.py", line 8686, in goto
+    self._sync(
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_page.py", line 519, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_frame.py", line 145, in goto
+    await self._channel.send("goto", locals_to_params(locals()))
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 59, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/c2/taeil/anaconda3/envs/agent/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 514, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.goto: Timeout 10000ms exceeded.
+Call log:
+navigating to "http://18.191.199.182:8023/users/sign_in", waiting until "load"
+
+
+2026-01-20 11:26:08,395 - 1579815 - browsergym.experiments.loop - INFO - Saving summary info.
+WARNING this demo agent will soon be moved elsewhere. Expect it to be removed at some point.

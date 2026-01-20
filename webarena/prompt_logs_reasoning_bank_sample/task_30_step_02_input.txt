@@ -1,0 +1,928 @@
+================================================================================
+STEP 2 INPUT
+================================================================================
+
+================================================================================
+SYSTEM PROMPT
+================================================================================
+You are an agent trying to solve a web task based on the content of the page and
+a user instructions. You can interact with the page and explore. Each time you
+submit an action it will be sent to the browser and you will receive a new page.
+
+================================================================================
+USER PROMPT
+================================================================================
+# Instructions
+
+You are a UI Assistant, your goal is to help the user perform tasks using a web browser. You can
+communicate with the user via a chat, in which the user gives you instructions and in which you
+can send back messages. You have access to a web browser that both you and the user can see,
+and with which only you can interact via specific commands.
+
+Review the instructions from the user, the current state of the page and all other information
+to find the best possible next action to accomplish your goal. Your answer will be interpreted
+and executed by a program, make sure to follow the formatting instructions.
+
+**Current Progress**: Step 2/10 (8 steps remaining)
+
+**Before choosing your next action:**
+- Check your action history below - are you repeating the same actions?
+- If yes, try a different approach (search, different menu, filters, etc.)
+- Make sure each action brings you closer to completing the goal
+
+## Chat messages:
+
+ - [assistant] Hi! I am your UI assistant, I can perform web tasks for you. What can I help you with?
+ - [user] Tell me the count of comments that have received more downvotes than upvotes for the user who made the latest post on the space forum.# Reasoning Memories
+
+Below are some memory items that I accumulated from past interaction from the environment that may be helpful to solve the task. You can use it when you feel it's relevant. In each step, please first explicitly discuss if you want to use each memory item or not, and then take action.
+
+Memory 1:
+- Title: Count comments with more downvotes than upvotes by checking net scores
+- Description: Determine which comments have received more downvotes than upvotes by inspecting each comment's net score.
+- Content: For each comment by the user, check its displayed score (net upvotes minus downvotes) and count those with a negative score; report the total and optionally cite a representative negative score for clarity.
+Memory 2:
+- Title: Count negative net scores as downvote-majority
+- Description: When a comment shows a single numeric score, treat negative values as indicators that downvotes exceed upvotes.
+- Content: If the interface displays one number per comment (rather than separate up/down counts), that number is typically the net score (upvotes minus downvotes). Counting comments with negative net scores is the simplest way to identify comments that received more downvotes than upvotes.
+Memory 3:
+- Title: Use the user's comment/activity page and handle pagination when comparing vote counts
+- Description: Count downvote-dominant comments by parsing the user's comments or activity feed directly and ensuring you traverse all pages of results.
+- Content: Open the author's profile and go to their comment or activity tab, then extract numeric upvote and downvote values for each comment. Account for pagination or lazy loading (load more buttons, infinite scroll) and normalize any abbreviated vote formats before comparing downvotes > upvotes.
+
+
+# Observation of current step:
+
+## AXTree:
+RootWebArea 'space', focused
+	[27] navigation ''
+		[28] link 'Jump to main content'
+		[29] link 'Jump to sidebar'
+	[30] navigation ''
+		[33] link 'Home'
+			StaticText 'Postmill'
+		[43] list ''
+			[44] listitem ''
+				[45] link 'Forums'
+			[46] listitem ''
+				[47] link 'Wiki'
+		[48] Section ''
+			[57] searchbox 'Search query'
+		[58] list ''
+			[59] listitem ''
+				[60] link 'Notifications (0)'
+					[63] image ''
+			[64] listitem ''
+				[65] link 'Submit'
+					[68] image ''
+					StaticText 'Submit'
+			[70] listitem ''
+				[71] button 'MarvelsGrantMan136', hasPopup='menu', expanded=False
+					[74] image ''
+					[75] strong ''
+						StaticText 'MarvelsGrantMan136'
+	[116] main ''
+		[117] heading '/f/space'
+			StaticText '/f/'
+			[119] strong ''
+				StaticText 'space'
+		[120] navigation ''
+			[121] list ''
+				[122] listitem ''
+					[123] link 'Submissions'
+				[124] listitem ''
+					[125] link 'Comments'
+			[126] list ''
+				[127] listitem ''
+					[128] button 'Sort by: Hot', hasPopup='menu', expanded=False
+						[130] image ''
+						StaticText 'Hot'
+		[146] article ''
+			[151] heading 'The Moon, Saturn and Jupiter through my 4" telescope and smartphone'
+				[152] link 'The Moon, Saturn and Jupiter through my 4" telescope and smartphone'
+			[154] paragraph ''
+				StaticText 'Submitted by'
+				[156] link 'InternationalBack472', expanded=False
+					[157] strong ''
+						StaticText 'InternationalBack472'
+				StaticText ''
+				StaticText '['
+				StaticText 't3_zom99c'
+				StaticText ']'
+				StaticText ''
+				[159] time 'December 17, 2022 at 8:20:30 PM EST'
+					StaticText '3 years ago'
+			[160] navigation ''
+				[161] list ''
+					[162] listitem ''
+						[163] link '77 comments'
+							[164] strong ''
+								StaticText '77 comments'
+			[167] Section ''
+				[169] button 'Upvote'
+				StaticText '14304'
+				[179] button 'Downvote'
+		[184] article ''
+			[189] heading "NASA's Annual Day of Remembrance today, Jan. 26, honors the astronauts who died during the Apollo 1 fire and the Challenger and Columbia space shuttle disasters."
+				[190] link "NASA's Annual Day of Remembrance today, Jan. 26, honors the astronauts who died during the Apollo 1 fire and the Challenger and Columbia space shuttle disasters."
+			StaticText ''
+			[191] link 'astronomy.com'
+			[192] paragraph ''
+				StaticText 'Submitted by'
+				[194] link 'clayt6', expanded=False
+					[195] strong ''
+						StaticText 'clayt6'
+				StaticText ''
+				StaticText '['
+				StaticText 't3_10m450d'
+				StaticText ']'
+				StaticText ''
+				[197] time 'January 26, 2023 at 5:12:58 PM EST'
+					StaticText '3 years ago'
+			[198] navigation ''
+				[199] list ''
+					[200] listitem ''
+						[201] link '108 comments'
+							[202] strong ''
+								StaticText '108 comments'
+			[205] Section ''
+				[207] button 'Upvote'
+				StaticText '12645'
+				[217] button 'Downvote'
+		[222] article ''
+			[227] heading 'My two year progress shooting Jupiter, using the same $300 telescope!'
+				[228] link 'My two year progress shooting Jupiter, using the same $300 telescope!'
+			[230] paragraph ''
+				StaticText 'Submitted by'
+				[232] link 'theillini19', expanded=False
+					[233] strong ''
+						StaticText 'theillini19'
+				StaticText ''
+				StaticText '['
+				StaticText 't3_11cw0e7'
+				StaticText ']'
+				StaticText ''
+				[235] time 'February 26, 2023 at 6:16:43 PM EST'
+					StaticText '3 years ago'
+			[236] navigation ''
+				[237] list ''
+					[238] listitem ''
+						[239] link '114 comments'
+							[240] strong ''
+								StaticText '114 comments'
+			[243] Section ''
+				[245] button 'Upvote'
+				StaticText '11231'
+				[255] button 'Downvote'
+		[260] article ''
+			[265] heading 'My progress at Astrophotography'
+				[266] link 'My progress at Astrophotography'
+			[268] paragraph ''
+				StaticText 'Submitted by'
+				[270] link 'steliosmudda', expanded=False
+					[271] strong ''
+						StaticText 'steliosmudda'
+				StaticText ''
+				StaticText '['
+				StaticText 't3_zv6dbl'
+				StaticText ']'
+				StaticText ''
+				[273] time 'December 25, 2022 at 3:50:19 PM EST'
+					StaticText '3 years ago'
+			[274] navigation ''
+				[275] list ''
+					[276] listitem ''
+						[277] link '114 comments'
+							[278] strong ''
+								StaticText '114 comments'
+			[281] Section ''
+				[283] button 'Upvote'
+				StaticText '10277'
+				[293] button 'Downvote'
+		[298] article ''
+			[303] heading 'Astronaut Peggy Whitson in the Festive Spirit 2016'
+				[304] link 'Astronaut Peggy Whitson in the Festive Spirit 2016'
+			[306] paragraph ''
+				StaticText 'Submitted by'
+				[308] link 'Aeromarine_eng', expanded=False
+					[309] strong ''
+						StaticText 'Aeromarine_eng'
+				StaticText ''
+				StaticText '['
+				StaticText 't3_zv13ep'
+				StaticText ']'
+				StaticText ''
+				[311] time 'December 25, 2022 at 11:20:31 AM EST'
+					StaticText '3 years ago'
+			[312] navigation ''
+				[313] list ''
+					[314] listitem ''
+						[315] link '45 comments'
+							[316] strong ''
+								StaticText '45 comments'
+			[319] Section ''
+				[321] button 'Upvote'
+				StaticText '9999'
+				[331] button 'Downvote'
+		[336] article ''
+			[341] heading 'NASA captures a "snapshot in time" showing how a star is born among the Cosmic Cliffs'
+				[342] link 'NASA captures a "snapshot in time" showing how a star is born among the Cosmic Cliffs'
+			StaticText ''
+			[343] link 'cbsnews.com'
+			[344] paragraph ''
+				StaticText 'Submitted by'
+				[346] link 'scot816', expanded=False
+					[347] strong ''
+						StaticText 'scot816'
+				StaticText ''
+				StaticText '['
+				StaticText 't3_zspbqo'
+				StaticText ']'
+				StaticText ''
+				[349] time 'December 22, 2022 at 10:54:36 AM EST'
+					StaticText '3 years ago'
+			[350] navigation ''
+				[351] list ''
+					[352] listitem ''
+						[353] link '125 comments'
+							[354] strong ''
+								StaticText '125 comments'
+			[357] Section ''
+				[359] button 'Upvote'
+				StaticText '8844'
+				[369] button 'Downvote'
+		[374] article ''
+			[379] heading 'A view I captured of the sun between ISS solar panels. More details in comments.'
+				[380] link 'A view I captured of the sun between ISS solar panels. More details in comments.'
+			[382] paragraph ''
+				StaticText 'Submitted by'
+				[384] link 'astro_pettit', expanded=False
+					[385] strong ''
+						StaticText 'astro_pettit'
+				StaticText ''
+				StaticText '['
+				StaticText 't3_yhkz3i'
+				StaticText ']'
+				StaticText ''
+				[387] time 'October 30, 2022 at 1:51:50 PM EDT'
+					StaticText '3 years ago'
+			[388] navigation ''
+				[389] list ''
+					[390] listitem ''
+						[391] link '130 comments'
+							[392] strong ''
+								StaticText '130 comments'
+			[395] Section ''
+				[397] button 'Upvote'
+				StaticText '8764'
+				[407] button 'Downvote'
+		[412] article ''
+			[417] heading 'During WW1, a self-taught Ukrainian calculated the trajectory and method to get to the Moon and back. Almost 50 years later, NASA used his work and now the route of Apollo-11 wears his name - Kondratyuk Route'
+				[418] link 'During WW1, a self-taught Ukrainian calculated the trajectory and method to get to the Moon and back. Almost 50 years later, NASA used his work and now the route of Apollo-11 wears his name - Kondratyuk Route'
+			StaticText ''
+			[419] link 'nmspacemuseum.org'
+			[420] paragraph ''
+				StaticText 'Submitted by'
+				[422] link 'HydrolicKrane', expanded=False
+					[423] strong ''
+						StaticText 'HydrolicKrane'
+				StaticText ''
+				StaticText '['
+				StaticText 't3_1004c6a'
+				StaticText ']'
+				StaticText ''
+				[425] time 'December 31, 2022 at 4:38:10 PM EST'
+					StaticText '3 years ago'
+			[426] navigation ''
+				[427] list ''
+					[428] listitem ''
+						[429] link '14 comments'
+							[430] strong ''
+								StaticText '14 comments'
+			[433] Section ''
+				[435] button 'Upvote'
+				StaticText '8705'
+				[445] button 'Downvote'
+		[450] article ''
+			[455] heading 'Enjoy the details. I work 16 hours edit and merge 380 RAW images of the moon and the final result was worth it'
+				[456] link 'Enjoy the details. I work 16 hours edit and merge 380 RAW images of the moon and the final result was worth it'
+			[458] paragraph ''
+				StaticText 'Submitted by'
+				[460] link 'daryavaseum', expanded=False
+					[461] strong ''
+						StaticText 'daryavaseum'
+				StaticText ''
+				StaticText '['
+				StaticText 't3_xzjmh6'
+				StaticText ']'
+				StaticText ''
+				[463] time 'October 9, 2022 at 7:43:05 AM EDT'
+					StaticText '3 years ago'
+			[464] navigation ''
+				[465] list ''
+					[466] listitem ''
+						[467] link '127 comments'
+							[468] strong ''
+								StaticText '127 comments'
+			[471] Section ''
+				[473] button 'Upvote'
+				StaticText '8687'
+				[483] button 'Downvote'
+		[488] article ''
+			[493] heading 'Meet the amateur astronomer who found a lost NASA satellite'
+				[494] link 'Meet the amateur astronomer who found a lost NASA satellite'
+			StaticText ''
+			[495] link 'freethink.com'
+			[496] paragraph ''
+				StaticText 'Submitted by'
+				[498] link 'jarvedttudd', expanded=False
+					[499] strong ''
+						StaticText 'jarvedttudd'
+				StaticText ''
+				StaticText '['
+				StaticText 't3_zvvjh2'
+				StaticText ']'
+				StaticText ''
+				[501] time 'December 26, 2022 at 3:05:37 PM EST'
+					StaticText '3 years ago'
+			[502] navigation ''
+				[503] list ''
+					[504] listitem ''
+						[505] link '173 comments'
+							[506] strong ''
+								StaticText '173 comments'
+			[509] Section ''
+				[511] button 'Upvote'
+				StaticText '8570'
+				[521] button 'Downvote'
+		[526] article ''
+			[531] heading 'My 1st ever star trail from space. More details in comments.'
+				[532] link 'My 1st ever star trail from space. More details in comments.'
+			[534] paragraph ''
+				StaticText 'Submitted by'
+				[536] link 'astro_pettit', expanded=False
+					[537] strong ''
+						StaticText 'astro_pettit'
+				StaticText ''
+				StaticText '['
+				StaticText 't3_10653aa'
+				StaticText ']'
+				StaticText ''
+				[539] time 'January 7, 2023 at 7:52:36 PM EST'
+					StaticText '3 years ago'
+			[540] navigation ''
+				[541] list ''
+					[542] listitem ''
+						[543] link '57 comments'
+							[544] strong ''
+								StaticText '57 comments'
+			[547] Section ''
+				[549] button 'Upvote'
+				StaticText '7510'
+				[559] button 'Downvote'
+		[564] article ''
+			[569] heading 'Every planet in the solar system visible in rare "planet parade"'
+				[570] link 'Every planet in the solar system visible in rare "planet parade"'
+			StaticText ''
+			[571] link 'cbsnews.com'
+			[572] paragraph ''
+				StaticText 'Submitted by'
+				[574] link 'scot816', expanded=False
+					[575] strong ''
+						StaticText 'scot816'
+				StaticText ''
+				StaticText '['
+				StaticText 't3_zy3ash'
+				StaticText ']'
+				StaticText ''
+				[577] time 'December 29, 2022 at 6:35:29 AM EST'
+					StaticText '3 years ago'
+			[578] navigation ''
+				[579] list ''
+					[580] listitem ''
+						[581] link '183 comments'
+							[582] strong ''
+								StaticText '183 comments'
+			[585] Section ''
+				[587] button 'Upvote'
+				StaticText '7261'
+				[597] button 'Downvote'
+		[602] article ''
+			[607] heading 'My camera setup on the International Space station. More details in comments.'
+				[608] link 'My camera setup on the International Space station. More details in comments.'
+			[610] paragraph ''
+				StaticText 'Submitted by'
+				[612] link 'astro_pettit', expanded=False
+					[613] strong ''
+						StaticText 'astro_pettit'
+				StaticText ''
+				StaticText '['
+				StaticText 't3_12241ym'
+				StaticText ']'
+				StaticText ''
+				[615] time 'March 25, 2023 at 7:57:27 PM EDT'
+					StaticText '3 years ago'
+			[616] navigation ''
+				[617] list ''
+					[618] listitem ''
+						[619] link '162 comments'
+							[620] strong ''
+								StaticText '162 comments'
+			[623] Section ''
+				[625] button 'Upvote'
+				StaticText '6848'
+				[635] button 'Downvote'
+		[640] article ''
+			[645] heading 'More Water Found on Moon, Locked in Tiny Glass Beads'
+				[646] link 'More Water Found on Moon, Locked in Tiny Glass Beads'
+			StaticText ''
+			[647] link 'wsj.com'
+			[648] paragraph ''
+				StaticText 'Submitted by'
+				[650] link 'LanceOhio', expanded=False
+					[651] strong ''
+						StaticText 'LanceOhio'
+				StaticText ''
+				StaticText '['
+				StaticText 't3_124mzrx'
+				StaticText ']'
+				StaticText ''
+				[653] time 'March 28, 2023 at 8:19:51 AM EDT'
+					StaticText '3 years ago'
+			[654] navigation ''
+				[655] list ''
+					[656] listitem ''
+						[657] link '172 comments'
+							[658] strong ''
+								StaticText '172 comments'
+			[661] Section ''
+				[663] button 'Upvote'
+				StaticText '6755'
+				[673] button 'Downvote'
+		[678] article ''
+			[683] heading "Here's a collage of some of my best photos of that planets I've taken with my telescope this year"
+				[684] link "Here's a collage of some of my best photos of that planets I've taken with my telescope this year"
+			[686] paragraph ''
+				StaticText 'Submitted by'
+				[688] link 'J3RRYLIKESCHEESE', expanded=False
+					[689] strong ''
+						StaticText 'J3RRYLIKESCHEESE'
+				StaticText ''
+				StaticText '['
+				StaticText 't3_yh06s4'
+				StaticText ']'
+				StaticText ''
+				[691] time 'October 29, 2022 at 8:43:19 PM EDT'
+					StaticText '3 years ago'
+			[692] navigation ''
+				[693] list ''
+					[694] listitem ''
+						[695] link '155 comments'
+							[696] strong ''
+								StaticText '155 comments'
+			[699] Section ''
+				[701] button 'Upvote'
+				StaticText '6445'
+				[711] button 'Downvote'
+		[716] article ''
+			[721] heading 'Happy Holidays r/Space'
+				[722] link 'Happy Holidays r/Space'
+			[724] paragraph ''
+				StaticText 'Submitted by'
+				[726] link 'rtphokie', expanded=False
+					[727] strong ''
+						StaticText 'rtphokie'
+				StaticText ''
+				StaticText '['
+				StaticText 't3_zuriko'
+				StaticText ']'
+				StaticText ''
+				[729] time 'December 25, 2022 at 12:31:23 AM EST'
+					StaticText '3 years ago'
+			[730] navigation ''
+				[731] list ''
+					[732] listitem ''
+						[733] link '37 comments'
+							[734] strong ''
+								StaticText '37 comments'
+			[737] Section ''
+				[739] button 'Upvote'
+				StaticText '6208'
+				[749] button 'Downvote'
+		[754] article ''
+			[759] heading 'Todays solar eclipse drew some nice patterns through the shades'
+				[760] link 'Todays solar eclipse drew some nice patterns through the shades'
+			[762] paragraph ''
+				StaticText 'Submitted by'
+				[764] link 'kapege', expanded=False
+					[765] strong ''
+						StaticText 'kapege'
+				StaticText ''
+				StaticText '['
+				StaticText 't3_ydaimb'
+				StaticText ']'
+				StaticText ''
+				[767] time 'October 25, 2022 at 1:27:20 PM EDT'
+					StaticText '3 years ago'
+			[768] navigation ''
+				[769] list ''
+					[770] listitem ''
+						[771] link '24 comments'
+							[772] strong ''
+								StaticText '24 comments'
+			[775] Section ''
+				[777] button 'Upvote'
+				StaticText '6199'
+				[787] button 'Downvote'
+		[792] article ''
+			[797] heading "Orion snaps 'selfie' with the Moon as it prepares for distant retrograde orbit | Insertion burn scheduled to take place today then engineers have six days to see how spacecraft fares in deep space"
+				[798] link "Orion snaps 'selfie' with the Moon as it prepares for distant retrograde orbit | Insertion burn scheduled to take place today then engineers have six days to see how spacecraft fares in deep space"
+			StaticText ''
+			[799] link 'theregister.com'
+			[800] paragraph ''
+				StaticText 'Submitted by'
+				[802] link 'chrisdh79', expanded=False
+					[803] strong ''
+						StaticText 'chrisdh79'
+				StaticText ''
+				StaticText '['
+				StaticText 't3_z4cbzl'
+				StaticText ']'
+				StaticText ''
+				[805] time 'November 25, 2022 at 7:34:32 AM EST'
+					StaticText '3 years ago'
+			[806] navigation ''
+				[807] list ''
+					[808] listitem ''
+						[809] link '111 comments'
+							[810] strong ''
+								StaticText '111 comments'
+			[813] Section ''
+				[815] button 'Upvote'
+				StaticText '6109'
+				[825] button 'Downvote'
+		[830] article ''
+			[835] heading 'I have finally completed the Solar System! No telescope and no equatorial mount. Just DSLRs, a fixed tripod, stacking and patience!'
+				[836] link 'I have finally completed the Solar System! No telescope and no equatorial mount. Just DSLRs, a fixed tripod, stacking and patience!'
+			[838] paragraph ''
+				StaticText 'Submitted by'
+				[840] link 'andrea_g_amato_art', expanded=False
+					[841] strong ''
+						StaticText 'andrea_g_amato_art'
+				StaticText ''
+				StaticText '['
+				StaticText 't3_z6d9oi'
+				StaticText ']'
+				StaticText ''
+				[843] time 'November 27, 2022 at 4:32:22 PM EST'
+					StaticText '3 years ago'
+			[844] navigation ''
+				[845] list ''
+					[846] listitem ''
+						[847] link '175 comments'
+							[848] strong ''
+								StaticText '175 comments'
+			[851] Section ''
+				[853] button 'Upvote'
+				StaticText '6033'
+				[863] button 'Downvote'
+		[868] article ''
+			[873] heading 'Ancient humans and their early depictions of the universe: “It is no exaggeration to say that astronomy has existed as an exact science for more than five millennia,” writes the late science historian John North.'
+				[874] link 'Ancient humans and their early depictions of the universe: “It is no exaggeration to say that astronomy has existed as an exact science for more than five millennia,” writes the late science historian John North.'
+			StaticText ''
+			[875] link 'astronomy.com'
+			[876] paragraph ''
+				StaticText 'Submitted by'
+				[878] link 'clayt6', expanded=False
+					[879] strong ''
+						StaticText 'clayt6'
+				StaticText ''
+				StaticText '['
+				StaticText 't3_10g7eh5'
+				StaticText ']'
+				StaticText ''
+				[881] time 'January 19, 2023 at 12:21:19 PM EST'
+					StaticText '3 years ago'
+			[882] navigation ''
+				[883] list ''
+					[884] listitem ''
+						[885] link '168 comments'
+							[886] strong ''
+								StaticText '168 comments'
+			[889] Section ''
+				[891] button 'Upvote'
+				StaticText '5366'
+				[901] button 'Downvote'
+		[906] article ''
+			[911] heading 'I captured this lightning-filled star trail from the International Space Station. More details in comments!'
+				[912] link 'I captured this lightning-filled star trail from the International Space Station. More details in comments!'
+			[914] paragraph ''
+				StaticText 'Submitted by'
+				[916] link 'astro_pettit', expanded=False
+					[917] strong ''
+						StaticText 'astro_pettit'
+				StaticText ''
+				StaticText '['
+				StaticText 't3_11oz924'
+				StaticText ']'
+				StaticText ''
+				[919] time 'March 11, 2023 at 6:53:29 PM EST'
+					StaticText '3 years ago'
+			[920] navigation ''
+				[921] list ''
+					[922] listitem ''
+						[923] link '77 comments'
+							[924] strong ''
+								StaticText '77 comments'
+			[927] Section ''
+				[929] button 'Upvote'
+				StaticText '5187'
+				[939] button 'Downvote'
+		[944] article ''
+			[949] heading 'Andromeda (M31)'
+				[950] link 'Andromeda (M31)'
+			[952] paragraph ''
+				StaticText 'Submitted by'
+				[954] link 'P3n1sD1cK', expanded=False
+					[955] strong ''
+						StaticText 'P3n1sD1cK'
+				StaticText ''
+				StaticText '['
+				StaticText 't3_xtw7u2'
+				StaticText ']'
+				StaticText ''
+				[957] time 'October 2, 2022 at 2:38:03 PM EDT'
+					StaticText '3 years ago'
+			[958] navigation ''
+				[959] list ''
+					[960] listitem ''
+						[961] link '53 comments'
+							[962] strong ''
+								StaticText '53 comments'
+			[965] Section ''
+				[967] button 'Upvote'
+				StaticText '5028'
+				[977] button 'Downvote'
+		[982] article ''
+			[987] heading "3 years ago I built this telescope in my parents' garage. It's since shown me supernovae, comets, 3 dwarf planets and been looked through by thousands of other people."
+				[988] link "3 years ago I built this telescope in my parents' garage. It's since shown me supernovae, comets, 3 dwarf planets and been looked through by thousands of other people."
+			[990] paragraph ''
+				StaticText 'Submitted by'
+				[992] link '__Augustus_', expanded=False
+					[993] strong ''
+						StaticText '__Augustus_'
+				StaticText ''
+				StaticText '['
+				StaticText 't3_12256k8'
+				StaticText ']'
+				StaticText ''
+				[995] time 'March 25, 2023 at 8:38:28 PM EDT'
+					StaticText '3 years ago'
+			[996] navigation ''
+				[997] list ''
+					[998] listitem ''
+						[999] link '74 comments'
+							[1000] strong ''
+								StaticText '74 comments'
+			[1003] Section ''
+				[1005] button 'Upvote'
+				StaticText '4780'
+				[1015] button 'Downvote'
+		[1020] article ''
+			[1025] heading 'The James Webb Space Telescope just found an asteroid by total accident, its smallest object yet'
+				[1026] link 'The James Webb Space Telescope just found an asteroid by total accident, its smallest object yet'
+			StaticText ''
+			[1027] link 'space.com'
+			[1028] paragraph ''
+				StaticText 'Submitted by'
+				[1030] link 'pecika', expanded=False
+					[1031] strong ''
+						StaticText 'pecika'
+				StaticText ''
+				StaticText '['
+				StaticText 't3_10w0m54'
+				StaticText ']'
+				StaticText ''
+				[1033] time 'February 7, 2023 at 7:29:36 AM EST'
+					StaticText '3 years ago'
+			[1034] navigation ''
+				[1035] list ''
+					[1036] listitem ''
+						[1037] link '159 comments'
+							[1038] strong ''
+								StaticText '159 comments'
+			[1041] Section ''
+				[1043] button 'Upvote'
+				StaticText '4772'
+				[1053] button 'Downvote'
+		[1058] article ''
+			[1063] heading "The Northern Lights could dazzle the skies from Washington to New York on Friday, blown by winds from a giant 'hole' on the sun"
+				[1064] link "The Northern Lights could dazzle the skies from Washington to New York on Friday, blown by winds from a giant 'hole' on the sun"
+			StaticText ''
+			[1065] link 'businessinsider.com'
+			[1066] paragraph ''
+				StaticText 'Submitted by'
+				[1068] link 'thisisinsider', expanded=False
+					[1069] strong ''
+						StaticText 'thisisinsider'
+				StaticText ''
+				StaticText '['
+				StaticText 't3_11yraow'
+				StaticText ']'
+				StaticText ''
+				[1071] time 'March 22, 2023 at 2:07:54 PM EDT'
+					StaticText '3 years ago'
+			[1072] navigation ''
+				[1073] list ''
+					[1074] listitem ''
+						[1075] link '153 comments'
+							[1076] strong ''
+								StaticText '153 comments'
+			[1079] Section ''
+				[1081] button 'Upvote'
+				StaticText '4658'
+				[1091] button 'Downvote'
+		[1096] navigation ''
+			[1097] list ''
+				[1099] listitem ''
+					[1100] link 'More'
+	[1102] complementary ''
+		[1103] Section ''
+			[1104] heading 'space'
+				[1105] link 'space'
+			[1106] Section ''
+				[1109] button 'Subscribe No subscribers'
+					StaticText 'Subscribe'
+					StaticText '0'
+			[1116] paragraph ''
+				StaticText 't5_2qh87'
+			[1117] separator '', orientation='horizontal'
+			[1118] list ''
+				[1119] listitem ''
+					StaticText 'Created'
+					[1120] time 'September 30, 2022 at 8:11:23 PM EDT'
+						StaticText '3 years ago'
+				[1121] listitem ''
+					[1122] link 'Subscribe via RSS'
+						[1124] image ''
+						StaticText 'Subscribe via RSS'
+		[1126] group ''
+			[1127] DisclosureTriangle 'Hide this forum', expanded=False
+		[1133] Section ''
+			[1134] heading 'Toolbox'
+			[1135] list ''
+				[1136] listitem ''
+					[1137] link 'Bans'
+				[1138] listitem ''
+					[1139] link 'Moderation log'
+	[1140] contentinfo ''
+		[1141] paragraph ''
+			StaticText 'Running'
+			[1143] link 'Postmill'
+
+
+# History of interaction with the task:
+
+## step 0
+
+### Action:
+click('42')
+
+## step 1
+
+### Action:
+click('624')
+
+# Action space:
+
+13 different types of actions are available.
+
+noop(wait_ms: float = 1000)
+    Description: Do nothing, and optionally wait for the given time (in milliseconds).
+    Examples:
+        noop()
+
+        noop(500)
+
+send_msg_to_user(text: str)
+    Description: Sends a message to the user.
+    Examples:
+        send_msg_to_user('Based on the results of my search, the city was built in 1751.')
+
+scroll(delta_x: float, delta_y: float)
+    Description: Scroll horizontally and vertically. Amounts in pixels, positive for right or down scrolling, negative for left or up scrolling. Dispatches a wheel event.
+    Examples:
+        scroll(0, 200)
+
+        scroll(-50.2, -100.5)
+
+fill(bid: str, value: str, enable_autocomplete_menu: bool = False)
+    Description: Fill out a form field. It focuses the element and triggers an input event with the entered text. It works for <input>, <textarea> and [contenteditable] elements.
+    Examples:
+        fill('45', 'multi-line\nexample')
+
+        fill('a12', 'example with "quotes"')
+
+        fill('b534', 'Montre', True)
+
+select_option(bid: str, options: str | list[str])
+    Description: Select one or multiple options in a <select> element. You can specify option value or label to select. Multiple options can be selected.
+    Examples:
+        select_option('a48', 'blue')
+
+        select_option('c48', ['red', 'green', 'blue'])
+
+click(bid: str, button: Literal['left', 'middle', 'right'] = 'left', modifiers: list[typing.Literal['Alt', 'Control', 'ControlOrMeta', 'Meta', 'Shift']] = [])
+    Description: Click an element.
+    Examples:
+        click('a51')
+
+        click('b22', button='right')
+
+        click('48', button='middle', modifiers=['Shift'])
+
+dblclick(bid: str, button: Literal['left', 'middle', 'right'] = 'left', modifiers: list[typing.Literal['Alt', 'Control', 'ControlOrMeta', 'Meta', 'Shift']] = [])
+    Description: Double click an element.
+    Examples:
+        dblclick('12')
+
+        dblclick('ca42', button='right')
+
+        dblclick('178', button='middle', modifiers=['Shift'])
+
+hover(bid: str)
+    Description: Hover over an element.
+    Examples:
+        hover('b8')
+
+press(bid: str, key_comb: str)
+    Description: Focus the matching element and press a combination of keys. It accepts the logical key names that are emitted in the keyboardEvent.key property of the keyboard events: Backquote, Minus, Equal, Backslash, Backspace, Tab, Delete, Escape, ArrowDown, End, Enter, Home, Insert, PageDown, PageUp, ArrowRight, ArrowUp, F1 - F12, Digit0 - Digit9, KeyA - KeyZ, etc. You can alternatively specify a single character you'd like to produce such as "a" or "#". Following modification shortcuts are also supported: Shift, Control, Alt, Meta, ShiftLeft, ControlOrMeta. ControlOrMeta resolves to Control on Windows and Linux and to Meta on macOS.
+    Examples:
+        press('88', 'Backspace')
+
+        press('a26', 'ControlOrMeta+a')
+
+        press('a61', 'Meta+Shift+t')
+
+focus(bid: str)
+    Description: Focus the matching element.
+    Examples:
+        focus('b455')
+
+clear(bid: str)
+    Description: Clear the input field.
+    Examples:
+        clear('996')
+
+drag_and_drop(from_bid: str, to_bid: str)
+    Description: Perform a drag & drop. Hover the element that will be dragged. Press left mouse button. Move mouse to the element that will receive the drop. Release left mouse button.
+    Examples:
+        drag_and_drop('56', '498')
+
+upload_file(bid: str, file: str | list[str])
+    Description: Click an element and wait for a "filechooser" event, then select one or multiple input files for upload. Relative file paths are resolved relative to the current working directory. An empty list clears the selected files.
+    Examples:
+        upload_file('572', 'my_receipt.pdf')
+
+        upload_file('63', ['/home/bob/Documents/image.jpg', '/home/bob/Documents/file.zip'])
+
+Multiple actions can be provided at once, but will be executed sequentially without any feedback from the page.
+More than 2-3 actions usually leads to failure or unexpected behavior. Example:
+fill('b534', 'Montre', True)
+click('a51')
+click('48', button='middle', modifiers=['Shift'])
+
+
+# Abstract Example
+
+Here is an abstract version of the answer with description of the content of
+each tag. Make sure you follow this structure, but replace the content with your
+answer:
+
+<think>
+Think step by step. If you need to make calculations such as coordinates, write them here. Describe the effect
+that your previous action had on the current content of the page.
+</think>
+
+<action>
+One or several actions, separated by new lines.
+</action>
+
+# Concrete Example
+
+Here is a concrete example of how to format your answer.
+Make sure to follow the template with proper tags:
+
+<think>
+My memory says that I filled the first name and last name, but I can't see any
+content in the form. I need to explore different ways to fill the form. Perhaps
+the form is not visible yet or some fields are disabled. I need to replan.
+</think>
+
+<action>
+fill('b534', 'Montre', True)
+click('a51')
+click('48', button='middle', modifiers=['Shift'])
+</action>
+
+[IMAGE_1: data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD...]

@@ -1,0 +1,1 @@
+{"id": 224, "eval_info": {"thoughts": "The agent used the map directions tool with CMU -> Wendy's, and the final page snapshot clearly shows \"Distance: 2.0km. Time: 0:03.\" The agent's message reported that 3-minute car estimate (and noted it's an OSRM/ideal estimate) and offered follow-ups. This satisfies the information-seeking intent.", "status": "success"}}
