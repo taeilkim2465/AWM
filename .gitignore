@@ -4,6 +4,11 @@ webarena/config_files/[0-9]*.json
 webarena/data/
 webarena/prompt_logs/
 webarena/results*/
+webarena/timeout_tasks.jsonl
+webarena/rerun_timeout_reasoning_bank.log
+webarena/rerun_timeout_reasoning_bank.sh
+webarena/autoeval/log/
+webarena/autoeval/*.tar
 
 # Mind2Web 관련
 mind2web/data/
